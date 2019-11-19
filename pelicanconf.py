@@ -36,3 +36,25 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+# Blog setup
+
+STATIC_PATHS = ['images']
+# HEADER_IMAGE = "/content/images/great-wave-off-kinosawa.jpg"
+HOME_COVER = 'images/great-wave-off-kinosawa.jpg'
+# HOME_COLOR = 'black'
+# COLOR_SCHEME_CSS = 'monokai.css'
+
+AUTHORS_BIO = {
+  "alexgonzalez": {
+    "name": "Alex Gonzalez",
+    "cover": "images/last-night.jpg",
+    "image": "images/last-night.jpg",
+    "website": "http://alexgonzalez.dev",
+    "location": "Terra",
+    "bio": "This is my 200 character biography. Hello!"
+  }
+}
+
+ARTICLE_PATHS = ['posts',]
+ARTICLE_URL = 'posts/{slug}.html'
+ARTICLE_SAVE_AS = 'posts/{slug}.html'
