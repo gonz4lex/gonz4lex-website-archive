@@ -1,7 +1,9 @@
-Title: The Great Wave
-Date: 2019-11-18 19:10
-Category: python, art
-Slug: the-great-wave
+title: The Great Wave
+date: 2019-11-18 19:10
+category: python, art
+slug: the-great-wave
+author: Alex Gonzalez
+
 
 ## The image I wanted to add
 
