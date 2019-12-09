@@ -48,24 +48,14 @@ HOME_COVER = 'images/last-night.jpg'
 
 # COLOR_SCHEME_CSS = 'monokai.css'
 
-# AUTHORS_BIO = {
-#   "Alex Gonzalez": {
-#     "name": "Alex Gonzalez",
-#     "cover": "images/great-wave-off-kinosawa.jpg",
-#     "image": "images/last-night.jpg",
-#     "website": "http://alexgonzalez.dev",
-#     "location": "Terra",
-#     "bio": "This is my 200 character biography. Hello!"
-#   }
-# }
 AUTHORS_BIO = {
-  "zutrinken": {
-    "name": "Zutrinken",
-    "cover": "https://arulrajnet.github.io/attila-demo/assets/images/avatar.png",
-    "image": "https://arulrajnet.github.io/attila-demo/assets/images/avatar.png",
-    "website": "http://blog.arulraj.net",
-    "location": "Chennai",
-    "bio": "This is the place for a small biography with max 200 characters. Well, now 100 are left. Cool, hugh?"
+  "Alex Gonzalez": {
+    "name": "Alex Gonzalez",
+    "cover": "images/great-wave-off-kinosawa.jpg",
+    "image": "images/last-night.jpg",
+    "website": "http://alexgonzalez.dev",
+    "location": "Terra",
+    "bio": "This is my 200 character biography. Hello!"
   }
 }
 
