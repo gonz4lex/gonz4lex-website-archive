@@ -1,39 +1,10 @@
-title: VS Code Ninja
+title: Master of Visual Studio Code
 date: 2019-11-26 19:00
 category: vscode
 slug: vs-code-ninja
 author: Alex Gonzalez
 status: published
-
-<p style="font-weight:600; font-size:36px">Master of Visual Studio Code</p>
-
-
-<!-- TOC -->
-<p style="font-weight:600; font-size:20px">Table of Contents</p>
-
-- [Introduction](#introduction)
-- [Explorer](#explorer)
-- [Search](#search)
-- [Source control](#source-control)
-- [Debugger](#debugger)
-- [Extensions](#extensions)
-- [Integrated Terminal](#integrated-terminal)
-- [The command palette](#the-command-palette)
-- [Customization](#customization)
-  - [Themes and icons](#themes-and-icons)
-  - [Fonts](#fonts)
-- [Workspaces](#workspaces)
-- [Editing evolved](#editing-evolved)
-  - [IntelliSense](#intellisense)
-  - [Code formatting and navigation](#code-formatting-and-navigation)
-  - [Errors, warnings and info](#errors-warnings-and-info)
-  - [Keyboard shortcuts](#keyboard-shortcuts)
-  - [Code snippets](#code-snippets)
-- [Extensions showcase](#extensions-showcase)
-
-<!-- /TOC -->
-
-<div style="page-break-after: always;"></div>
+summary: Master Visual Studio Code with these tips
 
 ## Introduction
 
