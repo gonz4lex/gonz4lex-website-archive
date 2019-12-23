@@ -3,9 +3,10 @@ date: 2019-12-08 22:50
 category: linux
 tags: linux, learning
 slug: linux-dev-env
-author: Zutrinken
+author: Alex Gonzalez
 status: published
 summary: An overview of my Linux development setup.
+header_cover: 
 
 I recently got the itch of purchasing a new laptop for development and learning, so I took the chance on Black Friday and got myself a nice HP Stream 14. I am a long-time Windows user so I thought it would be a great opportunity to get started with Linux and set up a developer workstation while documenting the process.
 
@@ -13,11 +14,11 @@ I recently got the itch of purchasing a new laptop for development and learning,
 
 I wanted this machine to be equipped for:
 
-* web and software development, mostly in Python
 * data science and machine learning investigation
-* cloud deployments
-* indie game development
 * writing
+* web and software development, mostly in Python
+* indie game development
+* cloud deployments
 
 
 For that, I will be using tools like Visual Studio Code, Zsh (with Oh My Zsh), Godot and a nice terminal emulator like Tilix.

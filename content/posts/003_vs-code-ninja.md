@@ -5,6 +5,7 @@ slug: vs-code-ninja
 author: Alex Gonzalez
 status: published
 summary: Master Visual Studio Code with these tips
+header_cover: images/code-ninja.png
 
 ## Introduction
 

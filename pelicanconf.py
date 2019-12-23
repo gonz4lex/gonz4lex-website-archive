@@ -6,7 +6,7 @@ AUTHOR = 'alex.gonzalez'
 SITENAME = 'deeprivers'
 SITESUBTITLE = 'Sorry for the mess and welcome to my blog!'
 SITEURL = 'https://alexgonzalez.dev'
-THEME = 'theme' # or attila
+THEME = 'theme'
 LOAD_CONTENT_CACHE = False
 
 PATH = 'content'
@@ -24,7 +24,7 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Github', 'http://github.com/gonz4lex'),
-        #  ('Python.org', 'http://python.org/'),
+         ('Python.org', 'http://python.org/'),
         #  ('Jinja2', 'http://jinja.pocoo.org/'),
         #  ('You can modify those links in your config file', '#'),
          )
@@ -32,20 +32,22 @@ LINKS = (('Github', 'http://github.com/gonz4lex'),
 # Social widget
 SOCIAL = (('Github', 'http://github.com/gonz4lex'),
           ('Twitter', 'http://twitter.com/gonz4lex_'),)
+
+
 TYPOGRIFY = True
 DEFAULT_PAGINATION = 10
 DEFAULT_METADATA = {
     'status': 'draft',
 }
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
 # Blog setup
 
 STATIC_PATHS = ['images', 'extra']
-HEADER_IMAGE = "images/last_night.jpg"
-HOME_COVER = 'images/last-night.jpg'
-
+HEADER_COVER = "images/last-night.jpg"
+# HOME_COVER = 'images/last-night.jpg'
 # COLOR_SCHEME_CSS = 'monokai.css'
 
 AUTHORS_BIO = {
@@ -75,4 +77,9 @@ EXTRA_PATH_METADATA = {
 
 DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%m'
 NEWEST_FIRST_ARCHIVES = True
+
 GITHUB_URL = 'http://github.com/gonz4lex'
+EMAIL = "alejandrogcaules@gmail.com"
+LINKEDIN_URL = "https://www.linkedin.com/in/alejandro-gonzalez-a05636127/"
+
+SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = True
