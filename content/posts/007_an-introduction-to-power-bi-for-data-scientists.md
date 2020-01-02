@@ -1,5 +1,5 @@
 title: An introduction to Power BI for data scientists
-date: 2019-12-6 17:12
+date: 2019-12-6 17:42
 category: power bi
 tags: data science
 slug: an-introduction-to-power-bi-for-data-scientists

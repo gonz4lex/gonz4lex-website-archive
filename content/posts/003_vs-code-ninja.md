@@ -1,5 +1,5 @@
 title: Master of Visual Studio Code
-date: 2019-11-26 19:00
+date: 2019-11-26 19:27
 category: vscode
 slug: vs-code-ninja
 author: Alex Gonzalez

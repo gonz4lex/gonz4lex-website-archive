@@ -5,9 +5,9 @@ from __future__ import unicode_literals
 AUTHOR = 'alex.gonzalez'
 SITENAME = 'deeprivers'
 SITESUBTITLE = 'Sorry for the mess and welcome to my blog!'
-SITEURL = 'https://alexgonzalez.dev'
+SITEURL = 'https://gonz4lex.github.io/'
 THEME = 'theme'
-LOAD_CONTENT_CACHE = False
+LOAD_CONTENT_CACHE = True
 
 PATH = 'content'
 
