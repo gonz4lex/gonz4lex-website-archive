@@ -53,8 +53,8 @@ HEADER_COVER = "images/last-night.jpg"
 AUTHORS_BIO = {
   "Alex Gonzalez": {
     "name": "Alex Gonzalez",
-    "cover": "images/great-wave-off-kinosawa.jpg",
-    "image": "images/last-night.jpg",
+    # "cover": "images/great-wave-off-kinosawa.jpg",
+    # "image": "images/last-night.jpg",
     "website": "http://alexgonzalez.dev",
     "location": "Terra",
     "bio": "This is my 200 character biography. Hello!"
