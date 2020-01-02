@@ -163,8 +163,6 @@ Navigating your files is much faster and easier with Code, for example:
   * You can also peek at its definition, maintaining your current position in the document.
 * You can also rename every occurrence of a symbol just by pressing `F2` with the cursor on the symbol. 
 
-<div style="page-break-after: always;"></div>
-
 ### Errors, warnings and info
 
 You can find these in the problems tab, which can be activated with `Ctrl+Shift+M`. These problems are usually underlined in your code in different colors depending on the problem level.

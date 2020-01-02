@@ -4,6 +4,6 @@ category: julia
 tags: julia, learning
 slug: a_date_with_julia
 author: Alex Gonzalez
-status: published
+status: draft
 summary: Getting started with the Julia language.
 header_cover: images/julia-lang.png
