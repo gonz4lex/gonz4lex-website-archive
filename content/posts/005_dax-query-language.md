@@ -1,5 +1,5 @@
 title: Data Analysis eXpression query language
-date: 2020-1-1 20:01
+date: 2019-12-27 10:32
 category: data modeling, dax
 tags: data, feature engineering
 slug: learning-dax

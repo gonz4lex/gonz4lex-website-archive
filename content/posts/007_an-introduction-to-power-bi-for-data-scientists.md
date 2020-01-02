@@ -1,16 +1,18 @@
 title: An introduction to Power BI for data scientists
-date: 2020-1-1 20:44
-category:
-tags:
+date: 2019-12-6 17:12
+category: power bi
+tags: data science
 slug: an-introduction-to-power-bi-for-data-scientists
 author: Alex Gonzalez
-summary:
-header_cover:
-status: draft
+summary: Power BI is a great free tool that can be used to quickly prototype visualizations for exploratory data analysis.
+header_cover: images/power-bi.png
+status: published
+
+Get started with Power BI to speed up your exploratory data analysis when looking for trends and features than might be useful for prediction or classification with machine learning algorithms.
 
 ## Getting Data
 
-Connecting to a data source in Power BI is quite straightforward. Just navigate to the Home tab in the ribbon and select **Get Data** to find a dropdown menu of possible options. Common sources are SQL Server, Analysis Services, Excel and Dynamics 365, among others. In most cases, such as SQL Server, you can also specify the query you want to run against the database.
+Connecting to a data source in Power BI is quite straightforward. Just navigate to the Home tab in the ribbon and select **Get Data** to find a dropdown menu of possible options. Common sources are SQL Server, Analysis Services (SSAS), Excel and Dynamics 365, among others. In most cases, such as SQL Server, you can also specify the query you want to run against the database.
 Note that when connecting to a source you can either query the data directly through **DirectQuery** or **Import** modes, but you cannot combine both methods into the same solution. There is also the **LiveConnection** mode, a variation of DirectQuery geared towards SSAS Tabular that we will not cover here.
 
 There are some crucial differences between the two connection modes:
@@ -21,8 +23,6 @@ There are some crucial differences between the two connection modes:
 When you have selected the source, Power BI will present you with a preview of your data. If everything looks OK, you can continue towards the next step. Otherwise, you can review your query and make any necessary changes.
 
 You can also use a folder as your source, allowing you to import several files at once such as a series of Excel or CSV files. They are loaded as binary data types and double clicking them loads their values.
-
-<div style="page-break-after: always;"></div>
 
 ## Clean and Transform
 
@@ -115,4 +115,4 @@ You can use them to change between report pages, create a guided navigation for 
 Time intelligence manages complex time-based calculations with reduced user input. It needs a date table with no date gaps, which Power BI creates automagically if the setting `Auto Date/Time` is enabled, which is the default case.
 It is recommended to create your own date table instead of relying on this one, since it's not possible to adjust if necessary and can actually only be viewed from DAX Studio.
 
-If you decide to work with it, you can use dot notation to access the time calculations, i.e. `Bookings[Booking Date].[Date]`.
+If you decide to work with it, you can use dot notation to access the time calculations, i.e. `Orders[Date].[Year]` to automatically extract the year of that date.
