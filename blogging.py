@@ -1,24 +1,26 @@
 import sys
 from datetime import datetime
+from colorama import Fore
 
 TEMPLATE = """
 
 title: {title}
 date: {year}-{month}-{day} {hour}:{minute:02d}
-tags:
 category:
+tags:
 slug: {slug}
+author: Alex Gonzalez
 summary:
+header_cover:
+status: draft
 
 
 """
 
-
 def make_entry(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
-    f_create = "content/posts/{}{:0>2}{:0>2}{}.md".format(
-        today.year, today.month, today.day, slug)
+    f_create = "content/posts/_{}.md".format(slug)
     t = TEMPLATE.strip().format(title=title,
                                 year=today.year,
                                 month=today.month,
@@ -28,7 +30,7 @@ def make_entry(title):
                                 slug=slug)
     with open(f_create, 'w') as w:
         w.write(t)
-    print("File created: " + f_create)
+    print(Fore.GREEN + "SUCCESS! " + Fore.RESET + "File created: " + f_create)
 
 
 if __name__ == '__main__':
