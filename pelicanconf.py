@@ -82,3 +82,4 @@ LINKEDIN_URL = "https://www.linkedin.com/in/alejandro-gonzalez-a05636127/"
 
 SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = True
 DISPLAY_PAGES_ON_MENU = True
+GOOGLE_ANALYTICS = "UA-155317378-1"
