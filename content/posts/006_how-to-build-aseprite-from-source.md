@@ -1,5 +1,5 @@
 title: How to build Aseprite from source in Ubuntu
-date: 2020-1-4
+date: 2020-1-4 00:33
 category: game dev, pixel art
 tags: aseprite
 slug: how-to-build-aseprite-from-source
