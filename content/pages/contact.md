@@ -1,8 +1,8 @@
 title: Contact
 slug: contact
-author: Alex
+author: Alex Gonzalez
 status: published
-<!-- header_cover: ../images/great-wave-off-kinosawa.jpg -->
+header_cover: ../images/mountains.jpg
 
 # Say hi! 👋
 

@@ -1,4 +1,4 @@
-title: Data Analysis eXpression query language
+title: Data Analysis eXpressions query language
 date: 2019-12-27 10:32
 category: data modeling, dax
 tags: data, feature engineering
