@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'alex.gonzalez'
-SITENAME = 'deeprivers'
-SITESUBTITLE = 'Sorry for the mess and welcome to my blog!'
-SITEURL = 'https://gonz4lex.github.io/'
+AUTHOR = 'Alex Gonzalez'
+SITENAME = 'Alex Gonzalez'
+SITESUBTITLE = 'Hey! I\'m Alex, a developer focused on data engineering, machine learning, data science and visualization. '
+SITEURL = 'https://alexgonzalezc.dev'
 THEME = 'theme'
 LOAD_CONTENT_CACHE = True
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/Madrid'
 
 DEFAULT_LANG = 'en'
 
@@ -47,8 +47,6 @@ RELATIVE_URLS = True
 
 STATIC_PATHS = ['images', 'extra']
 HEADER_COVER = "images/last-night.jpg"
-# HOME_COVER = 'images/last-night.jpg'
-# COLOR_SCHEME_CSS = 'monokai.css'
 
 AUTHORS_BIO = {
   "Alex Gonzalez": {
@@ -83,3 +81,4 @@ EMAIL = "alejandrogcaules@gmail.com"
 LINKEDIN_URL = "https://www.linkedin.com/in/alejandro-gonzalez-a05636127/"
 
 SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = True
+DISPLAY_PAGES_ON_MENU = True
