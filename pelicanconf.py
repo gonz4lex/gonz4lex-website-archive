@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
-SITESUBTITLE = 'Hey! I\'m Alex, a developer focused on data engineering, machine learning, data science and visualization. '
+SITESUBTITLE = "Hey! I'm Alex, a developer focused on data engineering, machine learning, data science and visualization."
 SITEURL = 'https://alexgonzalezc.dev'
 THEME = 'theme'
 LOAD_CONTENT_CACHE = True
