@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>  How I got started with&nbsp;Linux |  Alex Gonzalez  </title>
+        <title>  How to build Aseprite from source in&nbsp;Ubuntu |  Alex Gonzalez  </title>
 
             <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Full Atom Feed" />
             <link href="https://alexgonzalezc.dev/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Categories Atom Feed" />
@@ -37,8 +37,7 @@
 
 
 
-        <meta name="tags" contents="linux" />
-        <meta name="tags" contents="learning" />
+        <meta name="tags" contents="aseprite" />
 
 
 			<meta property="og:locale" content="en">
@@ -46,11 +45,11 @@
 
 	<meta property="og:type" content="article">
 	<meta property="article:author" content="">
-	<meta property="og:url" content="../posts/linux-dev-env.html">
-	<meta property="og:title" content="How I got started with&nbsp;Linux">
+	<meta property="og:url" content="../posts/how-to-build-aseprite-from-source.html">
+	<meta property="og:title" content="How to build Aseprite from source in&nbsp;Ubuntu">
 	<meta property="og:description" content="">
-	<meta property="og:image" content="../images/mountains.jpg">
-	<meta property="article:published_time" content="2019-12-08 22:50:00+01:00">
+	<meta property="og:image" content="../images/aseprite.png">
+	<meta property="article:published_time" content="2020-01-04 00:33:00+01:00">
 </head>
 
 <body>
@@ -83,15 +82,15 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('../images/mountains.jpg')">
+        <header class="intro-header" style="background-image: url('../images/aseprite.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>How I got started with&nbsp;Linux</h1>
+                        <h1>How to build Aseprite from source in&nbsp;Ubuntu</h1>
                         <span class="meta">Posted by
                                 <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                             on 2019-12-08 22:12
+                             on 2020-01-04 00:01
                         </span>
                         
                     </div>
@@ -106,39 +105,84 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>I recently got the itch of purchasing a new laptop for development and learning, so I took the chance on Black Friday and got myself a nice <span class="caps">HP</span> Stream 14. I am a long-time Windows user so I thought it would be a great opportunity to get started with Linux and set up a developer workstation while documenting the&nbsp;process.</p>
-<h1>Objectives</h1>
-<p>I wanted this machine to be equipped&nbsp;for:</p>
-<ul>
-<li>data science and machine learning&nbsp;investigation</li>
-<li>writing</li>
-<li>web and software development, mostly in&nbsp;Python</li>
-<li>indie game&nbsp;development</li>
-<li>cloud&nbsp;deployments</li>
-</ul>
-<p>For that, I will be using tools like Visual Studio Code, Zsh (with Oh My Zsh), Godot and a nice terminal emulator like&nbsp;Tilix.</p>
-<h1>Linux</h1>
-<p>I searched for a bit trying to decide which Linux flavor I would use. I tried Elementary <span class="caps">OS</span> and Ubuntu Budgie, but finally decided myself for the true and tested Ubuntu 18.04 <span class="caps">LTS</span>, which grants support and maintenance for up to 5 years. After all, I just want to learn and have fun with this&nbsp;laptop.</p>
-<p>At first, I experienced some issues with the system. For example, the Wi-Fi adapter wasn&#8217;t recognised by the <span class="caps">OS</span>, so I had no internet connection. The Stream 14 doesn&#8217;t have an Ethernet port, so that wasn&#8217;t an option either. Finally I had to use my phone&#8217;s connection through <span class="caps">USB</span> thethering so I could run the following&nbsp;commands:</p>
-<div class="highlight"><pre><span></span>sudo apt-get upgrade
-sudo apt-get update
+        <blockquote>
+<p><strong>Disclaimer:</strong>
+Aseprite is a paid software and you should buy it to support its developers. It&#8217;s 15$ and can be purchased for Windows, macOS and Linux, as well as Steam. You can use this method to inspect the source code and try to help with development, or to try the software. There is also a free trial in their&nbsp;website.</p>
+</blockquote>
+<h2>Building Aseprite from&nbsp;Github</h2>
+<p><a href="https://www.aseprite.org">Aseprite</a> is the best pixel art tool I have come across, and has a very affordable price if you just want to test the waters of pixel art. However, should you want to help tackle some of the <a href="https://github.com/aseprite/aseprite/issues">issues</a> on the project&#8217;s repository, you need to compile the program to inspect your&nbsp;changes.</p>
+<p>I went through this process on my Windows and Linux machines, and I must say that the experience was <em>wildly</em> different, even if the process is very similar. I am currently using Ubuntu 18.04 <span class="caps">LTS</span>.</p>
+<h2>Get&nbsp;started</h2>
+<p>Before beginning, please note that the full <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md">install instructions</a> can be found in the project&#8217;s&nbsp;repo.</p>
+<p>First, you should clone the repository in a directory of your choice, such as <code>~/</code>:</p>
+<div class="highlight"><pre><span></span>git clone --recursive https://github.com/aseprite/aseprite.git
 </pre></div>
 
 
-<p>This fixes any broken packages. After that, I was able to install Git and clone a repo with the drivers for my adapters. This got my connection ready to start the real setup. The details are probably specific to the factory settings on my laptop so I won&#8217;t really go over them, but <a href="../pages/contact.html">let me know</a> if you&#8217;re stuck with a similar issue and I&#8217;ll try to help&nbsp;out.</p>
-<h2>Coding&nbsp;tools</h2>
-<p>That&#8217;s my default editor and developer tool. I love the extensible and customizable design, and the many <a href="../posts/vs-code-ninja.html">productivity hacks</a> you can take advantage&nbsp;of.</p>
-<p><a href="https://gnunn1.github.io/tilix-web/">Tilix</a> is an awesome terminal emulator with integrated multiplexing (like <code>tmux</code>) and can speed up your workflow significantly if used properly.
-I also like <a href="https://hyper.is/">Hyper</a> as it is very simple and&nbsp;lightweight.</p>
-<p>Since I started dabbling in game development, Godot has been the most approachable engine I have encountered. I tried <a href="https://phaser.io/">PhaserJS</a> briefly but my JavaScript is not that polished and I find an engine to be more more hollistic in developmnet as opposed to a framework like&nbsp;Phaser.</p>
-<h2>Programming&nbsp;languages</h2>
-<p>Even though Python comes installed in Linux distros by default, its package manager <code>pip</code> wasn&#8217;t available on my system. A swift <code>sudo apt-get install pip3</code> took that problem away.
-Take note of the <code>pip3</code> part, which installs the module for Python&nbsp;3.</p>
-<p>I also installed <a href="https://julialang.org/">Julia 1.3</a> to run some benchmarks against Python and try my hand at some development with this growing&nbsp;language.</p>
-<p>I added some other stuff, languages like <a href="https://vlang.io/">V</a> and <a href="https://www.lua.org/">Lua</a> to have more options to play with. As you can see, I have installed many different languages so I can mix and match my learning and find the niche I am most comfortable in. Many advocate against a &#8220;jack of all trades&#8221; approach, but I find breadth of knowledge more useful than depth in general situations. You can always specialise if&nbsp;necessary.</p>
-<p>I am thinking of trying Go, but I will leave that for later because I don&#8217;t really want to bite off more than I can chew. Which I am already doing,&nbsp;anyway.</p>
-<h2>Closing&nbsp;thoughts</h2>
-<p>I have been using this setup for a few months now and I am very satisfied with my decision. My Linux desktop is fast and sleek with a good-looking interface, and installing stuff is as easy as writing one shell command. I can definitely see why many developers use Linux, and I will probably make a full switch from Windows when&nbsp;possible.</p>
+<p>This will create an <code>aseprite</code> directory. You can later update this clone with new releases by&nbsp;running:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> aseprite
+git pull
+git submodule update --init --recursive
+</pre></div>
+
+
+<h2>Aseprite&nbsp;dependencies</h2>
+<p>There are three main dependencies for&nbsp;Aseprite:</p>
+<ul>
+<li>latest <a href="cmake.org">CMake</a></li>
+<li>the <a href="ninja-build.org">Ninja</a> build&nbsp;system</li>
+<li>a compiled version of <a href="https://skia.org/">Skia</a></li>
+</ul>
+<p>Note that for Windows, you need Windows 10 and <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2019</a>, as well as a [C++ <span class="caps">SDK</span>] for desktop development. The latter is an item to check in your <a href="https://imgur.com/4Pq2Cbv">Visual Studio installer</a>, so make sure you have selected&nbsp;it.</p>
+<p>Also, installing CMake on Windows was <span class="caps">HORRIBLE</span> and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&nbsp;command:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
+</pre></div>
+
+
+<p>Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&nbsp;Windows:</p>
+<div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/deps
+<span class="nb">cd</span> <span class="nv">$HOME</span>/deps
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git clone -b aseprite-m71 https://github.com/aseprite/skia.git
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/depot_tools:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">cd</span> skia
+python tools/git-sync-deps
+gn gen out/Release --args<span class="o">=</span><span class="s2">&quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&quot;</span>
+ninja -C out/Release skia
+</pre></div>
+
+
+<p>These commands can also be found in the Aseprite documentation, so head there if you get&nbsp;stuck.</p>
+<h2>Compiling the&nbsp;code</h2>
+<p>After getting all the dependecies, create a new folder <code>build</code> inside your <code>aseprite</code> directory, and <code>cd</code> into it. Afterwards, run <code>cmake</code>:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/aseprite
+mkdir build
+<span class="nb">cd</span> build
+</pre></div>
+
+
+<blockquote>
+<p>In this last command, <code>cmake</code> needs a different setup based on your <span class="caps">OS</span>. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling">installation guide</a>.</p>
+</blockquote>
+<p>Run this command on your Linux machine to build the&nbsp;source:</p>
+<div class="highlight"><pre><span></span>cmake <span class="se">\</span>
+  -DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo <span class="se">\</span>
+  -DLAF_OS_BACKEND<span class="o">=</span>skia <span class="se">\</span>
+  -DSKIA_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia <span class="se">\</span>
+  -DSKIA_OUT_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia/out/Release <span class="se">\</span>
+  -G Ninja <span class="se">\</span>
+  ..
+</pre></div>
+
+
+<p>When your terminal finishes the previous task, just run Ninja inside the <code>build</code> directory and you will have your executable in <code>aseprite/build/bin/aseprite.exe</code>:</p>
+<div class="highlight"><pre><span></span>ninja aseprite
+</pre></div>
+
+
+<h2>Start&nbsp;pixeling!</h2>
+<p>That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
+Remember to actually purchase Aseprite if you are going to use it commercially or&nbsp;professionally.</p>
     </article>
 
     <hr>
