@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
-SITESUBTITLE = "Hey! I'm Alex, a developer focused on data engineering, machine learning, data science and visualization."
+SITESUBTITLE = "Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics."
 SITEURL = 'https://alexgonzalezc.dev'
 THEME = 'theme'
 LOAD_CONTENT_CACHE = True
@@ -25,8 +25,6 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Github', 'http://github.com/gonz4lex'),
          ('Python.org', 'http://python.org/'),
-        #  ('Jinja2', 'http://jinja.pocoo.org/'),
-        #  ('You can modify those links in your config file', '#'),
          )
 
 # Social widget
@@ -83,3 +81,6 @@ LINKEDIN_URL = "https://www.linkedin.com/in/alejandro-gonzalez-a05636127/"
 SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = True
 DISPLAY_PAGES_ON_MENU = True
 GOOGLE_ANALYTICS = "UA-155317378-1"
+
+import logging
+LOG_FILTER = [(logging.WARN, 'Cannot get modification stamp')]

@@ -17,7 +17,7 @@ status: draft
 
 """
 
-def make_entry(title):
+def make_post(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
     f_create = "content/posts/_{}.md".format(slug)
@@ -36,6 +36,6 @@ def make_entry(title):
 if __name__ == '__main__':
 
     if len(sys.argv) > 1:
-        make_entry(sys.argv[1])
+        make_post(sys.argv[1])
     else:
         print("Please specify a post title.")
