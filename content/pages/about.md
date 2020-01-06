@@ -1,7 +1,16 @@
 title: About me
 slug: about-me
-author: Alex
+author: Alex Gonzalez
 status: draft
+
+## Too Long, Didn't Read
+
+Hey there! I am Alex, a developer specialising in data engineering, machine learning and data science, as well as visualization and analytics.
+
+My favourite tools and languages are Python, R, SQL, Power BI and Visual Studio Code. I have experience working with open source software and the Microsoft Data Platform.
+However, I am always looking to improve and learn new things to build the next generation of data tools.
+
+I like to write in my spare time, mainly about technology. I also enjoy reading and gaming.
 
 ## The long version
 
@@ -17,7 +26,6 @@ I consider myself a resourceful, proactive person with keen attention to detail,
 
 
 ##   Work and professional trajectory
-
 
 I have experienced a solid career growth in my current company, MTS Globe. I was promoted from my starting Junior position just 6 months after joining and I'm currently leading the data science and machine learning initiatives, establishing a framework for the development of predictive modelling tools and artificial intelligence applications.
 Some of my earlier tasks as junior analyst included:
@@ -44,6 +52,6 @@ I am currently finishing my master's thesis, focusing on artificial intelligence
 
 I consider myself proficient in Microsoft Excel and the full Office suite. I am also self educated in IT programming languages such as SQL Server (including a Microsoft certificate), as well as R, Python, MDX, and JavaScript.
 
-I speak around 4 languages: native Spanish and Catalan, proficient English with C2 level of the European Reference Language Framework, very basic French and self-taught elementary Japanese. はじめまして！！
+I speak around 4 languages: native Spanish and Catalan, proficient English with C2 level of the European Reference Language Framework, and very basic French.
 
 [^1]: Joaquín Alegre, Llorenç Pou, (2016) "Consumption, unemployment and the Great Recession: Does it matter who is unemployed and for how long?", International Journal of Manpower, Vol. 37 Issue: 4, pp.724-743, https://doi.org/10.1108/IJM-04-2015-0067 
