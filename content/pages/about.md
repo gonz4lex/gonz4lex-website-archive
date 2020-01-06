@@ -1,7 +1,7 @@
 title: About me
 slug: about-me
 author: Alex
-status: published
+status: draft
 
 ## The long version
 
