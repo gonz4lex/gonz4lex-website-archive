@@ -78,6 +78,11 @@ I speak native Spanish and Catalan, and I have achieved English level C2 in the 
 
 Check out [my badge!](https://www.youracclaim.com/badges/32ace4b4-0d19-4c9a-8724-469d79cd7937/)
 
+### Julia Academy: Introduction to Julia
+`Jan 2020`
+
+You can find my certificate [here](../assets/JuliaCertificate_AlexGonzalez.pdf).
+
 
 ## Projects 📂️  
 
@@ -90,7 +95,7 @@ You can find some of my code on my [Github](https://github.com/gonz4lex/) profil
 Joaquín Alegre, Llorenç Pou, (2016) "Consumption, unemployment and the Great Recession: Does it matter who is unemployed and for how long?", International Journal of Manpower, Vol. 37 Issue: 4, pp.724-743, https://doi.org/10.1108/IJM-04-2015-0067 
 
 ### University Investment Club  
-`Nov 2015 - Apr 2016`  
+`Nov 2015 - Apr 2016`    
 Internship at Club de Inversion BMN-UIB investment competition. Managed and provided consultancy for participants, brokered and supervised the contest.
 
 ### XXXIX Symposium of the Spanish Economics Association  

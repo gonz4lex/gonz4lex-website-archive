@@ -43,7 +43,7 @@ RELATIVE_URLS = True
 
 # Blog setup
 
-STATIC_PATHS = ['images', 'extra']
+STATIC_PATHS = ['images', 'extra', 'assets']
 HEADER_COVER = "images/last-night.jpg"
 
 AUTHORS_BIO = {
