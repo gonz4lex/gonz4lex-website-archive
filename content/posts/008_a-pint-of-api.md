@@ -56,7 +56,7 @@ The basic verbs to interact with resources over HTTP are:
 
 An endpoint is a path that points to a resource. These are normally hierarchical and tend to be quite descriptive, so that the client can understand what resource they are accessing even if they have never seen that specifiv path before.
 
-For example, take https://api.github.com/users/gonz4lex/repos. This points to the __repos__ endpoint, which stores information about the repositories of the user with the name __gonz4lex__ (that's me!), and is used, for instance, in a GET request to retrieve information about the specific resource. 
+For example, take [https://api.github.com/users/gonz4lex/repos](https://api.github.com/users/gonz4lex/repos). This points to the _repos_ endpoint, which stores information about the repositories of the user with the name _gonz4lex_ (that's me!), and is used, for instance, in a GET request to retrieve information about the specific resource. 
 
 ### Responses
 
