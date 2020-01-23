@@ -5,9 +5,13 @@ tags: julia
 slug: on-julias-multiple-dispatch
 author: Alex Gonzalez
 summary: Multiple dispatch is one of the key features of Julia, and makes your code blazing fast thanks to its typed functions.
-header_cover: images/pint-of-api.jpg
+header_cover: 
 status: draft
 
+
+Multiple dispatch is a function of programming languages, which chooses and _dispatches_ the optimal method for a given function or operator. This decision in taken based on the type of __all__ the parameters passed to the function, whereas in object-oriented programming languages only the first parameters matters.
+
+This is one of the features that makes Julia inherently faster than Python and other languages, so it's useful to know the basics and learn how to implement your own typed methods.
 
 ### Code
 
