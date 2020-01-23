@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.">
+        <meta name="description" content="<p>Multiple dispatch is one of the key features of Julia, and makes your code blazing fast thanks to its typed&nbsp;functions.</p>">
         <meta name="author" content="">
 
-        <title>Alex Gonzalez - Articles by Alex Gonzalez </title>
+        <title>  On Julia&#8217;s Multiple&nbsp;Dispatch |  Alex Gonzalez  </title>
 
             <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Full Atom Feed" />
+            <link href="https://alexgonzalezc.dev/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Categories Atom Feed" />
 
         <!-- Bootstrap Core CSS -->
         <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
@@ -33,8 +34,22 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="en">
+
+
+
+        <meta name="tags" contents="julia" />
+
+
+			<meta property="og:locale" content="en">
 		<meta property="og:site_name" content="Alex Gonzalez">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="../drafts/on-julias-multiple-dispatch.html">
+	<meta property="og:title" content="On Julia&#8217;s Multiple&nbsp;Dispatch">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="../">
+	<meta property="article:published_time" content="2020-01-22 11:03:00+01:00">
 </head>
 
 <body>
@@ -67,12 +82,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/last-night.jpg')">
+        <header class="intro-header" style="background-image: url('../theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by Alex Gonzalez</h1>
+                        <h1>On Julia&#8217;s Multiple&nbsp;Dispatch</h1>
+                        <span class="meta">Posted by
+                                <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
+                             on 2020-01-22 11:01
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -83,105 +103,48 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="../posts/data-visualization-principles.html" rel="bookmark" title="Permalink to Data visualization principles">
-                <h2 class="post-title">
-                    Data visualization&nbsp;principles
-                </h2>
-            </a>
-                <p>Conveying meaning through data visualization is not an easy task. Here is how you might get&nbsp;started.</p>
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2020-01-23 20:01
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/a-pint-of-api.html" rel="bookmark" title="Permalink to A Pint of APIs">
-                <h2 class="post-title">
-                    A Pint of&nbsp;APIs
-                </h2>
-            </a>
-                <p>Understand the fundamentals of APIs with this adaptation of a talk I gave fully in-editor with Visual Studio&nbsp;Code.</p>
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2020-01-18 23:01
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/how-to-build-aseprite-from-source.html" rel="bookmark" title="Permalink to How to build Aseprite from source in Ubuntu">
-                <h2 class="post-title">
-                    How to build Aseprite from source in&nbsp;Ubuntu
-                </h2>
-            </a>
-                <p>Aseprite is an amazing pixel art software and its source code is open. This is how you can build and test it, or help with...
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2020-01-04 00:01
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/learning-dax.html" rel="bookmark" title="Permalink to Data Analysis eXpressions query language">
-                <h2 class="post-title">
-                    Data Analysis eXpressions query&nbsp;language
-                </h2>
-            </a>
-                <p>The first part of an overview of the <span class="caps">DAX</span> language for data&nbsp;analysis.</p>
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2019-12-27 10:12
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/linux-dev-env.html" rel="bookmark" title="Permalink to How I got started with Linux">
-                <h2 class="post-title">
-                    How I got started with&nbsp;Linux
-                </h2>
-            </a>
-                <p>An overview of my Linux development&nbsp;setup.</p>
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2019-12-08 22:12
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/introduction-to-power-bi-for-data-scientists.html" rel="bookmark" title="Permalink to An introduction to Power BI for data scientists">
-                <h2 class="post-title">
-                    An introduction to Power <span class="caps">BI</span> for data&nbsp;scientists
-                </h2>
-            </a>
-                <p>Power <span class="caps">BI</span> is a great free tool that can be used to quickly prototype visualizations for exploratory...
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2019-12-06 17:12
-            </p>
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="../posts/vs-code-ninja.html" rel="bookmark" title="Permalink to Master of Visual Studio Code">
-                <h2 class="post-title">
-                    Master of Visual Studio&nbsp;Code
-                </h2>
-            </a>
-                <p>Master Visual Studio Code with these&nbsp;tips</p>
-            <p class="post-meta">Posted by
-                    <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                 on 2019-11-26 19:11
-            </p>
-        </div>
-        <hr>
+    <!-- Post Content -->
+    <article>
+        <p>Multiple dispatch is a function of programming languages, which chooses and <em>dispatches</em> the optimal method for a given function or operator. This decision in taken based on the type of <strong>all</strong> the parameters passed to the function, whereas in object-oriented programming languages only the first parameters&nbsp;matters.</p>
+<p>This is one of the features that makes Julia inherently faster than Python and other languages, so it&#8217;s useful to know the basics and learn how to implement your own typed&nbsp;methods.</p>
+<h3>Code</h3>
+<div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for String for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
 
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-        </li>
-    </ul>
-    Page 1 / 1
+<span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Float64</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for Float64 for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">methods</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">)</span>
+<span class="n">printf</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+
+
+<p>You can also examine the methods of the <code>+</code> operator:</p>
+<div class="highlight"><pre><span></span><span class="err">methods(+) # 166 methods for generic function &quot;+&quot;: [...]</span>
+</pre></div>
+
+
+<p>One use of this would be to enable the <code>+</code> operator to do string concatenation, much like in&nbsp;Python.</p>
+<div class="highlight"><pre><span></span><span class="k">import</span> <span class="n">Base</span><span class="o">.+</span>
+
+<span class="k">function</span> <span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">String</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>Note how the output returns <code>+ (generic function with 167 methods)</code>, and the new method has been added to our operator. You can also check it with <code>methods(+)</code>.</p>
+<p>Now, the following code should&nbsp;work:</p>
+<div class="highlight"><pre><span></span>
+</pre></div>
+    </article>
+
     <hr>
+
             </div>
         </div>
     </div>
