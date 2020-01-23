@@ -13,6 +13,9 @@ Julia is great, albeit a little complicated to get at around when you first meet
 
 That said, if you are still considering using Julia, let's get started with its basics to see if it's the language for you. We will cover both its syntax and concepts as we go through some examples.
 
+
+
+
 # Data Structures
 
 # Strings
@@ -22,3 +25,9 @@ That said, if you are still considering using Julia, let's get started with its 
 # Loops
 
 # Functions
+
+# Multiple dispatch
+
+One of the reasons for the performance of Julia is the way it relies on types to execute functions based on their parameter types.
+
+For example, the `+` operator can call one of its many methods depending on the types of the operands.

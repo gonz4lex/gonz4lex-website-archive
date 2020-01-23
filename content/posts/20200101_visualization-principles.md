@@ -17,7 +17,9 @@ When designing a visualization, there are usually four main topics that the auth
 These are used to compare the magnitude of values to each other and to easily identify the lowest or highest values in the data.
 
 If you want to compare values over time, line or bar charts are often the best option and their choice depends on the number of periods you would like to analyze.
-However, for comparisons among items, bar or column charts are preferred. Line charts provide a sense of continuity that might not be meaningful for categories. Faceted charts are also a good option when dealing with many categories.
+However, for comparisons among items, bar or column charts are preferred. Line charts provide a sense of continuity that might not be meaningful for categories.
+
+Faceted charts are also a good option when dealing with many categories or dimensions. R's `ggplot2` package
 You can use pie charts for comparison as well, although the length of a column or bar is usually better at displaying differences in your data than the angle of a pie chart.
 
 #### Composition
@@ -41,11 +43,10 @@ Relationship charts have a constrained set of options as normally scatter plots 
 
 While the human eye can only appreciate three dimensions together, you can visualize additional variables by mapping them to the size, color or shape of your data points.
 
-<!-- 
+
 See the image below for reference:
 
-![Visualization Best Principles](../images/data-visualization/chart-viz.png) -->
+![Visualization Best Principles](../images/data-visualization/chart-viz.png)
 
 
-> As a bonus tool, if you run into issues trying to find the best set of colors for your report or chart, make sure to check out [ColorHex](https://www.colorhexa.com/). This is a web app that provides color scales, palettes and blends based on the color of your choice.
->
+> As a bonus tool, if you run into issues trying to find the best set of colors for your report or chart, make sure to check out [Coolors](https://coolors.co/). This is a web app that provides color scales, palettes and blends based on the color of your choice.
