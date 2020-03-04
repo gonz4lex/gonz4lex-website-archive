@@ -65,7 +65,7 @@ DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%m'
 NEWEST_FIRST_ARCHIVES = True
 
 GITHUB_URL = 'http://github.com/gonz4lex'
-EMAIL = "alejandrogcaules@gmail.com"
+EMAIL = "hello@alexgonzalezc.dev"
 LINKEDIN_URL = "https://www.linkedin.com/in/alejandro-gonzalez-a05636127/"
 
 SHOW_SOCIAL_ON_INDEX_PAGE_HEADER = True
