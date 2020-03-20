@@ -6,7 +6,8 @@ AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
 SITESUBTITLE = "Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics."
 SITEURL = 'https://alexgonzalezc.dev'
-THEME = 'theme'
+THEME = 'alexdev'
+
 LOAD_CONTENT_CACHE = True
 
 PATH = 'content'
