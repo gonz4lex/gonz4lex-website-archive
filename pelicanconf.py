@@ -4,9 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
-SITESUBTITLE = "Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics."
-SITEURL = 'https://alexgonzalezc.dev'
-THEME = 'theme'
+TAGLINE = "Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics."
+# SITEURL = 'https://alexgonzalezc.dev'
+SITEURL = 'http://127.0.0.1:8000'
+THEME = 'svbhack'
 LOAD_CONTENT_CACHE = True
 
 PATH = 'content'
@@ -22,14 +23,16 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Github', 'http://github.com/gonz4lex'),
-         ('Python.org', 'http://python.org/'),
-         )
+# # Blogroll
+# LINKS = (('Github', 'http://github.com/gonz4lex'),
+#          ('Python.org', 'http://python.org/'),
+#          )
 
 # Social widget
-SOCIAL = (('Github', 'http://github.com/gonz4lex'),
-          ('Twitter', 'http://twitter.com/gonz4lex_'),)
+SOCIAL = (
+    ('Github', 'http://github.com/gonz4lex'),
+    # ('Twitter', 'http://twitter.com/gonz4lex_'),
+)
 
 
 TYPOGRIFY = True
@@ -42,6 +45,7 @@ DEFAULT_METADATA = {
 RELATIVE_URLS = True
 
 # Blog setup
+USER_LOGO_URL = SITEURL + 'static/images/logo.png'
 
 STATIC_PATHS = ['images', 'extra', 'assets']
 HEADER_COVER = "images/last-night.jpg"
