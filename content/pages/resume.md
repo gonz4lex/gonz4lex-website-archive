@@ -3,7 +3,6 @@ slug: resume
 author: Alex Gonzalez
 status: published
 summary: I am always looking for opportunities to grow and I am available for contract work or freelancing.
-header_cover: ../images/logos.png
 
 # Resume
 
@@ -17,9 +16,22 @@ You can find more about me in my [website](https://alexgonzalezc.dev) or my [Lin
 
 ## Work
 
+### Machine Learning and AI Developer
+#### Bravent
+`Jan 2022 - present`
+
+Engineering and development of AI & ML tools covering a breadth of domains.
+
+### Data Scientist
+#### Tinamica
+`Feb 2020 - Jan 2022`
+
+Data science consultancy for end client Melia Hotels International involving full workflow stack: analysis, engineering, development and orchestration.
+
+
 ### Business Intelligence Developer 💻️
 #### MTS Globe
-`Jan 2019 - present`
+`Jan 2019 - Feb 2020`
 
 Developed and launched new __Power BI__ reporting platform within the organization. Programmed in __DAX and M for data modeling__. Deployed __web scraping pipelines__ with __Python__ and __SQL Server__. __Trained__ Power BI developers and users alike.
 
