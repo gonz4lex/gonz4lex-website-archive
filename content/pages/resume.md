@@ -10,7 +10,7 @@ I am always looking for opportunities to grow and I am available for contract wo
 
 ## Profile 👨‍💻
 
-I'm a proactive and innovative self-taught developer from Palma, Spain. I specialise in data engineering, analytics and visualization, as well as data science and machine learning. I am always happy to explore new tech stacks or industries. In my spare time, I enjoy both reading and writing.
+I'm a proactive and innovative self-taught developer from Spain. I specialise in data science and machine learning, as well as data engineering, analytics and visualization. I am always happy to explore new tech stacks or industries. In my spare time, I enjoy gaming, reading and writing (code or otherwise).
 
 You can find more about me in my [website](https://alexgonzalezc.dev) or my [LinkedIn](https://www.linkedin.com/in/alejandro-gonzalez-a05636127/) profile.
 
