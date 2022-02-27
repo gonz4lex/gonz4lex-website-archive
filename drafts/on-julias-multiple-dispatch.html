@@ -2,24 +2,25 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.">
+        <meta name="description" content="<p>Multiple dispatch is one of the key features of Julia, and makes your code blazing fast thanks to its typed&nbsp;functions.</p>">
         <meta name="author" content="">
 
-        <title>Alex Gonzalez - Authors </title>
+        <title>  On Julia&#8217;s Multiple&nbsp;Dispatch |  Alex Gonzalez  </title>
 
             <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Full Atom Feed" />
+            <link href="https://alexgonzalezc.dev/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Categories Atom Feed" />
 
         <!-- Bootstrap Core CSS -->
-        <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="./theme/css/clean-blog.min.css" rel="stylesheet">
+        <link href="../theme/css/clean-blog.min.css" rel="stylesheet">
 
         <!-- Code highlight color scheme -->
-            <link href="./theme/css/code_blocks/darkly.css" rel="stylesheet">
+            <link href="../theme/css/code_blocks/darkly.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,8 +34,22 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="en">
+
+
+
+        <meta name="tags" contents="julia" />
+
+
+			<meta property="og:locale" content="en">
 		<meta property="og:site_name" content="Alex Gonzalez">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="../drafts/on-julias-multiple-dispatch.html">
+	<meta property="og:title" content="On Julia&#8217;s Multiple&nbsp;Dispatch">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="../">
+	<meta property="article:published_time" content="2020-01-22 11:03:00+01:00">
 </head>
 
 <body>
@@ -50,15 +65,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./">Alex Gonzalez</a>
+                <a class="navbar-brand" href="../">Alex Gonzalez</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 
-                            <li><a href="./pages/contact.html">Contact</a></li>
-                            <li><a href="./pages/resume.html">Resume</a></li>
+                            <li><a href="../pages/contact.html">Contact</a></li>
+                            <li><a href="../pages/resume.html">Resume</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,12 +82,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/last-night.jpg')">
+        <header class="intro-header" style="background-image: url('../theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by </h1>
+                        <h1>On Julia&#8217;s Multiple&nbsp;Dispatch</h1>
+                        <span class="meta">Posted by
+                                <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
+                             on 2020-01-22 11:01
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -83,14 +103,48 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="./author/alex-gonzalez.html" rel="bookmark">
-                <h2 class="post-title">
-                    Alex Gonzalez (7)
-                </h2>
-            </a>
-        </div>
-        <hr>
+    <!-- Post Content -->
+    <article>
+        <p>Multiple dispatch is a function of programming languages, which chooses and <em>dispatches</em> the optimal method for a given function or operator. This decision in taken based on the type of <strong>all</strong> the parameters passed to the function, whereas in object-oriented programming languages only the first parameters&nbsp;matters.</p>
+<p>This is one of the features that makes Julia inherently faster than Python and other languages, so it&#8217;s useful to know the basics and learn how to implement your own typed&nbsp;methods.</p>
+<h3>Code</h3>
+<div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for String for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Float64</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for Float64 for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">methods</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">)</span>
+<span class="n">printf</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+
+
+<p>You can also examine the methods of the <code>+</code> operator:</p>
+<div class="highlight"><pre><span></span><span class="err">methods(+) # 166 methods for generic function &quot;+&quot;: [...]</span>
+</pre></div>
+
+
+<p>One use of this would be to enable the <code>+</code> operator to do string concatenation, much like in&nbsp;Python.</p>
+<div class="highlight"><pre><span></span><span class="k">import</span> <span class="n">Base</span><span class="o">.+</span>
+
+<span class="k">function</span> <span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="n">String</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>Note how the output returns <code>+ (generic function with 167 methods)</code>, and the new method has been added to our operator. You can also check it with <code>methods(+)</code>.</p>
+<p>Now, the following code should&nbsp;work:</p>
+<div class="highlight"><pre><span></span>
+</pre></div>
+    </article>
+
+    <hr>
+
             </div>
         </div>
     </div>
@@ -136,13 +190,13 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="./theme/js/jquery.js"></script>
+    <script src="../theme/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="./theme/js/bootstrap.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="./theme/js/clean-blog.min.js"></script>
+    <script src="../theme/js/clean-blog.min.js"></script>
 
     <script type="text/javascript">
     var _gaq = _gaq || [];

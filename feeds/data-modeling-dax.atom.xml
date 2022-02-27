@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez - data modeling, dax</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/data-modeling-dax.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2019-12-27T10:32:00+01:00</updated><subtitle>Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.</subtitle><entry><title>Data Analysis eXpressions query language</title><link href="https://alexgonzalezc.dev/posts/learning-dax.html" rel="alternate"></link><published>2019-12-27T10:32:00+01:00</published><updated>2019-12-27T10:32:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2019-12-27:/posts/learning-dax.html</id><summary type="html">&lt;p&gt;The first part of an overview of the &lt;span class="caps"&gt;DAX&lt;/span&gt; language for data&amp;nbsp;analysis.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Data Analysis eXpressions (&lt;span class="caps"&gt;DAX&lt;/span&gt;)&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; is a functional language, that is, execution flows from function calls read from inner to outer context in nested&amp;nbsp;calls.&lt;/p&gt;
+&lt;p&gt;Here is a short description of &lt;span class="caps"&gt;DAX&lt;/span&gt; syntax&amp;nbsp;conventions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use [Measure] and &amp;#8216;Table&amp;#8217;[Column] and never otherwise. Quotes can be omitted for single word table&amp;nbsp;names.&lt;/li&gt;
+&lt;li&gt;Use spaces before opening and closing parentheses, and before any operand and&amp;nbsp;operator.&lt;/li&gt;
+&lt;li&gt;Space before an in-line argument, and indented line feed for multi-line function&amp;nbsp;calls.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Functions&lt;/h3&gt;
+&lt;h4&gt;Aggregations&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUM&lt;/code&gt;, &lt;code&gt;AVERAGE&lt;/code&gt;, &lt;code&gt;MIN&lt;/code&gt;, &lt;code&gt;MAX&lt;/code&gt;&amp;#8230;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUM ( Sales[Price] )&lt;/code&gt; works!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SUM ( Sales[Price] + Sales[Quantity] )&lt;/code&gt; does&amp;nbsp;not!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Expressions within aggregators need to be calculated with an &lt;strong&gt;iterator&lt;/strong&gt;. These are versions of the function with an X in their name, i.e. &lt;code&gt;SUMX&lt;/code&gt;. These functions iterate over a table and evaluate the expression for every row, which means the concept of row context comes to life here.
+These functions always receive two inputs: the table to iterate and expression to&amp;nbsp;evaluate.&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;SUM&lt;/code&gt; is just syntax sugar. &lt;code&gt;SUM ( Sales[Price] )&lt;/code&gt; is translated in-engine to &lt;code&gt;SUMX ( Sales, Sales[Price] )&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Counting&amp;nbsp;values&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;COUNT&lt;/code&gt; /&lt;code&gt;COUNTA&lt;/code&gt;: anything but&amp;nbsp;blanks&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COUNTBLANK&lt;/code&gt;: blanks and empty&amp;nbsp;strings &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COUNTROWS&lt;/code&gt;: rows in a&amp;nbsp;table&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCTCOUNT&lt;/code&gt;: syntax sugar for &lt;code&gt;COUNTROWS ( DISTINCT ( 'Table'[Column] ) )&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Relational&amp;nbsp;functions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;RELATED&lt;/code&gt; / &lt;code&gt;RELATEDTABLE&lt;/code&gt;: both follow relationships in the data model and return the value of a column or all the rows in relationship with the current one.&lt;ul&gt;
+&lt;li&gt;All relationships must follow the same&amp;nbsp;direction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Table-valued&amp;nbsp;functions&lt;/h4&gt;
+&lt;p&gt;These return full tables which are often used as the input for further&amp;nbsp;calculations.&lt;/p&gt;
+&lt;p&gt;You can mix table functions, for example: &lt;code&gt;FILTER ( ALL ( 'Sales' ); Product[Name] = "Laptop" )&lt;/code&gt; puts a filter over the entire table, ignoring any other filter&amp;nbsp;context.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FILTER&lt;/code&gt;, &lt;code&gt;ALL&lt;/code&gt;, &lt;code&gt;VALUES&lt;/code&gt;, &lt;code&gt;DISTINCT&lt;/code&gt;, &lt;code&gt;ADDCOLUMNS&lt;/code&gt;, &lt;code&gt;SUMMARIZE&lt;/code&gt;&amp;#8230;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCT&lt;/code&gt; returns the unique values of a column that are visible in the current&amp;nbsp;context. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VALUES&lt;/code&gt; is the same, respects the filter context and returns the additional blank row if it&amp;#8217;s visible within the context. This row is created to guarantee referential integrity when values in the fact table can&amp;#8217;t be found in the dimension&amp;nbsp;table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALL&lt;/code&gt; returns all the rows of a table while ignoring every filter. It&amp;#8217;s useful to calculate grand totals and relative&amp;nbsp;percentages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALLNOBLANKROW&lt;/code&gt; is the same, but excludes the blank&amp;nbsp;row.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALLSELECTED&lt;/code&gt; returns the elements of a table as visible outside the current visualization. That is, it ignores all filters from the current visual but respects all others.&lt;ul&gt;
+&lt;li&gt;Very dangerous function as it is difficult to&amp;nbsp;debug.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ADDCOLUMNS&lt;/code&gt; adds one or more columns to a table expression, keeping all existing columns. It&amp;#8217;s an iterator, so you can access columns of the table and perform expressions and&amp;nbsp;calculations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
+&lt;p&gt;I often use &lt;code&gt;ADDCOLUMNS&lt;/code&gt; to generate a Date table, For&amp;nbsp;example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
+    &lt;span class="no"&gt;MONTH&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="no"&gt;YEAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; 
+    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a very flexible way of generating your own date dimension according to your specific&amp;nbsp;needs.&lt;/p&gt;
+&lt;p&gt;You can also generate a dimension table by scanning the columns of your different fact tables and appending them. For&amp;nbsp;example:
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;UNION&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;The &lt;span class="caps"&gt;IN&lt;/span&gt;&amp;nbsp;operator&lt;/h3&gt;
+&lt;p&gt;Verifies whether a value exists in a list of possible values, i.e. &lt;code&gt;Company[Code] IN {"Microsoft", "Apple", "Dell"}&lt;/code&gt;.
+Note that the curly brackets notation generates a temporary table behind the scenes to perform the&amp;nbsp;filtering.&lt;/p&gt;
+&lt;h3&gt;More&amp;nbsp;functions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DIVIDE ( )&lt;/code&gt;: handles safe division by zero and allows for custom alternate values. No more &lt;code&gt;IF ( ISERROR (...) )&lt;/code&gt;!&lt;/li&gt;
+&lt;li&gt;Also, better&amp;nbsp;performance.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SELECTEDVALUE ( )&lt;/code&gt;: provides a shortcut to access the filtered value of a dimension to display in a chart or&amp;nbsp;card.&lt;/li&gt;
+&lt;li&gt;For example, you can create a custom measure that concatenates text with the selected value and display dynamic title in a&amp;nbsp;chart.&lt;/li&gt;
+&lt;li&gt;Prior to this function, the same objective could be accomplished through something along the lines of &lt;code&gt;IF ( HASONEVALUE ( ... ) )&lt;/code&gt;, which is much longer and&amp;nbsp;error-prone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;span class="caps"&gt;CALCULATE&lt;/span&gt; (&amp;nbsp;)&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; is the main function for &lt;span class="caps"&gt;DAX&lt;/span&gt; expressions, as it is used in many different scenarios to add, change or remove filters. Its syntax is as&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;CALCULATE (&lt;/span&gt;
+&lt;span class="err"&gt;    Expression;&lt;/span&gt;
+&lt;span class="err"&gt;    Filter1;&lt;/span&gt;
+&lt;span class="err"&gt;    ...;&lt;/span&gt;
+&lt;span class="err"&gt;    FilterN &lt;/span&gt;
+&lt;span class="err"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; calls with multiple filters can have very different&amp;nbsp;behaviors:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+    &lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will result in the amount of booking items for the filtered companies, in 2019.
+However, the following expression has a very different&amp;nbsp;result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+    &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this case, the use of nested &lt;code&gt;CALCULATE&lt;/code&gt; statements does not intersect the filter. The result of the expression is &lt;strong&gt;the amount of items only for Microsoft&lt;/strong&gt;, since the inner filter overwrites the&amp;nbsp;outer.&lt;/p&gt;
+&lt;p&gt;You can override this behavior to intersect filter by using the &lt;code&gt;KEEPFILTERS&lt;/code&gt; function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this context, only Microsoft remains visible at the end of the&amp;nbsp;evaluation.&lt;/p&gt;
+&lt;h3&gt;Variables&lt;/h3&gt;
+&lt;p&gt;Newer feature in &lt;span class="caps"&gt;DAX&lt;/span&gt;. Allows for reduced repetition of expressions and other nifty tricks, such as accessing outer row context.
+You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt;
+&lt;p&gt;Variables can be used to store the previous row context for later&amp;nbsp;access:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;VAR&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="no"&gt;RETURN&lt;/span&gt;
+
+&lt;span class="no"&gt;COUNTROWS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this case, you save the value of the previous price during the outer context evaluation, and use it to check whether the price in the inner context is&amp;nbsp;greater.&lt;/p&gt;
+&lt;h2&gt;Evaluation&amp;nbsp;contexts&lt;/h2&gt;
+&lt;p&gt;The filter and row contexts are one of the most important concepts in &lt;span class="caps"&gt;DAX&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The filter context is defined&amp;nbsp;by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;row&amp;nbsp;selection  &lt;/li&gt;
+&lt;li&gt;column&amp;nbsp;selection  &lt;/li&gt;
+&lt;li&gt;report&amp;nbsp;filters  &lt;/li&gt;
+&lt;li&gt;slicer&amp;nbsp;selection &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The row context is the concept of &amp;#8220;current row&amp;#8221; and you have a row context whenever you iterate a table, either explicitly (using an iterator) or implicitly (in a calculated&amp;nbsp;column).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
+&lt;p&gt;Starting from a row context, you can use related to access columns in other&amp;nbsp;tables:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;RELATED&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;You need &lt;span class="caps"&gt;RELATED&lt;/span&gt; because the row context is iterating the sales table. The Markup columns is in another table, but the row context allows for the relationship to be&amp;nbsp;propagated. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;AVERAGEX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The inner expression can safely reference two columns coming from different tables because there are &lt;strong&gt;two row contexts&lt;/strong&gt;: the first one introduced by &lt;code&gt;AVERAGEX&lt;/code&gt; and the second one by &lt;code&gt;SUMX&lt;/code&gt;. Also note that &lt;code&gt;RELATEDTABLE&lt;/code&gt; uses the row context to determine the set of rows to return, that is, the Orders of the current product which is the one being currently iterated by &lt;code&gt;AVERAGEX&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Context&amp;nbsp;transition&lt;/h3&gt;
+&lt;p&gt;The context transition in &lt;span class="caps"&gt;DAX&lt;/span&gt; is the transformation of row contexts into an equivalent filter context performed by &lt;code&gt;CALCULATE&lt;/code&gt; functions.
+When &lt;code&gt;CALCULATE&lt;/code&gt; is executed within a row context, it transforms the context into the equivalent filter context and applies it to the data model before computing its expression.
+This is an expensive operation, so it&amp;#8217;s better to avoid it when iterating large&amp;nbsp;tables.&lt;/p&gt;
+&lt;p&gt;This concept is easier to understand through&amp;nbsp;examples:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first calculated column returns the grand total of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt;, because no filter context is active, whereas the one with &lt;code&gt;CALCULATE&lt;/code&gt; returns the sum of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt; for the current product only, because the filter context containing the current product is automatically propagated to sales due to the relationship between the two&amp;nbsp;tables.&lt;/p&gt;
+&lt;p&gt;It is important to note that context transition happens before further filters in &lt;code&gt;CALCULATE&lt;/code&gt;. Thus, filters in &lt;code&gt;CALCULATE&lt;/code&gt; might override filters produced by context transition as seen on previous&amp;nbsp;sections.&lt;/p&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; Studio is a tool to write, execute, and analyze &lt;span class="caps"&gt;DAX&lt;/span&gt; queries in Power &lt;span class="caps"&gt;BI&lt;/span&gt;, Power Pivot for Excel, and Analysis Services Tabular. It can connect to any of sources and access their data model, such as an open Power &lt;span class="caps"&gt;BI&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;It includes an Object Browser, query editing and execution, formula and measure editing, syntax highlighting and formatting, integrated tracing and query execution&amp;nbsp;breakdowns.&lt;/p&gt;
+&lt;p&gt;This tool supercharges you report development toolbelt and allows to access fairly advanced features such&amp;nbsp;as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Query tracing and server timings&lt;/strong&gt;: provides insights on execution time, and differentiates between time spent on formula or query engine to facilitate&amp;nbsp;debugging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Filter dumps&lt;/strong&gt;: you can create a measure automatically that shows the current filter context for each visual and data point. This filter dump can be set on a tooltip to make debugging infinitely&amp;nbsp;easier.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Measure definitions&lt;/strong&gt;: similarly, you can automatically document all of your calculated measures with a single click inside of &lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Language formatting&lt;/strong&gt;: you can also format your &lt;span class="caps"&gt;DAX&lt;/span&gt; queries using the syntax tree developed by &lt;span class="caps"&gt;SQLBI&lt;/span&gt; and used in &lt;a href="https://www.daxformatter.com/"&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; Formatter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Management Views (DMVs)&lt;/strong&gt;: the tool also grants access to several pre-defined DMVs that allow for finer control of the data model embedded in the file. For example, you can automate the documentation and definition of your model using a series of queries against the&amp;nbsp;DMVs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Closing&amp;nbsp;thoughts&lt;/h2&gt;
+&lt;p&gt;This is but a small subset of all the capabilities of &lt;span class="caps"&gt;DAX&lt;/span&gt; and merely scratches the surface of the language. Some resources like &lt;a href="sqlbi.com"&gt;sqlbi.com&lt;/a&gt; or &lt;a href="dax.guide"&gt;dax.guide&lt;/a&gt; are great steps to take&amp;nbsp;next.&lt;/p&gt;
+&lt;p&gt;If you are stuck with a certain problem, try looking or posting a question on the &lt;span class="caps"&gt;DAX&lt;/span&gt; tag in the &lt;a href="https://community.powerbi.com/"&gt;Power &lt;span class="caps"&gt;BI&lt;/span&gt; community forums&lt;/a&gt;. They are a friendly and knowledgeable bunch that will most certainly help you as long as you follow the site&amp;#8217;s rules and&amp;nbsp;etiquette.&lt;/p&gt;
+&lt;p&gt;Hopefully the techniques and tools mentioned in this post as well as the simplicity of the language and it&amp;#8217;s Excel-like functionality encourage you to try the language or dive deeper into its guts. In any case, I&amp;#8217;m more than happy to answer any questions you might&amp;nbsp;have.&lt;/p&gt;</content><category term="data modeling, dax"></category><category term="data"></category><category term="feature engineering"></category></entry></feed>

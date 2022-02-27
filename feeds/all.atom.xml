@@ -1,2 +1,859 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/all.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2022-02-27T13:43:55Z</updated><subtitle>Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.</subtitle></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/all.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2020-01-23T20:05:00+01:00</updated><subtitle>Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.</subtitle><entry><title>Data visualization principles</title><link href="https://alexgonzalezc.dev/posts/data-visualization-principles.html" rel="alternate"></link><published>2020-01-23T20:05:00+01:00</published><updated>2020-01-23T20:05:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-23:/posts/data-visualization-principles.html</id><summary type="html">&lt;p&gt;Conveying meaning through data visualization is not an easy task. Here is how you might get&amp;nbsp;started.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Originally published on 2020-1-1. Updated with figures and examples, like a good post about data&amp;nbsp;visualization.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When designing a visualization, there are usually four main topics that the author would want to&amp;nbsp;highlight:&lt;/p&gt;
+&lt;h4&gt;Comparison&lt;/h4&gt;
+&lt;p&gt;These are used to compare the magnitude of values to each other and to easily identify the lowest or highest values in the&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;If you want to compare values over time, line or bar charts are often the best option and their choice depends on the number of periods you would like to analyze.
+However, for comparisons among items, bar or column charts are preferred. Line charts provide a sense of continuity that might not be meaningful for&amp;nbsp;categories.&lt;/p&gt;
+&lt;p&gt;Faceted charts are also a good option when dealing with many categories or dimensions. R&amp;#8217;s &lt;code&gt;ggplot2&lt;/code&gt; package is specially useful for&amp;nbsp;this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Example of a faceted plot" src="../images/data-visualization/facet-plot.png"&gt;&lt;/p&gt;
+&lt;p&gt;For example, the above plot shows the density of each numerical variable in a dataset, using subplots or &lt;em&gt;facets&lt;/em&gt; to create a new dimension of&amp;nbsp;visualization.&lt;/p&gt;
+&lt;p&gt;You can use pie charts for comparison as well, although the length of a column or bar is usually better at displaying differences in your data than the angle of a pie&amp;nbsp;chart.&lt;/p&gt;
+&lt;p&gt;For example, examine the following&amp;nbsp;figures:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pie chart against bar chart" src="../images/data-visualization/pie-bar-chart.png"&gt;&lt;/p&gt;
+&lt;p&gt;For values differing very little, such as 10% to 11%, the difference is more noticeable when plotted in a bar chart with proper scaling. Labels normally alleviate this problem, but they also tend to increase clutter in the&amp;nbsp;chart.&lt;/p&gt;
+&lt;p&gt;However, &lt;em&gt;I am not completely against pie charts&lt;/em&gt;, as I think they can quick convey meaning when plotting attributes of low cardinality or dichotomic relations. Personally, I think 2 (or at most 3) different values should be shown on a pie chart so that it does not become&amp;nbsp;confusing.  &lt;/p&gt;
+&lt;h4&gt;Composition&lt;/h4&gt;
+&lt;p&gt;Composition charts are used to see how a part of your data compares to the whole, and can show relative and absolute values. They can be used to accurately represent both static and time-series&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;For static data, a pie chart can do the job. However, there also other options that can tell the same story, such as a stacked bar chart, a waterfall chart or a tree map.
+For time-based data, the number of periods is again a decisive factor when choosing your chart. You can visualize composition over many periods with area charts, which are very similar to line charts, and stacked bar or column charts when you have a reduced amount of&amp;nbsp;periods.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Example of composition chart" src="../images/data-visualization/stacked-bar.png"&gt;  &lt;/p&gt;
+&lt;p&gt;It is important to consider that time-based visualization should be ordered chronologically as a general rule, and not by highest value, for example. Otherwise, those consuming the visualization might get the wrong conclusion when charts are not ordered according to expectations or&amp;nbsp;convention.&lt;/p&gt;
+&lt;h4&gt;Distribution&lt;/h4&gt;
+&lt;p&gt;When studying how quantitative values are located along an axis, distribution charts are the way to go. By looking at the shape of the data, the user can identify features such as value range, central tendency and&amp;nbsp;outliers.&lt;/p&gt;
+&lt;p&gt;One of the previous figures is actually an example of a distribution plot. Here&amp;#8217;s another&amp;nbsp;one:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Density plot to show value distribution" src="../images/data-visualization/density.png"&gt;&lt;/p&gt;
+&lt;p&gt;See how the relative values of the population are &lt;em&gt;distributed&lt;/em&gt; along the different age categories. Being a continuous range of integers, we use lines to represent the distribution. If instead, it were categories (i.e. age 18 - 35) we would use&amp;nbsp;columns.&lt;/p&gt;
+&lt;p&gt;With this charts, the interest is in the full picture of the data and this can lead to having many data points (note: not categories!). In these cases, it&amp;#8217;s often better to use a line histogram, while column histograms are great for few data points.
+In any case, when analyzing distribution for two variables at once, a scatter plot allows to compare between the full picture of two&amp;nbsp;dimensions.&lt;/p&gt;
+&lt;h4&gt;Relationship&lt;/h4&gt;
+&lt;p&gt;Relationship charts have a constrained set of options as normally scatter plots are the only adequate way of presenting the data. They are used to find correlations, outliers, and clusters in your&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;While the human eye can only appreciate three dimensions together, you can visualize additional variables by mapping them to the size, color or shape of your data&amp;nbsp;points.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Example of a scatter plot" src="../images/data-visualization/scatter-plot.png"&gt;&lt;/p&gt;
+&lt;p&gt;In this example, the chart can be used to study 3 variables at the same time: number of marketing calls, their duration, and whether their outcome is a sale or not. To aid the human eye, the third dimension is mapped to a color based on the value of their factors.
+Thanks to this, we can see that calls that do not result in a sale are concentrated along the lower bounds of the Y axis, meaning more calls increases the likelihood of&amp;nbsp;conversion.&lt;/p&gt;
+&lt;p&gt;See the image below for&amp;nbsp;reference:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Visualization Best Principles" src="../images/data-visualization/chart-viz.jpg"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As a bonus tool, if you run into issues trying to find the best set of colors for your report or chart, make sure to check out &lt;a href="https://coolors.co/"&gt;Coolors&lt;/a&gt;. This is a web app that provides color scales, palettes and blends based on the color of your&amp;nbsp;choice.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="posts"></category></entry><entry><title>A Pint of APIs</title><link href="https://alexgonzalezc.dev/posts/a-pint-of-api.html" rel="alternate"></link><published>2020-01-18T23:50:00+01:00</published><updated>2020-01-18T23:50:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-18:/posts/a-pint-of-api.html</id><summary type="html">&lt;p&gt;Understand the fundamentals of APIs with this adaptation of a talk I gave fully in-editor with Visual Studio&amp;nbsp;Code.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;A Pint of &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/h1&gt;
+&lt;h2&gt;Definition&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;API&lt;/span&gt; stands for Application Programming Interface. In other words, it&amp;#8217;s an &lt;em&gt;interface&lt;/em&gt; that makes it easier for developers to &lt;em&gt;program&lt;/em&gt; different &lt;em&gt;applications&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Some&amp;nbsp;examples&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter&lt;/li&gt;
+&lt;li&gt;Booking.com&lt;/li&gt;
+&lt;li&gt;Your computer&amp;#8217;s file&amp;nbsp;system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;RESTful&amp;nbsp;APIs&lt;/h2&gt;
+&lt;p&gt;These are APIs that follow the &lt;span class="caps"&gt;REST&lt;/span&gt; architectural style. &lt;span class="caps"&gt;REST&lt;/span&gt; stands for &lt;strong&gt;REpresentational State Transfer&lt;/strong&gt;, and it makes it easier for systems to communicate between one another. By using a &lt;span class="caps"&gt;REST&lt;/span&gt; interface, different clients can hit the same endpoints and perform the same actions to obtain the same&amp;nbsp;responses.&lt;/p&gt;
+&lt;p&gt;Therefore, the code that implements the server and the one that implements the client can be developed independently and without previous knowledge of each other. Changes to these codebases can be performed at any time without affecting the other codebase, as long as each side knows what format to expect in the&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;Systems following this architectural paradigm are stateless, which means that the server and the client do not need to know anything about the state of their counterpart. This is enforced with the use of resources, which are any object, document, or element of the Web. &lt;span class="caps"&gt;REST&lt;/span&gt; systems interact through standard operations on these&amp;nbsp;resources.&lt;/p&gt;
+&lt;h2&gt;Communication&lt;/h2&gt;
+&lt;p&gt;In the &lt;span class="caps"&gt;REST&lt;/span&gt; architecture, the client sends a request that retrieves or modifies a given resource, and the server sends a response to the&amp;nbsp;request.&lt;/p&gt;
+&lt;h3&gt;Requests&lt;/h3&gt;
+&lt;p&gt;A request generally consists&amp;nbsp;of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;an &lt;span class="caps"&gt;HTTP&lt;/span&gt; verb defining the operation to&amp;nbsp;perform&lt;/li&gt;
+&lt;li&gt;a &lt;em&gt;header&lt;/em&gt;, containing metadata about the&amp;nbsp;request&lt;/li&gt;
+&lt;li&gt;a path to a resource, also called an &lt;em&gt;endpoint&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;an optional message body with a data&amp;nbsp;payload&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="A Pint of API" src="../images/pint-of-api.jpg"&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;verbs&lt;/h4&gt;
+&lt;p&gt;The basic verbs to interact with resources over &lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="caps"&gt;GET&lt;/span&gt; — to retrieve a resource or collection of&amp;nbsp;resources&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;POST&lt;/span&gt; — to create a new&amp;nbsp;resource&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PUT&lt;/span&gt; — to update a&amp;nbsp;resource&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;DELETE&lt;/span&gt; — can you&amp;nbsp;guess?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Endpoints&lt;/h4&gt;
+&lt;p&gt;An endpoint is a path that points to a resource. These are normally hierarchical and tend to be quite descriptive, so that the client can understand what resource they are accessing even if they have never seen that specifiv path&amp;nbsp;before.&lt;/p&gt;
+&lt;p&gt;For example, take &lt;a href="https://api.github.com/users/gonz4lex/repos"&gt;https://api.github.com/users/gonz4lex/repos&lt;/a&gt;. This points to the &lt;em&gt;repos&lt;/em&gt; endpoint, which stores information about the repositories of the user with the name &lt;em&gt;gonz4lex&lt;/em&gt; (that&amp;#8217;s me!), and is used, for instance, in a &lt;span class="caps"&gt;GET&lt;/span&gt; request to retrieve information about the specific&amp;nbsp;resource. &lt;/p&gt;
+&lt;h3&gt;Responses&lt;/h3&gt;
+&lt;p&gt;Responses from the server generally contain the data payload requested by the client as well as response metadata, such as status code and content&amp;nbsp;type.&lt;/p&gt;
+&lt;h4&gt;Response&amp;nbsp;codes&lt;/h4&gt;
+&lt;p&gt;Responses contain information of the success status of the operation, to inform the client of its success (or failure). There are many such codes, but it&amp;#8217;s only important to know the most common ones and learn how they can be&amp;nbsp;used.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Status code&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;200 (OK)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Succesful standard &lt;span class="caps"&gt;HTTP&lt;/span&gt; request.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;201 (CREATED)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Succesful request that results in the creation of an item.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;204 (NO CONTENT)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Succesful request that returns an empty response body.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;400 (BAD REQUEST)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Unsuccesful request due to client error such as bad syntax&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;403 (FORBIDDEN)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Unsuccesful request due to lack of authentication or credentials.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;404 (NOT FOUND)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Unsuccesful request because the resource could not be found.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;500 (INTERNAL SERVER ERROR)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Generic response to unexpected failure when no futher info is available.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a href="https://www.codecademy.com/articles/what-is-rest"&gt;https://www.codecademy.com/articles/what-is-rest&lt;/a&gt;&lt;/p&gt;</content><category term="web dev, api"></category><category term="python"></category></entry><entry><title>How to build Aseprite from source in Ubuntu</title><link href="https://alexgonzalezc.dev/posts/how-to-build-aseprite-from-source.html" rel="alternate"></link><published>2020-01-04T00:33:00+01:00</published><updated>2020-01-04T00:33:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-04:/posts/how-to-build-aseprite-from-source.html</id><summary type="html">&lt;p&gt;Aseprite is an amazing pixel art software and its source code is open. This is how you can build and test it, or help with its&amp;nbsp;development.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt;
+Aseprite is a paid software and you should buy it to support its developers. It&amp;#8217;s 15$ and can be purchased for Windows, macOS and Linux, as well as Steam. You can use this method to inspect the source code and try to help with development, or to try the software. There is also a free trial in their&amp;nbsp;website.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Building Aseprite from&amp;nbsp;Github&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.aseprite.org"&gt;Aseprite&lt;/a&gt; is the best pixel art tool I have come across, and has a very affordable price if you just want to test the waters of pixel art. However, should you want to help tackle some of the &lt;a href="https://github.com/aseprite/aseprite/issues"&gt;issues&lt;/a&gt; on the project&amp;#8217;s repository, you need to compile the program to inspect your&amp;nbsp;changes.&lt;/p&gt;
+&lt;p&gt;I went through this process on my Windows and Linux machines, and I must say that the experience was &lt;em&gt;wildly&lt;/em&gt; different, even if the process is very similar. I am currently using Ubuntu 18.04 &lt;span class="caps"&gt;LTS&lt;/span&gt;.&lt;/p&gt;
+&lt;h2&gt;Get&amp;nbsp;started&lt;/h2&gt;
+&lt;p&gt;Before beginning, please note that the full &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md"&gt;install instructions&lt;/a&gt; can be found in the project&amp;#8217;s&amp;nbsp;repo.&lt;/p&gt;
+&lt;p&gt;First, you should clone the repository in a directory of your choice, such as &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/aseprite/aseprite.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will create an &lt;code&gt;aseprite&lt;/code&gt; directory. You can later update this clone with new releases by&amp;nbsp;running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; aseprite
+git pull
+git submodule update --init --recursive
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Aseprite&amp;nbsp;dependencies&lt;/h2&gt;
+&lt;p&gt;There are three main dependencies for&amp;nbsp;Aseprite:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;latest &lt;a href="cmake.org"&gt;CMake&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the &lt;a href="ninja-build.org"&gt;Ninja&lt;/a&gt; build&amp;nbsp;system&lt;/li&gt;
+&lt;li&gt;a compiled version of &lt;a href="https://skia.org/"&gt;Skia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that for Windows, you need Windows 10 and &lt;a href="https://visualstudio.microsoft.com/downloads/"&gt;Visual Studio 2019&lt;/a&gt;, as well as a [C++ &lt;span class="caps"&gt;SDK&lt;/span&gt;] for desktop development. The latter is an item to check in your &lt;a href="https://imgur.com/4Pq2Cbv"&gt;Visual Studio installer&lt;/a&gt;, so make sure you have selected&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Also, installing CMake on Windows was &lt;span class="caps"&gt;HORRIBLE&lt;/span&gt; and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&amp;nbsp;Windows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git clone -b aseprite-m71 https://github.com/aseprite/skia.git
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PWD&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/depot_tools:&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; skia
+python tools/git-sync-deps
+gn gen out/Release --args&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&amp;quot;&lt;/span&gt;
+ninja -C out/Release skia
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These commands can also be found in the Aseprite documentation, so head there if you get&amp;nbsp;stuck.&lt;/p&gt;
+&lt;h2&gt;Compiling the&amp;nbsp;code&lt;/h2&gt;
+&lt;p&gt;After getting all the dependecies, create a new folder &lt;code&gt;build&lt;/code&gt; inside your &lt;code&gt;aseprite&lt;/code&gt; directory, and &lt;code&gt;cd&lt;/code&gt; into it. Afterwards, run &lt;code&gt;cmake&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/aseprite
+mkdir build
+&lt;span class="nb"&gt;cd&lt;/span&gt; build
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;In this last command, &lt;code&gt;cmake&lt;/code&gt; needs a different setup based on your &lt;span class="caps"&gt;OS&lt;/span&gt;. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling"&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Run this command on your Linux machine to build the&amp;nbsp;source:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cmake &lt;span class="se"&gt;\&lt;/span&gt;
+  -DCMAKE_BUILD_TYPE&lt;span class="o"&gt;=&lt;/span&gt;RelWithDebInfo &lt;span class="se"&gt;\&lt;/span&gt;
+  -DLAF_OS_BACKEND&lt;span class="o"&gt;=&lt;/span&gt;skia &lt;span class="se"&gt;\&lt;/span&gt;
+  -DSKIA_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia &lt;span class="se"&gt;\&lt;/span&gt;
+  -DSKIA_OUT_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia/out/Release &lt;span class="se"&gt;\&lt;/span&gt;
+  -G Ninja &lt;span class="se"&gt;\&lt;/span&gt;
+  ..
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When your terminal finishes the previous task, just run Ninja inside the &lt;code&gt;build&lt;/code&gt; directory and you will have your executable in &lt;code&gt;aseprite/build/bin/aseprite.exe&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ninja aseprite
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Start&amp;nbsp;pixeling!&lt;/h2&gt;
+&lt;p&gt;That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
+Remember to actually purchase Aseprite if you are going to use it commercially or&amp;nbsp;professionally.&lt;/p&gt;</content><category term="game dev, pixel art"></category><category term="aseprite"></category></entry><entry><title>Data Analysis eXpressions query language</title><link href="https://alexgonzalezc.dev/posts/learning-dax.html" rel="alternate"></link><published>2019-12-27T10:32:00+01:00</published><updated>2019-12-27T10:32:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2019-12-27:/posts/learning-dax.html</id><summary type="html">&lt;p&gt;The first part of an overview of the &lt;span class="caps"&gt;DAX&lt;/span&gt; language for data&amp;nbsp;analysis.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Data Analysis eXpressions (&lt;span class="caps"&gt;DAX&lt;/span&gt;)&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; is a functional language, that is, execution flows from function calls read from inner to outer context in nested&amp;nbsp;calls.&lt;/p&gt;
+&lt;p&gt;Here is a short description of &lt;span class="caps"&gt;DAX&lt;/span&gt; syntax&amp;nbsp;conventions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use [Measure] and &amp;#8216;Table&amp;#8217;[Column] and never otherwise. Quotes can be omitted for single word table&amp;nbsp;names.&lt;/li&gt;
+&lt;li&gt;Use spaces before opening and closing parentheses, and before any operand and&amp;nbsp;operator.&lt;/li&gt;
+&lt;li&gt;Space before an in-line argument, and indented line feed for multi-line function&amp;nbsp;calls.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Functions&lt;/h3&gt;
+&lt;h4&gt;Aggregations&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUM&lt;/code&gt;, &lt;code&gt;AVERAGE&lt;/code&gt;, &lt;code&gt;MIN&lt;/code&gt;, &lt;code&gt;MAX&lt;/code&gt;&amp;#8230;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUM ( Sales[Price] )&lt;/code&gt; works!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SUM ( Sales[Price] + Sales[Quantity] )&lt;/code&gt; does&amp;nbsp;not!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Expressions within aggregators need to be calculated with an &lt;strong&gt;iterator&lt;/strong&gt;. These are versions of the function with an X in their name, i.e. &lt;code&gt;SUMX&lt;/code&gt;. These functions iterate over a table and evaluate the expression for every row, which means the concept of row context comes to life here.
+These functions always receive two inputs: the table to iterate and expression to&amp;nbsp;evaluate.&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;SUM&lt;/code&gt; is just syntax sugar. &lt;code&gt;SUM ( Sales[Price] )&lt;/code&gt; is translated in-engine to &lt;code&gt;SUMX ( Sales, Sales[Price] )&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Counting&amp;nbsp;values&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;COUNT&lt;/code&gt; /&lt;code&gt;COUNTA&lt;/code&gt;: anything but&amp;nbsp;blanks&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COUNTBLANK&lt;/code&gt;: blanks and empty&amp;nbsp;strings &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COUNTROWS&lt;/code&gt;: rows in a&amp;nbsp;table&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCTCOUNT&lt;/code&gt;: syntax sugar for &lt;code&gt;COUNTROWS ( DISTINCT ( 'Table'[Column] ) )&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Relational&amp;nbsp;functions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;RELATED&lt;/code&gt; / &lt;code&gt;RELATEDTABLE&lt;/code&gt;: both follow relationships in the data model and return the value of a column or all the rows in relationship with the current one.&lt;ul&gt;
+&lt;li&gt;All relationships must follow the same&amp;nbsp;direction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Table-valued&amp;nbsp;functions&lt;/h4&gt;
+&lt;p&gt;These return full tables which are often used as the input for further&amp;nbsp;calculations.&lt;/p&gt;
+&lt;p&gt;You can mix table functions, for example: &lt;code&gt;FILTER ( ALL ( 'Sales' ); Product[Name] = "Laptop" )&lt;/code&gt; puts a filter over the entire table, ignoring any other filter&amp;nbsp;context.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FILTER&lt;/code&gt;, &lt;code&gt;ALL&lt;/code&gt;, &lt;code&gt;VALUES&lt;/code&gt;, &lt;code&gt;DISTINCT&lt;/code&gt;, &lt;code&gt;ADDCOLUMNS&lt;/code&gt;, &lt;code&gt;SUMMARIZE&lt;/code&gt;&amp;#8230;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISTINCT&lt;/code&gt; returns the unique values of a column that are visible in the current&amp;nbsp;context. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VALUES&lt;/code&gt; is the same, respects the filter context and returns the additional blank row if it&amp;#8217;s visible within the context. This row is created to guarantee referential integrity when values in the fact table can&amp;#8217;t be found in the dimension&amp;nbsp;table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALL&lt;/code&gt; returns all the rows of a table while ignoring every filter. It&amp;#8217;s useful to calculate grand totals and relative&amp;nbsp;percentages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALLNOBLANKROW&lt;/code&gt; is the same, but excludes the blank&amp;nbsp;row.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALLSELECTED&lt;/code&gt; returns the elements of a table as visible outside the current visualization. That is, it ignores all filters from the current visual but respects all others.&lt;ul&gt;
+&lt;li&gt;Very dangerous function as it is difficult to&amp;nbsp;debug.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ADDCOLUMNS&lt;/code&gt; adds one or more columns to a table expression, keeping all existing columns. It&amp;#8217;s an iterator, so you can access columns of the table and perform expressions and&amp;nbsp;calculations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
+&lt;p&gt;I often use &lt;code&gt;ADDCOLUMNS&lt;/code&gt; to generate a Date table, For&amp;nbsp;example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
+    &lt;span class="no"&gt;MONTH&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="no"&gt;YEAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; 
+    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a very flexible way of generating your own date dimension according to your specific&amp;nbsp;needs.&lt;/p&gt;
+&lt;p&gt;You can also generate a dimension table by scanning the columns of your different fact tables and appending them. For&amp;nbsp;example:
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;UNION&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;The &lt;span class="caps"&gt;IN&lt;/span&gt;&amp;nbsp;operator&lt;/h3&gt;
+&lt;p&gt;Verifies whether a value exists in a list of possible values, i.e. &lt;code&gt;Company[Code] IN {"Microsoft", "Apple", "Dell"}&lt;/code&gt;.
+Note that the curly brackets notation generates a temporary table behind the scenes to perform the&amp;nbsp;filtering.&lt;/p&gt;
+&lt;h3&gt;More&amp;nbsp;functions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DIVIDE ( )&lt;/code&gt;: handles safe division by zero and allows for custom alternate values. No more &lt;code&gt;IF ( ISERROR (...) )&lt;/code&gt;!&lt;/li&gt;
+&lt;li&gt;Also, better&amp;nbsp;performance.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SELECTEDVALUE ( )&lt;/code&gt;: provides a shortcut to access the filtered value of a dimension to display in a chart or&amp;nbsp;card.&lt;/li&gt;
+&lt;li&gt;For example, you can create a custom measure that concatenates text with the selected value and display dynamic title in a&amp;nbsp;chart.&lt;/li&gt;
+&lt;li&gt;Prior to this function, the same objective could be accomplished through something along the lines of &lt;code&gt;IF ( HASONEVALUE ( ... ) )&lt;/code&gt;, which is much longer and&amp;nbsp;error-prone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;span class="caps"&gt;CALCULATE&lt;/span&gt; (&amp;nbsp;)&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; is the main function for &lt;span class="caps"&gt;DAX&lt;/span&gt; expressions, as it is used in many different scenarios to add, change or remove filters. Its syntax is as&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;CALCULATE (&lt;/span&gt;
+&lt;span class="err"&gt;    Expression;&lt;/span&gt;
+&lt;span class="err"&gt;    Filter1;&lt;/span&gt;
+&lt;span class="err"&gt;    ...;&lt;/span&gt;
+&lt;span class="err"&gt;    FilterN &lt;/span&gt;
+&lt;span class="err"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; calls with multiple filters can have very different&amp;nbsp;behaviors:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+    &lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will result in the amount of booking items for the filtered companies, in 2019.
+However, the following expression has a very different&amp;nbsp;result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+    &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this case, the use of nested &lt;code&gt;CALCULATE&lt;/code&gt; statements does not intersect the filter. The result of the expression is &lt;strong&gt;the amount of items only for Microsoft&lt;/strong&gt;, since the inner filter overwrites the&amp;nbsp;outer.&lt;/p&gt;
+&lt;p&gt;You can override this behavior to intersect filter by using the &lt;code&gt;KEEPFILTERS&lt;/code&gt; function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this context, only Microsoft remains visible at the end of the&amp;nbsp;evaluation.&lt;/p&gt;
+&lt;h3&gt;Variables&lt;/h3&gt;
+&lt;p&gt;Newer feature in &lt;span class="caps"&gt;DAX&lt;/span&gt;. Allows for reduced repetition of expressions and other nifty tricks, such as accessing outer row context.
+You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt;
+&lt;p&gt;Variables can be used to store the previous row context for later&amp;nbsp;access:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;VAR&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="no"&gt;RETURN&lt;/span&gt;
+
+&lt;span class="no"&gt;COUNTROWS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this case, you save the value of the previous price during the outer context evaluation, and use it to check whether the price in the inner context is&amp;nbsp;greater.&lt;/p&gt;
+&lt;h2&gt;Evaluation&amp;nbsp;contexts&lt;/h2&gt;
+&lt;p&gt;The filter and row contexts are one of the most important concepts in &lt;span class="caps"&gt;DAX&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The filter context is defined&amp;nbsp;by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;row&amp;nbsp;selection  &lt;/li&gt;
+&lt;li&gt;column&amp;nbsp;selection  &lt;/li&gt;
+&lt;li&gt;report&amp;nbsp;filters  &lt;/li&gt;
+&lt;li&gt;slicer&amp;nbsp;selection &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The row context is the concept of &amp;#8220;current row&amp;#8221; and you have a row context whenever you iterate a table, either explicitly (using an iterator) or implicitly (in a calculated&amp;nbsp;column).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
+&lt;p&gt;Starting from a row context, you can use related to access columns in other&amp;nbsp;tables:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;RELATED&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;You need &lt;span class="caps"&gt;RELATED&lt;/span&gt; because the row context is iterating the sales table. The Markup columns is in another table, but the row context allows for the relationship to be&amp;nbsp;propagated. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="no"&gt;AVERAGEX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The inner expression can safely reference two columns coming from different tables because there are &lt;strong&gt;two row contexts&lt;/strong&gt;: the first one introduced by &lt;code&gt;AVERAGEX&lt;/code&gt; and the second one by &lt;code&gt;SUMX&lt;/code&gt;. Also note that &lt;code&gt;RELATEDTABLE&lt;/code&gt; uses the row context to determine the set of rows to return, that is, the Orders of the current product which is the one being currently iterated by &lt;code&gt;AVERAGEX&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Context&amp;nbsp;transition&lt;/h3&gt;
+&lt;p&gt;The context transition in &lt;span class="caps"&gt;DAX&lt;/span&gt; is the transformation of row contexts into an equivalent filter context performed by &lt;code&gt;CALCULATE&lt;/code&gt; functions.
+When &lt;code&gt;CALCULATE&lt;/code&gt; is executed within a row context, it transforms the context into the equivalent filter context and applies it to the data model before computing its expression.
+This is an expensive operation, so it&amp;#8217;s better to avoid it when iterating large&amp;nbsp;tables.&lt;/p&gt;
+&lt;p&gt;This concept is easier to understand through&amp;nbsp;examples:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first calculated column returns the grand total of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt;, because no filter context is active, whereas the one with &lt;code&gt;CALCULATE&lt;/code&gt; returns the sum of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt; for the current product only, because the filter context containing the current product is automatically propagated to sales due to the relationship between the two&amp;nbsp;tables.&lt;/p&gt;
+&lt;p&gt;It is important to note that context transition happens before further filters in &lt;code&gt;CALCULATE&lt;/code&gt;. Thus, filters in &lt;code&gt;CALCULATE&lt;/code&gt; might override filters produced by context transition as seen on previous&amp;nbsp;sections.&lt;/p&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; Studio is a tool to write, execute, and analyze &lt;span class="caps"&gt;DAX&lt;/span&gt; queries in Power &lt;span class="caps"&gt;BI&lt;/span&gt;, Power Pivot for Excel, and Analysis Services Tabular. It can connect to any of sources and access their data model, such as an open Power &lt;span class="caps"&gt;BI&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;It includes an Object Browser, query editing and execution, formula and measure editing, syntax highlighting and formatting, integrated tracing and query execution&amp;nbsp;breakdowns.&lt;/p&gt;
+&lt;p&gt;This tool supercharges you report development toolbelt and allows to access fairly advanced features such&amp;nbsp;as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Query tracing and server timings&lt;/strong&gt;: provides insights on execution time, and differentiates between time spent on formula or query engine to facilitate&amp;nbsp;debugging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Filter dumps&lt;/strong&gt;: you can create a measure automatically that shows the current filter context for each visual and data point. This filter dump can be set on a tooltip to make debugging infinitely&amp;nbsp;easier.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Measure definitions&lt;/strong&gt;: similarly, you can automatically document all of your calculated measures with a single click inside of &lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Language formatting&lt;/strong&gt;: you can also format your &lt;span class="caps"&gt;DAX&lt;/span&gt; queries using the syntax tree developed by &lt;span class="caps"&gt;SQLBI&lt;/span&gt; and used in &lt;a href="https://www.daxformatter.com/"&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt; Formatter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Management Views (DMVs)&lt;/strong&gt;: the tool also grants access to several pre-defined DMVs that allow for finer control of the data model embedded in the file. For example, you can automate the documentation and definition of your model using a series of queries against the&amp;nbsp;DMVs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Closing&amp;nbsp;thoughts&lt;/h2&gt;
+&lt;p&gt;This is but a small subset of all the capabilities of &lt;span class="caps"&gt;DAX&lt;/span&gt; and merely scratches the surface of the language. Some resources like &lt;a href="sqlbi.com"&gt;sqlbi.com&lt;/a&gt; or &lt;a href="dax.guide"&gt;dax.guide&lt;/a&gt; are great steps to take&amp;nbsp;next.&lt;/p&gt;
+&lt;p&gt;If you are stuck with a certain problem, try looking or posting a question on the &lt;span class="caps"&gt;DAX&lt;/span&gt; tag in the &lt;a href="https://community.powerbi.com/"&gt;Power &lt;span class="caps"&gt;BI&lt;/span&gt; community forums&lt;/a&gt;. They are a friendly and knowledgeable bunch that will most certainly help you as long as you follow the site&amp;#8217;s rules and&amp;nbsp;etiquette.&lt;/p&gt;
+&lt;p&gt;Hopefully the techniques and tools mentioned in this post as well as the simplicity of the language and it&amp;#8217;s Excel-like functionality encourage you to try the language or dive deeper into its guts. In any case, I&amp;#8217;m more than happy to answer any questions you might&amp;nbsp;have.&lt;/p&gt;</content><category term="data modeling, dax"></category><category term="data"></category><category term="feature engineering"></category></entry><entry><title>How I got started with Linux</title><link href="https://alexgonzalezc.dev/posts/linux-dev-env.html" rel="alternate"></link><published>2019-12-08T22:50:00+01:00</published><updated>2019-12-08T22:50:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2019-12-08:/posts/linux-dev-env.html</id><summary type="html">&lt;p&gt;An overview of my Linux development&amp;nbsp;setup.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got the itch of purchasing a new laptop for development and learning, so I took the chance on Black Friday and got myself a nice &lt;span class="caps"&gt;HP&lt;/span&gt; Stream 14. I am a long-time Windows user so I thought it would be a great opportunity to get started with Linux and set up a developer workstation while documenting the&amp;nbsp;process.&lt;/p&gt;
+&lt;h1&gt;Objectives&lt;/h1&gt;
+&lt;p&gt;I wanted this machine to be equipped&amp;nbsp;for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;data science and machine learning&amp;nbsp;investigation&lt;/li&gt;
+&lt;li&gt;writing&lt;/li&gt;
+&lt;li&gt;web and software development, mostly in&amp;nbsp;Python&lt;/li&gt;
+&lt;li&gt;indie game&amp;nbsp;development&lt;/li&gt;
+&lt;li&gt;cloud&amp;nbsp;deployments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For that, I will be using tools like Visual Studio Code, Zsh (with Oh My Zsh), Godot and a nice terminal emulator like&amp;nbsp;Tilix.&lt;/p&gt;
+&lt;h1&gt;Linux&lt;/h1&gt;
+&lt;p&gt;I searched for a bit trying to decide which Linux flavor I would use. I tried Elementary &lt;span class="caps"&gt;OS&lt;/span&gt; and Ubuntu Budgie, but finally decided myself for the true and tested Ubuntu 18.04 &lt;span class="caps"&gt;LTS&lt;/span&gt;, which grants support and maintenance for up to 5 years. After all, I just want to learn and have fun with this&amp;nbsp;laptop.&lt;/p&gt;
+&lt;p&gt;At first, I experienced some issues with the system. For example, the Wi-Fi adapter wasn&amp;#8217;t recognised by the &lt;span class="caps"&gt;OS&lt;/span&gt;, so I had no internet connection. The Stream 14 doesn&amp;#8217;t have an Ethernet port, so that wasn&amp;#8217;t an option either. Finally I had to use my phone&amp;#8217;s connection through &lt;span class="caps"&gt;USB&lt;/span&gt; thethering so I could run the following&amp;nbsp;commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get upgrade
+sudo apt-get update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This fixes any broken packages. After that, I was able to install Git and clone a repo with the drivers for my adapters. This got my connection ready to start the real setup. The details are probably specific to the factory settings on my laptop so I won&amp;#8217;t really go over them, but &lt;a href="https://alexgonzalezc.dev/pages/contact.html"&gt;let me know&lt;/a&gt; if you&amp;#8217;re stuck with a similar issue and I&amp;#8217;ll try to help&amp;nbsp;out.&lt;/p&gt;
+&lt;h2&gt;Coding&amp;nbsp;tools&lt;/h2&gt;
+&lt;p&gt;That&amp;#8217;s my default editor and developer tool. I love the extensible and customizable design, and the many &lt;a href="https://alexgonzalezc.dev/posts/vs-code-ninja.html"&gt;productivity hacks&lt;/a&gt; you can take advantage&amp;nbsp;of.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gnunn1.github.io/tilix-web/"&gt;Tilix&lt;/a&gt; is an awesome terminal emulator with integrated multiplexing (like &lt;code&gt;tmux&lt;/code&gt;) and can speed up your workflow significantly if used properly.
+I also like &lt;a href="https://hyper.is/"&gt;Hyper&lt;/a&gt; as it is very simple and&amp;nbsp;lightweight.&lt;/p&gt;
+&lt;p&gt;Since I started dabbling in game development, Godot has been the most approachable engine I have encountered. I tried &lt;a href="https://phaser.io/"&gt;PhaserJS&lt;/a&gt; briefly but my JavaScript is not that polished and I find an engine to be more more hollistic in developmnet as opposed to a framework like&amp;nbsp;Phaser.&lt;/p&gt;
+&lt;h2&gt;Programming&amp;nbsp;languages&lt;/h2&gt;
+&lt;p&gt;Even though Python comes installed in Linux distros by default, its package manager &lt;code&gt;pip&lt;/code&gt; wasn&amp;#8217;t available on my system. A swift &lt;code&gt;sudo apt-get install pip3&lt;/code&gt; took that problem away.
+Take note of the &lt;code&gt;pip3&lt;/code&gt; part, which installs the module for Python&amp;nbsp;3.&lt;/p&gt;
+&lt;p&gt;I also installed &lt;a href="https://julialang.org/"&gt;Julia 1.3&lt;/a&gt; to run some benchmarks against Python and try my hand at some development with this growing&amp;nbsp;language.&lt;/p&gt;
+&lt;p&gt;I added some other stuff, languages like &lt;a href="https://vlang.io/"&gt;V&lt;/a&gt; and &lt;a href="https://www.lua.org/"&gt;Lua&lt;/a&gt; to have more options to play with. As you can see, I have installed many different languages so I can mix and match my learning and find the niche I am most comfortable in. Many advocate against a &amp;#8220;jack of all trades&amp;#8221; approach, but I find breadth of knowledge more useful than depth in general situations. You can always specialise if&amp;nbsp;necessary.&lt;/p&gt;
+&lt;p&gt;I am thinking of trying Go, but I will leave that for later because I don&amp;#8217;t really want to bite off more than I can chew. Which I am already doing,&amp;nbsp;anyway.&lt;/p&gt;
+&lt;h2&gt;Closing&amp;nbsp;thoughts&lt;/h2&gt;
+&lt;p&gt;I have been using this setup for a few months now and I am very satisfied with my decision. My Linux desktop is fast and sleek with a good-looking interface, and installing stuff is as easy as writing one shell command. I can definitely see why many developers use Linux, and I will probably make a full switch from Windows when&amp;nbsp;possible.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="learning"></category></entry><entry><title>An introduction to Power BI for data scientists</title><link href="https://alexgonzalezc.dev/posts/introduction-to-power-bi-for-data-scientists.html" rel="alternate"></link><published>2019-12-06T17:42:00+01:00</published><updated>2019-12-06T17:42:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2019-12-06:/posts/introduction-to-power-bi-for-data-scientists.html</id><summary type="html">&lt;p&gt;Power &lt;span class="caps"&gt;BI&lt;/span&gt; is a great free tool that can be used to quickly prototype visualizations for exploratory data&amp;nbsp;analysis.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Get started with Power &lt;span class="caps"&gt;BI&lt;/span&gt; to speed up your exploratory data analysis when looking for trends and features than might be useful for prediction or classification with machine learning&amp;nbsp;algorithms.&lt;/p&gt;
+&lt;h2&gt;Getting&amp;nbsp;Data&lt;/h2&gt;
+&lt;p&gt;Connecting to a data source in Power &lt;span class="caps"&gt;BI&lt;/span&gt; is quite straightforward. Just navigate to the Home tab in the ribbon and select &lt;strong&gt;Get Data&lt;/strong&gt; to find a dropdown menu of possible options. Common sources are &lt;span class="caps"&gt;SQL&lt;/span&gt; Server, Analysis Services (&lt;span class="caps"&gt;SSAS&lt;/span&gt;), Excel and Dynamics 365, among others. In most cases, such as &lt;span class="caps"&gt;SQL&lt;/span&gt; Server, you can also specify the query you want to run against the database.
+Note that when connecting to a source you can either query the data directly through &lt;strong&gt;DirectQuery&lt;/strong&gt; or &lt;strong&gt;Import&lt;/strong&gt; modes, but you cannot combine both methods into the same solution. There is also the &lt;strong&gt;LiveConnection&lt;/strong&gt; mode, a variation of DirectQuery geared towards &lt;span class="caps"&gt;SSAS&lt;/span&gt; Tabular that we will not cover&amp;nbsp;here.&lt;/p&gt;
+&lt;p&gt;There are some crucial differences between the two connection modes:
+* In DirectQuery, the data stays at the source and is not imported into your machine&amp;#8217;s memory and the size of the &lt;code&gt;.pbix&lt;/code&gt; file is dramatically lower than an import solution. However, each event during report visualization will trigger live queries that might harm the user experience. 
+* In Import mode, the data model is loaded into Power &lt;span class="caps"&gt;BI&lt;/span&gt; desktop and remains static until a refresh is triggered. This makes for smooth user experience but increase file size and memory&amp;nbsp;consumption.&lt;/p&gt;
+&lt;p&gt;When you have selected the source, Power &lt;span class="caps"&gt;BI&lt;/span&gt; will present you with a preview of your data. If everything looks &lt;span class="caps"&gt;OK&lt;/span&gt;, you can continue towards the next step. Otherwise, you can review your query and make any necessary&amp;nbsp;changes.&lt;/p&gt;
+&lt;p&gt;You can also use a folder as your source, allowing you to import several files at once such as a series of Excel or &lt;span class="caps"&gt;CSV&lt;/span&gt; files. They are loaded as binary data types and double clicking them loads their&amp;nbsp;values.&lt;/p&gt;
+&lt;h2&gt;Clean and&amp;nbsp;Transform&lt;/h2&gt;
+&lt;h2&gt;Data&amp;nbsp;Modeling&lt;/h2&gt;
+&lt;p&gt;There some key aspects to take into account when modeling data with Power &lt;span class="caps"&gt;BI&lt;/span&gt;, such as data categories and summarization; or establishing adequate relationships among your tables. You can also create custom hierarchies such as Year/Month/Week or Country/Destination/Region by dragging dragging columns on top of each other in the Report or Data&amp;nbsp;View.&lt;/p&gt;
+&lt;h3&gt;Data types, categories and format&amp;nbsp;strings&lt;/h3&gt;
+&lt;p&gt;There are several different types of data to work with in Power &lt;span class="caps"&gt;BI&lt;/span&gt;, such as integer, decimal/fixed, currency, date/time/datetime, string and binary objects.
+The data type is what allows certain functions and operations to be performed on a specific column, and it&amp;#8217;s &lt;strong&gt;not the same as the data format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The format string is the way that this data will be visually represented, such as percentage, with thousand separator, with decimals&amp;#8230; There also many different formats for date and time objects which can also be changed flexibly with the &lt;span class="caps"&gt;DAX&lt;/span&gt; &lt;code&gt;FORMAT ( )&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;Text data can be categorized, which is useful when you have geographical data or URLs in your table. Setting a data category for these columns allows for advanced features such as &lt;span class="caps"&gt;URL&lt;/span&gt; icons, embedded images and map visuals. Numerical data is uncategorized by default, since we use data types to differentiate it.
+Both types of data need &lt;em&gt;summarization&lt;/em&gt;, which is the default statistic that will be calculated by visuals using the measure. Possible options are &lt;code&gt;sum&lt;/code&gt;, &lt;code&gt;average&lt;/code&gt;, &lt;code&gt;minimum&lt;/code&gt;, &lt;code&gt;maximum&lt;/code&gt;, &lt;code&gt;count&lt;/code&gt; and &lt;code&gt;distinct&lt;/code&gt; for numerical types, while text types only have count and distinct. You can also use &lt;code&gt;first&lt;/code&gt; and &lt;code&gt;last&lt;/code&gt; within some&amp;nbsp;visuals. &lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s important to make a distinction between modeling your data within the Power Query editor or within Power &lt;span class="caps"&gt;BI&lt;/span&gt; Desktop itself, since different operations can be performed and the computational load is different. Usually, we use the &lt;em&gt;Query Editor&lt;/em&gt; to clean, shape and transform data from the source, while the &lt;em&gt;Data View&lt;/em&gt; (i.e. Power Pivot) is often used to model the imported data and define calculations for&amp;nbsp;analytics.&lt;/p&gt;
+&lt;h3&gt;Power Query editor and the &lt;code&gt;M&lt;/code&gt; language&lt;/h3&gt;
+&lt;p&gt;Power Query is a data discovery and query tool, good for shaping and mashing up data even before you’ve added the first row of data to the table. Inside the Power Query editor you can use the &lt;code&gt;M&lt;/code&gt; programming language to shape your data, creating step by step scripts that iteratively clean, transform and add columns to your model.
+Moreover, you can leverage the amazing Power &lt;span class="caps"&gt;BI&lt;/span&gt; user interface that makes this data engineering process very straight-forward and with zero necessary knowledge of &lt;code&gt;M&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some of the operations you can perform&amp;nbsp;are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Duplicate, transform or split&amp;nbsp;columns&lt;/li&gt;
+&lt;li&gt;You can use regular expressions, functions and calculations to engineer new&amp;nbsp;features.&lt;/li&gt;
+&lt;li&gt;Change data types and&amp;nbsp;formats&lt;/li&gt;
+&lt;li&gt;Power Query can also detect automatically the best data type for your column if you are not&amp;nbsp;sure.&lt;/li&gt;
+&lt;li&gt;Pivot, unpivot and sort&amp;nbsp;columns&lt;/li&gt;
+&lt;li&gt;Merge (join) and append (union)&amp;nbsp;queries&lt;/li&gt;
+&lt;li&gt;Remove or keep duplicates, errors, nulls,&amp;nbsp;headers&amp;#8230;&lt;/li&gt;
+&lt;li&gt;Group by columns and aggregate&amp;nbsp;measures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Enhance your model with the Data&amp;nbsp;View&lt;/h3&gt;
+&lt;p&gt;Not only can you explore all of your data interactively within this view, but you can also further improve the analytical capabilities of your model by using &lt;span class="caps"&gt;DAX&lt;/span&gt; expressions that leverage different filtering contexts and time frames to create complex&amp;nbsp;features.&lt;/p&gt;
+&lt;h3&gt;Create calculated&amp;nbsp;columns&lt;/h3&gt;
+&lt;p&gt;You can create calculated columns, for example, to establish a relationship between different tables, or to create indexes that could later be used as reference by iterator functions.
+Creating a calculated column consumes memory in your machine as it expands your data model if your tables have many records. Consider creating them only when necessary or for extremely complex calculations that should be run&amp;nbsp;live.&lt;/p&gt;
+&lt;p&gt;Remember to custom sort your columns, i.e. &lt;code&gt;MonthName&lt;/code&gt; should be sorted by &lt;code&gt;MonthNumber&lt;/code&gt; and not alphabetically by&amp;nbsp;itself.&lt;/p&gt;
+&lt;h3&gt;Create calculated&amp;nbsp;measures&lt;/h3&gt;
+&lt;p&gt;Measures are calculations that exists in your Power &lt;span class="caps"&gt;BI&lt;/span&gt; data model and is computed on the fly at each event. With &lt;span class="caps"&gt;DAX&lt;/span&gt; you can define a measure once and then slice it by all the different fields in your model, as long as the necessary relationships&amp;nbsp;exist.&lt;/p&gt;
+&lt;p&gt;Since they are computed at query time, calculated measures consume more &lt;span class="caps"&gt;CPU&lt;/span&gt; than a column, but they do not grow the tables in your data&amp;nbsp;model.&lt;/p&gt;
+&lt;h3&gt;Create calculated&amp;nbsp;tables&lt;/h3&gt;
+&lt;p&gt;Calculated tables allow you to express a whole new range of modeling capabilities, such as performing different types of joins and creating new tables on the fly based on the results of a formula.
+For example, you can create a date dimension with &lt;span class="caps"&gt;DAX&lt;/span&gt; by using the date to derive all necessary attributes such as month, week number or day of the week, or create summary tables with aggregated&amp;nbsp;values.&lt;/p&gt;
+&lt;h3&gt;Relationships in the data&amp;nbsp;model&lt;/h3&gt;
+&lt;p&gt;Data relationships are similar to how a cube is structured in Analysis Services. In the Model View you can access a diagrammatic view of your data, and you can define how your tables are related.
+To create a relationship, just click on a column on your fact table and drag it into the key on the dimension table. This generates an arrow indicating the active relationship, which you can double click to access advanced options such as setting the cardinality or the direction of the&amp;nbsp;relationship.&lt;/p&gt;
+&lt;p&gt;Your options for cardinality are Many to One, and One to One. Many to One is the fact to dimension type relationship, for example a sales table with multiple rows per product being matched up with a table listing products in their own unique&amp;nbsp;row.&lt;/p&gt;
+&lt;h2&gt;Visualization and report&amp;nbsp;design&lt;/h2&gt;
+&lt;p&gt;Visuals are the main element of Power &lt;span class="caps"&gt;BI&lt;/span&gt; reporting, and they have a wide range of formatting options that allows for almost limitless&amp;nbsp;customization. &lt;/p&gt;
+&lt;h3&gt;Editing&amp;nbsp;interactions&lt;/h3&gt;
+&lt;p&gt;When you have multiple visualizations on the same report page, selecting a particular segment by clicking or using a slicer will affect all the visuals on that page. In some cases, though, you may want to slice only specific visuals. For example, you might not want a scatter plot to be cross-filtered because that would remove crucial meaning from the visualization.
+You can define how visuals interacts with each other when the user selects data&amp;nbsp;points. &lt;/p&gt;
+&lt;h3&gt;Z-order&lt;/h3&gt;
+&lt;p&gt;When you have lots of elements on a report, Power &lt;span class="caps"&gt;BI&lt;/span&gt; lets you manage how they overlap with each other. How items are layered, or arranged on top of one another, is often referred to as the z-order.
+This is particularly useful when you want to use shapes to create backgrounds, highlights or containers. For example, you might use a shape to create the background for your report title, or to enclose a set of KPIs in a container. You can also set a semi-transparent shape over a graph section to highlight&amp;nbsp;it.&lt;/p&gt;
+&lt;h3&gt;Bookmarks&lt;/h3&gt;
+&lt;p&gt;Bookmarks are a great feature that allow for some nice tricks with user interaction. Essentially, a bookmark is a snapshot of your report page at a given time. They can save filter state, formatting options, visual placement, etc.
+You can use them to change between report pages, create a guided navigation for the user, change themes, show help or filter panes, send emails and many more&amp;nbsp;things. &lt;/p&gt;
+&lt;h2&gt;Time&amp;nbsp;Intelligence&lt;/h2&gt;
+&lt;p&gt;Time intelligence manages complex time-based calculations with reduced user input. It needs a date table with no date gaps, which Power &lt;span class="caps"&gt;BI&lt;/span&gt; creates automagically if the setting &lt;code&gt;Auto Date/Time&lt;/code&gt; is enabled, which is the default case.
+It is recommended to create your own date table instead of relying on this one, since it&amp;#8217;s not possible to adjust if necessary and can actually only be viewed from &lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio.&lt;/p&gt;
+&lt;p&gt;If you decide to work with it, you can use dot notation to access the time calculations, i.e. &lt;code&gt;Orders[Date].[Year]&lt;/code&gt; to automatically extract the year of that&amp;nbsp;date.&lt;/p&gt;</content><category term="power bi, data viz"></category><category term="data science"></category></entry><entry><title>Master of Visual Studio Code</title><link href="https://alexgonzalezc.dev/posts/vs-code-ninja.html" rel="alternate"></link><published>2019-11-26T19:27:00+01:00</published><updated>2019-11-26T19:27:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2019-11-26:/posts/vs-code-ninja.html</id><summary type="html">&lt;p&gt;Master Visual Studio Code with these&amp;nbsp;tips&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Visual Studio Code is a lightweight code editor with a lot of powerful capabilities. If you like Visual Studio, this is quite similar but without the abhorrent load times.
+It&amp;#8217;s available for the main operative systems and includes built-in support for JavaScript. It has a rich ecosystem of extensions that extend support to other languages such as C#, Java, Python, and &lt;span class="caps"&gt;SQL&lt;/span&gt;, as well as runtimes like .&lt;span class="caps"&gt;NET&lt;/span&gt; and&amp;nbsp;Unity.&lt;/p&gt;
+&lt;p&gt;It ships with great features such as IntelliSense, debugging and in-product source&amp;nbsp;control.&lt;/p&gt;
+&lt;h2&gt;Explorer&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;Ctrl+B&lt;/code&gt; to toggle the sidebar, where you can find the main functionalities. In Code, you work in directories or folders where your source code lives. The explorer allows for quick access and manipulation of the files in your project. You can use &lt;code&gt;Ctrl+P&lt;/code&gt; to open files in your folders&amp;nbsp;faster.&lt;/p&gt;
+&lt;h2&gt;Search&lt;/h2&gt;
+&lt;p&gt;Search files and inside of them. Match whole words or substrings, toggle case-sensitive search, use regex, and filter for different file types.
+You can launch the &lt;em&gt;search and replace&lt;/em&gt; feature from this pane, as well as by using &lt;code&gt;Ctrl+F&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Source&amp;nbsp;control&lt;/h2&gt;
+&lt;p&gt;You can integrate with both Git and Microsoft&amp;#8217;s &lt;span class="caps"&gt;TFVC&lt;/span&gt; (Team Foundation Version Control), although the latter needs to be installed.
+By opening a folder that&amp;#8217;s mapped to a &lt;span class="caps"&gt;TFVC&lt;/span&gt; repository, you can automatically check folders in and out, write your commit messages, view your work items or tasks and associate commits to them, all from inside the&amp;nbsp;editor.&lt;/p&gt;
+&lt;h2&gt;Debugger&lt;/h2&gt;
+&lt;p&gt;Launch the debugger panel by pressing &lt;code&gt;Ctrl+Shift+D&lt;/code&gt; and click the little configuration icon to create a debugging task. The editor detects your debugging environment automatically, but if this fails you can manually choose it. Next, you can set breakpoints wherever you want your program to stop and press &lt;code&gt;F5&lt;/code&gt; to start debugging. Now, you can inspect the status of all your variables and functions, examine their values and attributes, at any point in your file.
+In the panel you will see four main&amp;nbsp;areas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Variables: contains all of the existing variables in your&amp;nbsp;program.&lt;/li&gt;
+&lt;li&gt;Watch: this contains those variables that you have flagged for further inspection, so that they are easy to&amp;nbsp;find.&lt;/li&gt;
+&lt;li&gt;Call Stack: this explains how the program got to where it currently&amp;nbsp;is.&lt;/li&gt;
+&lt;li&gt;Breakpoints: here you can see any breakpoints that you have set and quickly refer to them to disable, enable, or reapply&amp;nbsp;them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Breakpoints are set by clicking on the gutter of your file or by pressing &lt;code&gt;F9&lt;/code&gt; and they stop the execution of your program.
+You can change a breakpoint to also be a log points, that is, some info will be logged to the console when the program execution reaches that&amp;nbsp;point.&lt;/p&gt;
+&lt;p&gt;When debugging, you can take a few actions that are know as &amp;#8220;stepping through&amp;nbsp;code&amp;#8221;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step over: this will step over a given line, meaning that if the line contains a function, it will be executed and the result returned without debugging each&amp;nbsp;line.&lt;/li&gt;
+&lt;li&gt;Step into: if the line you are going to step into contains a function, the debugger will enter it and continue working line by line. Otherwise it will behave as step&amp;nbsp;over.&lt;/li&gt;
+&lt;li&gt;Step out: this takes the debugger to the line where the current function was&amp;nbsp;called.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also launch an interactive debugging console with &lt;code&gt;Ctrl+Shift+Y&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is just a subset of the debugging capabilities of &lt;span class="caps"&gt;VS&lt;/span&gt; Code, and the topic deserves a course on its&amp;nbsp;own.&lt;/p&gt;
+&lt;h2&gt;Extensions&lt;/h2&gt;
+&lt;p&gt;One of the killer features of Code. The Visual Studio marketplace is community-sourced and you can make your own extensions with JavaScript or TypeScript. There are loads of useful features in extensions, but take into account that every extension that you install with have a small impact in the performance of your editor. Also, they bloat the &lt;code&gt;%APPDATA%&lt;/code&gt; folder in your roaming profile, making your machine start up a lot more&amp;nbsp;slowly.&lt;/p&gt;
+&lt;p&gt;As a workaround, you can write a one line batch file that loads the editor&amp;#8217;s metadata from a location outside the roaming profile where you have previously placed the Code folder.&lt;br&gt;
+For example, my setup is as&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-extensions-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-user-data-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save this with a &lt;code&gt;.bat&lt;/code&gt; extension and place it in your desktop. Next time you open &lt;span class="caps"&gt;VS&lt;/span&gt; Code, you can do it from that icon.
+It&amp;#8217;s not the most elegant solution, but it works in corporate&amp;nbsp;machines.&lt;/p&gt;
+&lt;p&gt;Alternatively, check the &lt;a href="https://code.visualstudio.com/docs/editor/portable"&gt;portable version of &lt;span class="caps"&gt;VS&lt;/span&gt; Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;They can also be enabled or disabled whenever necessary at the user or the workspace&amp;nbsp;level.&lt;/p&gt;
+&lt;h2&gt;Integrated&amp;nbsp;Terminal&lt;/h2&gt;
+&lt;p&gt;You can open several terminals in different languages, stack them on top of each other or put them to the side. You can use &lt;code&gt;Ctrl+`&lt;/code&gt; (or &lt;code&gt;Ctrl+Ñ&lt;/code&gt;) to toggle&amp;nbsp;it.  &lt;/p&gt;
+&lt;h2&gt;The command&amp;nbsp;palette&lt;/h2&gt;
+&lt;p&gt;Press &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; to launch the palette. This is, by far, the most important keyboard shortcut in &lt;span class="caps"&gt;VS&lt;/span&gt; Code because it allows access to every existing command in the editor. Just launch it, and start typing what you want to&amp;nbsp;do. &lt;/p&gt;
+&lt;h2&gt;Customization&lt;/h2&gt;
+&lt;h3&gt;Themes and&amp;nbsp;icons&lt;/h3&gt;
+&lt;p&gt;There are many, many different themes for &lt;span class="caps"&gt;VS&lt;/span&gt; Code and you can make your own ones as well. This is very useful when programming for long stretches of time, or when light reflects against your monitors. The keyboard command to change themes is &lt;code&gt;Ctrl+K, Ctrl+T&lt;/code&gt; and is obviously one of my most used ones!
+Some of the themes I personally&amp;nbsp;like:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Light&lt;/th&gt;
+&lt;th&gt;Dark&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Winter is Coming&lt;/td&gt;
+&lt;td&gt;1984&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Slack Theme&lt;/td&gt;
+&lt;td&gt;Monokai&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quiet Light&lt;/td&gt;
+&lt;td&gt;Fairyfloss&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ayu&lt;/td&gt;
+&lt;td&gt;Synthwave&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Noctis&lt;/td&gt;
+&lt;td&gt;Nord&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also use different icon themes, which make your files easier to find in the explorer pane while making it more appealing to look at!
+You can go to &lt;code&gt;Preferences -&amp;gt; File Icon Theme&lt;/code&gt; to change it, or of course use the all-powerful command&amp;nbsp;palette.&lt;/p&gt;
+&lt;p&gt;Some of my favorites&amp;nbsp;are:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Material&amp;nbsp;Icons  &lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;VS&lt;/span&gt; Code&amp;nbsp;Icons  &lt;/li&gt;
+&lt;li&gt;Ayu Icons (bundled with the Ayu&amp;nbsp;theme)  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can also find an extension that changes your file icons and instead shows Nicolas Cage&amp;#8217;s&amp;nbsp;face.&lt;/p&gt;
+&lt;p&gt;Please use at your own&amp;nbsp;risk. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Every one of these changes and customizations are saved to the user preferences, which are reachable via &lt;code&gt;Ctrl+,&lt;/code&gt; or the command palette. You can view them in a nice &lt;span class="caps"&gt;UI&lt;/span&gt; or in &lt;span class="caps"&gt;JSON&lt;/span&gt; format.
+For example, you can see that I have custom setting for &lt;code&gt;workbench.colorTheme&lt;/code&gt; and &lt;code&gt;workbench.iconTheme&lt;/code&gt;. I also have &lt;code&gt;window.zoomLevel&lt;/code&gt; set to -1 because I zoomed out with &lt;code&gt;Ctrl+-&lt;/code&gt;
+Note that settings can be applied globally at the user level or relative to a&amp;nbsp;workspace.&lt;/p&gt;
+&lt;p&gt;Some configuration options that I think are quite nice and improve collaboration and development&amp;nbsp;rythm:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"editor.minimap.enabled": false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Removes the minimap shown at the right side of the editor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"explorer.confirmDelete": false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Deactivates the warning before deleting a file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"explorer.confirmDragAndDrop": false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Removes warning when moving files in the explorer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"editor.formatOnSave": true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Automatically formats your code on save event.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"editor.formatOnPaste": true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Automatically formats your code when you paste it.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"javascript.format.enable": true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enables a &lt;span class="caps"&gt;JS&lt;/span&gt; formatter, such as &lt;code&gt;Prettier&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"editor.multiCursorModifier": "alt"&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Selection of multiple line when holding Alt and clicking.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"files.trimTrailingWhitespace": true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Deletes whitespace in files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"editor.quickSuggestionsDelay": 0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Show code actions without delay.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"tfvc.location": "path\\to\\tf.exe"&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Tell Code where to find the Team Foundation executable.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;"powermode.enabled": true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;This is the best setting ever, better than Power &lt;span class="caps"&gt;BI&lt;/span&gt; fish visuals. Try it yourself!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;There are much more settings that you can tweak, and each extension or language has their own settings. Change, mix and swap them to find the setup that works best for&amp;nbsp;you!&lt;/p&gt;
+&lt;h3&gt;Fonts&lt;/h3&gt;
+&lt;p&gt;You can also use a custom font if you wish to. Make sure the &lt;code&gt;.ttf&lt;/code&gt; file is installed in your system and set your preferred font in the settings.
+I (and many other developers) use &lt;a href="https://github.com/tonsky/FiraCode"&gt;Fira Code&lt;/a&gt; because it has nice ligatures and &lt;a href="https://www.typography.com/fonts/operator/styles"&gt;doesn&amp;#8217;t cost $200&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Workspaces&lt;/h2&gt;
+&lt;p&gt;A &lt;span class="caps"&gt;VS&lt;/span&gt; Code workspace is not a folder, or a working directory. It is a list of a project&amp;#8217;s folders and files and can contain multiple working directories. You can save settings or disable extensions at the workspace level and they take precedence over the user settings. They are a bit like Visual Studio&amp;#8217;s&amp;nbsp;solutions.&lt;/p&gt;
+&lt;p&gt;You can create one of these workspaces by going to &lt;code&gt;File -&amp;gt; Save Workspace as...&lt;/code&gt;, or just type workspace in the command palette to see all the available&amp;nbsp;options.&lt;/p&gt;
+&lt;h2&gt;Editing&amp;nbsp;evolved&lt;/h2&gt;
+&lt;h3&gt;IntelliSense&lt;/h3&gt;
+&lt;p&gt;IntelliSense is &lt;strong&gt;awesome&lt;/strong&gt;, and its capabilities get augmented by Microsoft&amp;#8217;s IntelliCode extension which leverages &lt;span class="caps"&gt;AI&lt;/span&gt; to improve code&amp;nbsp;completion.&lt;/p&gt;
+&lt;p&gt;In summary, the service provides code completion based on language semantics and your source code. The suggestions (variables, functions, methods&amp;#8230;) pop up as you type and get filtered as you continue typing. You can bring up IntelliSense in any editor window by pressing &lt;code&gt;Ctrl+Space&lt;/code&gt; or by typing a trigger character such as the dot character (&lt;code&gt;.&lt;/code&gt;) for JavaScript class&amp;nbsp;methods.&lt;/p&gt;
+&lt;p&gt;You can also see quick info on each of the suggestions, such as the definition of a variable or function, the expected parameters for a function or the documentation of a class or&amp;nbsp;object.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center"&gt;&lt;img alt="Types of IntelliSense Completion" src="https://raw.githubusercontent.com/gonz4lex/vscode-ninja/master/assets/intellisense.jpg"&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;&lt;em&gt;Types of IntelliSense Completion. From https://code.visualstudio.com/docs/editor/intellisense.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Code formatting and&amp;nbsp;navigation&lt;/h3&gt;
+&lt;p&gt;Aside from formatting on paste and save as mentioned in the settings section, you can also use the commands &lt;code&gt;Format Document&lt;/code&gt; or &lt;code&gt;Format Selection&lt;/code&gt; whenever needed, from the command palette or by right clicking the editor&amp;nbsp;window.&lt;/p&gt;
+&lt;p&gt;Navigating your files is much faster and easier with Code, for example:
+* You can jump directly to the definition of any function or variable, no matter where it is in your codebase.
+  * You can also peek at its definition, maintaining your current position in the document.
+* You can also rename every occurrence of a symbol just by pressing &lt;code&gt;F2&lt;/code&gt; with the cursor on the&amp;nbsp;symbol. &lt;/p&gt;
+&lt;h3&gt;Errors, warnings and&amp;nbsp;info&lt;/h3&gt;
+&lt;p&gt;You can find these in the problems tab, which can be activated with &lt;code&gt;Ctrl+Shift+M&lt;/code&gt;. These problems are usually underlined in your code in different colors depending on the problem level.
+You can loop through them by pressing &lt;code&gt;F8&lt;/code&gt; or &lt;code&gt;Shift+F8&lt;/code&gt; which will also provide an inline window with details about the&amp;nbsp;problem.&lt;/p&gt;
+&lt;h3&gt;Keyboard&amp;nbsp;shortcuts&lt;/h3&gt;
+&lt;p&gt;These are a very nice productivity aid that help developers avoid moving their hands back and forth between the keyboard and the mouse. While it might seem a negligible time, it&amp;#8217;s quite common to do several times every hour and it accumulates towards the end of the&amp;nbsp;day.&lt;/p&gt;
+&lt;p&gt;There are a lot of keyboards shortcuts and its quite impossible to remember them all. Thankfully, there is a &lt;a href="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"&gt;very handy reference&lt;/a&gt; and you can remap your shortcuts very flexibly to better match your work&amp;nbsp;process.&lt;/p&gt;
+&lt;p&gt;Some of my recommendations and most used keyboard&amp;nbsp;shortcuts:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Shortcut&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+Shift+N&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Open a new Code instance. Use it when launching from custom folder.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+Shift+Tab&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Shows you active files in the editor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift+Alt+↑/↓&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Copy current line above/below.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Alt+Click&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Insert cursor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift+Alt+I&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Insert cursor at the end of each selected line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift+Alt+(drag mouse)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Column or box selection.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+G&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Opens the command palette to let you enter a line number to go to.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+Shift+O&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Shows the list of symbols found in the current file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Alt+-&amp;gt;&lt;/code&gt;/&lt;code&gt;Alt+&amp;lt;-&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Switch between open files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Alt+Ç&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Toggle line comment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+K, Ctrl+T&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Change color theme.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+X&lt;/code&gt; / &lt;code&gt;Ctrl+C&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Cut or copy entire line, if you have empty selection.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+Shift+/&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Jump to matching bracket.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift+Alt+F&lt;/code&gt; / &lt;code&gt;Ctrl+K, Ctrl+F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Format document or selection.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Go to symbol definition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+\&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Split editor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift+Alt+0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Toggle editor layout between horizontal or vertical.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+K, Z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enter Zen mode. Double press &lt;code&gt;Esc&lt;/code&gt; to exit.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+´&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Show the terminal. &lt;code&gt;Ctrl+Ñ&lt;/code&gt; in Spanish keyboards.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+K, P&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Copy path of the active file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+K, R&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Reveal the active file in the system explorer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This is just a very small subset of commands, and only for the base &lt;span class="caps"&gt;VS&lt;/span&gt; Code. Extensions add new features which can also be mapped to any shortcut&amp;nbsp;keymap.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note that some shortcuts have different key chords. &lt;code&gt;Ctrl+K, Ctrl+T&lt;/code&gt; is not the same as &lt;code&gt;Ctrl+K, T&lt;/code&gt;. The latter means that you need to press the second key while &lt;code&gt;Ctrl&lt;/code&gt; is &lt;strong&gt;not&lt;/strong&gt; pressed&amp;nbsp;down.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Code&amp;nbsp;snippets&lt;/h3&gt;
+&lt;p&gt;This is another very cool feature not unique to Code, and many languages already come with ready-made snippets for you to use. You can also, of course, author your own snippets. Just type &amp;#8220;snippet&amp;#8221; in the command palette and you will see available options.
+You can set a snippets file for each language or a common file for a given user, with snippets in many&amp;nbsp;languages.&lt;/p&gt;
+&lt;p&gt;Some examples of useful snippets would be a &lt;code&gt;TRY-CATCH&lt;/code&gt; block in T-&lt;span class="caps"&gt;SQL&lt;/span&gt; or a for-loop in&amp;nbsp;JavaScript.&lt;/p&gt;
+&lt;h2&gt;Extensions&amp;nbsp;showcase&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Extension&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure Repos&lt;/td&gt;
+&lt;td&gt;Connectivity to Azure Repos and Team Foundation Server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Better Comments&lt;/td&gt;
+&lt;td&gt;Improved comment functionality.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bracket Pair Colorizer&lt;/td&gt;
+&lt;td&gt;Better code readability.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Code Time&lt;/td&gt;
+&lt;td&gt;Measures your coding frequency, volume and speed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESLint&lt;/td&gt;
+&lt;td&gt;JavaScript linting, needs ESLint library installed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GitLens&lt;/td&gt;
+&lt;td&gt;Supercharged version control, Git only.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Live Share&lt;/td&gt;
+&lt;td&gt;Remote collaboration within &lt;span class="caps"&gt;VS&lt;/span&gt; Code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Settings Sync&lt;/td&gt;
+&lt;td&gt;Synchronize settings across different machines.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polacode&lt;/td&gt;
+&lt;td&gt;Take beautiful screenshots of your code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prettier&lt;/td&gt;
+&lt;td&gt;Automatically format your files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/td&gt;
+&lt;td&gt;Integration with Microsoft&amp;#8217;s &lt;span class="caps"&gt;SQL&lt;/span&gt; Server.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Visual Studio IntelliCode&lt;/td&gt;
+&lt;td&gt;&lt;span class="caps"&gt;AI&lt;/span&gt; powered IntelliSense.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also get recommended extensions based on your usage of the editor. For example, I get recommendations for a Markdown linter because I often use that file extension, and for the Notepad++ keymaps because I have that editor&amp;nbsp;installed.&lt;/p&gt;</content><category term="vscode"></category></entry></feed>

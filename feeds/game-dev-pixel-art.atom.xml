@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez - game dev, pixel art</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/game-dev-pixel-art.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2020-01-04T00:33:00+01:00</updated><subtitle>Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.</subtitle><entry><title>How to build Aseprite from source in Ubuntu</title><link href="https://alexgonzalezc.dev/posts/how-to-build-aseprite-from-source.html" rel="alternate"></link><published>2020-01-04T00:33:00+01:00</published><updated>2020-01-04T00:33:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-04:/posts/how-to-build-aseprite-from-source.html</id><summary type="html">&lt;p&gt;Aseprite is an amazing pixel art software and its source code is open. This is how you can build and test it, or help with its&amp;nbsp;development.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt;
+Aseprite is a paid software and you should buy it to support its developers. It&amp;#8217;s 15$ and can be purchased for Windows, macOS and Linux, as well as Steam. You can use this method to inspect the source code and try to help with development, or to try the software. There is also a free trial in their&amp;nbsp;website.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Building Aseprite from&amp;nbsp;Github&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.aseprite.org"&gt;Aseprite&lt;/a&gt; is the best pixel art tool I have come across, and has a very affordable price if you just want to test the waters of pixel art. However, should you want to help tackle some of the &lt;a href="https://github.com/aseprite/aseprite/issues"&gt;issues&lt;/a&gt; on the project&amp;#8217;s repository, you need to compile the program to inspect your&amp;nbsp;changes.&lt;/p&gt;
+&lt;p&gt;I went through this process on my Windows and Linux machines, and I must say that the experience was &lt;em&gt;wildly&lt;/em&gt; different, even if the process is very similar. I am currently using Ubuntu 18.04 &lt;span class="caps"&gt;LTS&lt;/span&gt;.&lt;/p&gt;
+&lt;h2&gt;Get&amp;nbsp;started&lt;/h2&gt;
+&lt;p&gt;Before beginning, please note that the full &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md"&gt;install instructions&lt;/a&gt; can be found in the project&amp;#8217;s&amp;nbsp;repo.&lt;/p&gt;
+&lt;p&gt;First, you should clone the repository in a directory of your choice, such as &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/aseprite/aseprite.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will create an &lt;code&gt;aseprite&lt;/code&gt; directory. You can later update this clone with new releases by&amp;nbsp;running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; aseprite
+git pull
+git submodule update --init --recursive
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Aseprite&amp;nbsp;dependencies&lt;/h2&gt;
+&lt;p&gt;There are three main dependencies for&amp;nbsp;Aseprite:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;latest &lt;a href="cmake.org"&gt;CMake&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the &lt;a href="ninja-build.org"&gt;Ninja&lt;/a&gt; build&amp;nbsp;system&lt;/li&gt;
+&lt;li&gt;a compiled version of &lt;a href="https://skia.org/"&gt;Skia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that for Windows, you need Windows 10 and &lt;a href="https://visualstudio.microsoft.com/downloads/"&gt;Visual Studio 2019&lt;/a&gt;, as well as a [C++ &lt;span class="caps"&gt;SDK&lt;/span&gt;] for desktop development. The latter is an item to check in your &lt;a href="https://imgur.com/4Pq2Cbv"&gt;Visual Studio installer&lt;/a&gt;, so make sure you have selected&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Also, installing CMake on Windows was &lt;span class="caps"&gt;HORRIBLE&lt;/span&gt; and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&amp;nbsp;Windows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git clone -b aseprite-m71 https://github.com/aseprite/skia.git
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PWD&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/depot_tools:&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; skia
+python tools/git-sync-deps
+gn gen out/Release --args&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&amp;quot;&lt;/span&gt;
+ninja -C out/Release skia
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These commands can also be found in the Aseprite documentation, so head there if you get&amp;nbsp;stuck.&lt;/p&gt;
+&lt;h2&gt;Compiling the&amp;nbsp;code&lt;/h2&gt;
+&lt;p&gt;After getting all the dependecies, create a new folder &lt;code&gt;build&lt;/code&gt; inside your &lt;code&gt;aseprite&lt;/code&gt; directory, and &lt;code&gt;cd&lt;/code&gt; into it. Afterwards, run &lt;code&gt;cmake&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/aseprite
+mkdir build
+&lt;span class="nb"&gt;cd&lt;/span&gt; build
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;In this last command, &lt;code&gt;cmake&lt;/code&gt; needs a different setup based on your &lt;span class="caps"&gt;OS&lt;/span&gt;. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling"&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Run this command on your Linux machine to build the&amp;nbsp;source:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cmake &lt;span class="se"&gt;\&lt;/span&gt;
+  -DCMAKE_BUILD_TYPE&lt;span class="o"&gt;=&lt;/span&gt;RelWithDebInfo &lt;span class="se"&gt;\&lt;/span&gt;
+  -DLAF_OS_BACKEND&lt;span class="o"&gt;=&lt;/span&gt;skia &lt;span class="se"&gt;\&lt;/span&gt;
+  -DSKIA_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia &lt;span class="se"&gt;\&lt;/span&gt;
+  -DSKIA_OUT_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia/out/Release &lt;span class="se"&gt;\&lt;/span&gt;
+  -G Ninja &lt;span class="se"&gt;\&lt;/span&gt;
+  ..
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When your terminal finishes the previous task, just run Ninja inside the &lt;code&gt;build&lt;/code&gt; directory and you will have your executable in &lt;code&gt;aseprite/build/bin/aseprite.exe&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ninja aseprite
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Start&amp;nbsp;pixeling!&lt;/h2&gt;
+&lt;p&gt;That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
+Remember to actually purchase Aseprite if you are going to use it commercially or&amp;nbsp;professionally.&lt;/p&gt;</content><category term="game dev, pixel art"></category><category term="aseprite"></category></entry></feed>

@@ -2,24 +2,25 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Hey! I'm Alex, a developer specialising on data engineering, machine learning, data science, visualization and analytics.">
+        <meta name="description" content="<p>Getting started with Julia, and dynamic and idiomatic language perfect for data&nbsp;science.</p>">
         <meta name="author" content="">
 
-        <title>Alex Gonzalez - Authors </title>
+        <title>  A date with&nbsp;Julia |  Alex Gonzalez  </title>
 
             <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Full Atom Feed" />
+            <link href="https://alexgonzalezc.dev/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Categories Atom Feed" />
 
         <!-- Bootstrap Core CSS -->
-        <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="./theme/css/clean-blog.min.css" rel="stylesheet">
+        <link href="../theme/css/clean-blog.min.css" rel="stylesheet">
 
         <!-- Code highlight color scheme -->
-            <link href="./theme/css/code_blocks/darkly.css" rel="stylesheet">
+            <link href="../theme/css/code_blocks/darkly.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,8 +34,22 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="en">
+
+
+
+        <meta name="tags" contents="learn" />
+
+
+			<meta property="og:locale" content="en">
 		<meta property="og:site_name" content="Alex Gonzalez">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="../drafts/a_date_with_julia.html">
+	<meta property="og:title" content="A date with&nbsp;Julia">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="../images/julia-lang.png">
+	<meta property="article:published_time" content="2020-01-02 11:00:00+01:00">
 </head>
 
 <body>
@@ -50,15 +65,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./">Alex Gonzalez</a>
+                <a class="navbar-brand" href="../">Alex Gonzalez</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 
-                            <li><a href="./pages/contact.html">Contact</a></li>
-                            <li><a href="./pages/resume.html">Resume</a></li>
+                            <li><a href="../pages/contact.html">Contact</a></li>
+                            <li><a href="../pages/resume.html">Resume</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,12 +82,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/last-night.jpg')">
+        <header class="intro-header" style="background-image: url('../images/julia-lang.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by </h1>
+                        <h1>A date with&nbsp;Julia</h1>
+                        <span class="meta">Posted by
+                                <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
+                             on 2020-01-02 11:01
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -83,14 +103,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="./author/alex-gonzalez.html" rel="bookmark">
-                <h2 class="post-title">
-                    Alex Gonzalez (7)
-                </h2>
-            </a>
-        </div>
-        <hr>
+    <!-- Post Content -->
+    <article>
+        <p>Julia is great, albeit a little complicated to get at around when you first meet. It&#8217;s great because it writes like Python and <a href="https://syl1.gitbook.io/julia-language-a-concise-tutorial/language-core/performances">runs like C</a>. The optionally typed nature of Julia increases its performance well beyond Python in some cases, but it&#8217;s better suited to problems that require writing custom algorithms rather than rely on standard solutions. For other less non-trivial tasks, Python is just more simple to use and has a richer package ecosystem (<a href="https://juliaobserver.com">for now</a>).</p>
+<p>That said, if you are still considering using Julia, let&#8217;s get started with its basics to see if it&#8217;s the language for you. We will cover both its syntax and concepts as we go through some&nbsp;examples.</p>
+<h1>Data&nbsp;Structures</h1>
+<h1>Strings</h1>
+<h1>Conditionals</h1>
+<h1>Loops</h1>
+<h1>Functions</h1>
+<h1>Multiple&nbsp;dispatch</h1>
+<p>One of the reasons for the performance of Julia is the way it relies on types to execute functions based on their parameter&nbsp;types.</p>
+<p>For example, the <code>+</code> operator can call one of its many methods depending on the types of the&nbsp;operands.</p>
+    </article>
+
+    <hr>
+
             </div>
         </div>
     </div>
@@ -136,13 +164,13 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="./theme/js/jquery.js"></script>
+    <script src="../theme/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="./theme/js/bootstrap.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="./theme/js/clean-blog.min.js"></script>
+    <script src="../theme/js/clean-blog.min.js"></script>
 
     <script type="text/javascript">
     var _gaq = _gaq || [];
