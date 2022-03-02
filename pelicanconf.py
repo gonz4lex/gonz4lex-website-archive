@@ -45,7 +45,7 @@ DEFAULT_METADATA = {
 RELATIVE_URLS = True
 
 # Blog setup
-USER_LOGO_URL = SITEURL + 'static/images/logo.png'
+USER_LOGO_URL = SITEURL + '/images/logo.png'
 
 STATIC_PATHS = ['images', 'extra', 'assets']
 HEADER_COVER = "images/last-night.jpg"

@@ -2,11 +2,10 @@ title: Contact
 slug: contact
 author: Alex Gonzalez
 status: published
-header_cover: ../images/mountains.jpg
 
 # Say hi! 👋
 
-Anything goes! If you have a question, critique, suggestion or existential doubt, or even if you just want to share something, feel free to just hit me up! I would love to discuss anything, mostly tech related.
+Anything goes! If you have a question, critique, suggestion or existential doubt, or even if you just want to share something, feel free to just hit me up! I would love to discuss anything, mostly tech related, data and videogames.
 
 I am open to project collaborations, freelance work, speaking and mentoring.
 

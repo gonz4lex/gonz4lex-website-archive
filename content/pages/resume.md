@@ -3,9 +3,6 @@ slug: resume
 author: Alex Gonzalez
 status: published
 summary: I am always looking for opportunities to grow and I am available for contract work or freelancing.
-
-# Resume
-
 I am always looking for opportunities to grow and I am available for contract work or freelancing.
 
 ## Profile 👨‍💻
@@ -16,45 +13,41 @@ You can find more about me in my [website](https://alexgonzalezc.dev) or my [Lin
 
 ## Work
 
-### Machine Learning and AI Developer
-#### Bravent
+### Machine Learning and AI Developer ([Bravent](bravent.net))
 `Jan 2022 - present`
 
 Engineering and development of AI & ML tools covering a breadth of domains.
 
-### Data Scientist
-#### Tinamica
+### Data Scientist ([Tinamica](tinamica.com))
 `Feb 2020 - Jan 2022`
 
 Data science consultancy for end client Melia Hotels International involving full workflow stack: analysis, engineering, development and orchestration.
 
 
-### Business Intelligence Developer 💻️
-#### MTS Globe
+### Business Intelligence Developer ([MTS Globe](mtsglobe.com))
+
 `Jan 2019 - Feb 2020`
 
 Developed and launched new __Power BI__ reporting platform within the organization. Programmed in __DAX and M for data modeling__. Deployed __web scraping pipelines__ with __Python__ and __SQL Server__. __Trained__ Power BI developers and users alike.
 
-### Associate Professor 🎓️
-#### University of the Balearic Islands
+### Associate Professor ([University of the Balearic Islands](uib.eu))
+
 `Sep 2018 - Sep 2019`
 
 __Lectured__ on Tourism Marketing and __tutored__ students for the delivery of academic papers.
 
-### Business Intelligence Analyst 📊️
-#### MTS Globe
+### Business Intelligence Analyst ([MTS Globe](mtsglobe.com))
 `Jul 2017 - Jan 2019`
 
 Promoted from junior analyst in under 6 months. Developed Excel reports using  __SQL Server Analysis Services__ OLAP data sources. Intermediated between business users and database developers. __Trained__ end users in the usage of database and reporting tools.
 
 ## Education
 
-### MSc Big Data Analytics in Business and Economics 📚️
-#### University of the Balearic Islands
+### MSc Big Data Analytics in Business and Economics ([University of the Balearic Islands](uib.eu))
 `Sep 2019 – present`
 
-### BSc Economics 📖️
-#### University of the Balearic Islands
+### BSc Economics ([University of the Balearic Islands](uib.eu))
+
 `Sep 2012 – Jun 2017`
 
 ## Skills 
@@ -63,20 +56,20 @@ I have a broad knowledge of statistics, distributions and probability, as well a
 
 ### Programming languages ⚡️  
 
-⭐️⭐️⭐️ Python, R, SQL, DAX, M, MDX.  
+⭐️⭐️⭐️ Python, R, SQL, DAX, M, MDX
 
-⭐️⭐️ JavaScript (ES6), HTML5, CSS3, Bash.  
+⭐️⭐️ JavaScript (ES6), HTML5, CSS3, Bash
 
-⭐️ Julia, GDScript, Ruby, Go, Powershell, Lua.  
+⭐️ Julia, GDScript, Ruby, Go, Powershell, Lua
 
 
 ### Platforms and frameworks 🚀️  
 
-⭐️⭐️⭐️ Power BI, Excel, SQL Server.  
+⭐️⭐️⭐️ Power BI, Excel, SQL Server
 
-⭐️⭐️ Git, Team Foundation Server, Godot, Django, Linux.  
+⭐️⭐️ Git, Godot, Django, Linux, Azure
 
-⭐️ Azure, PostgreSQL.  
+⭐️ Team Foundation Server, PostgreSQL
 
 
 ### Languages 💬️  
