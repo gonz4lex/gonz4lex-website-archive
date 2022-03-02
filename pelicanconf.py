@@ -5,8 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
 TAGLINE = "Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics."
-# SITEURL = 'https://alexgonzalezc.dev'
-SITEURL = 'http://127.0.0.1:8000'
+SITEURL = 'https://alexgonzalezc.dev'
 THEME = 'svbhack'
 LOAD_CONTENT_CACHE = True
 
