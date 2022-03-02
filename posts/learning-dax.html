@@ -2,111 +2,81 @@
 <html lang="en">
 
 <head>
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="<p>The first part of an overview of the <span class="caps">DAX</span> language for data&nbsp;analysis.</p>">
-        <meta name="author" content="">
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="stylesheet" type="text/css" href="../theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
 
-        <title>  Data Analysis eXpressions query&nbsp;language |  Alex Gonzalez  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alex Gonzalez">
+  <meta name="description" content="Posts and writings by Alex Gonzalez">
 
-            <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Full Atom Feed" />
-            <link href="https://alexgonzalezc.dev/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Categories Atom Feed" />
+  <link href="https://alexgonzalezc.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alex Gonzalez Atom" />
 
-        <!-- Bootstrap Core CSS -->
-        <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
+<meta name="keywords" content="data, feature engineering">
 
-        <!-- Custom CSS -->
-        <link href="../theme/css/clean-blog.min.css" rel="stylesheet">
+  <title>
+    Alex Gonzalez
+&ndash; Data Analysis eXpressions query&nbsp;language  </title>
 
-        <!-- Code highlight color scheme -->
-            <link href="../theme/css/code_blocks/darkly.css" rel="stylesheet">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-155317378-1']);
+  _gaq.push(['_trackPageview']);
 
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-
-
-
-        <meta name="tags" contents="data" />
-        <meta name="tags" contents="feature engineering" />
-
-
-			<meta property="og:locale" content="en">
-		<meta property="og:site_name" content="Alex Gonzalez">
-
-	<meta property="og:type" content="article">
-	<meta property="article:author" content="">
-	<meta property="og:url" content="../posts/learning-dax.html">
-	<meta property="og:title" content="Data Analysis eXpressions query&nbsp;language">
-	<meta property="og:description" content="">
-	<meta property="og:image" content="../images/dax-code.png">
-	<meta property="article:published_time" content="2019-12-27 10:32:00+01:00">
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 
 <body>
+  <aside>
+    <div id="user_meta">
+      <a href="..">
+        <img src="http://127.0.0.1:8000/images/logo.png" alt="logo">
+      </a>
+      <h2><a href="..">Alex Gonzalez</a></h2>
+      <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
+      <ul>
+        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="../pages/resume.html">Resume</a></li>
+        <!--         <li><a href="../category/data-modeling-dax.html">data modeling, dax</a></li>
+        <li><a href="../category/game-dev-pixel-art.html">game dev, pixel art</a></li>
+        <li><a href="../category/linux.html">linux</a></li>
+        <li><a href="../category/posts.html">posts</a></li>
+        <li><a href="../category/power-bi-data-viz.html">power bi, data viz</a></li>
+        <li><a href="../category/vscode.html">vscode</a></li>
+        <li><a href="../category/web-dev-api.html">web dev, api</a></li>
+ -->
+        <li><a href="http://github.com/gonz4lex" target="_blank">Github</a></li>
+      </ul>
+    </div>
+  </aside>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../">Alex Gonzalez</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="../pages/contact.html">Contact</a></li>
-                            <li><a href="../pages/resume.html">Resume</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('../images/dax-code.png')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Data Analysis eXpressions query&nbsp;language</h1>
-                        <span class="meta">Posted by
-                                <a href="../author/alex-gonzalez.html">Alex Gonzalez</a>
-                             on 2019-12-27 10:12
-                        </span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main>
+    <header>
+      <p>
+      <a href="..">Index</a> &brvbar; <a href="../archives.html">Archives</a>
+      &brvbar; <a href="https://alexgonzalezc.dev/feeds/all.atom.xml">Atom</a>
+      </p>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <!-- Post Content -->
-    <article>
-        <h2>Data Analysis eXpressions (<span class="caps">DAX</span>)</h2>
+<article>
+  <div class="article_title">
+    <h1><a href="../posts/learning-dax.html">Data Analysis eXpressions query&nbsp;language</a></h1>
+  </div>
+  <div class="article_meta">
+    <p>Posted on: 2019-12-27 10:12</p>
+  </div>
+  <div class="article_text">
+    <h2>Data Analysis eXpressions (<span class="caps">DAX</span>)</h2>
 <p><span class="caps">DAX</span> is a functional language, that is, execution flows from function calls read from inner to outer context in nested&nbsp;calls.</p>
 <p>Here is a short description of <span class="caps">DAX</span> syntax&nbsp;conventions:</p>
 <ul>
@@ -159,7 +129,7 @@ These functions always receive two inputs: the table to iterate and expression t
 <h5>Quick&nbsp;tip!</h5>
 <p>I often use <code>ADDCOLUMNS</code> to generate a Date table, For&nbsp;example:</p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="no">ADDCOLUMNS</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="no">ADDCOLUMNS</span> <span class="p">(</span>
     <span class="no">ALL</span> <span class="p">(</span> <span class="s1">&#39;Sales&#39;</span><span class="o">[</span><span class="n">sk_Date</span><span class="o">]</span> <span class="p">);</span> <span class="c1"># the table that will be iterated</span>
     <span class="s2">&quot;Month&quot;</span><span class="p">;</span> <span class="c1"># the name of the first column to add</span>
     <span class="no">MONTH</span> <span class="p">(</span> <span class="s1">&#39;Sales&#39;</span><span class="o">[</span><span class="n">sk_Date</span><span class="o">]</span> <span class="p">);</span> <span class="c1"># the definition of the first column to add</span>
@@ -167,22 +137,20 @@ These functions always receive two inputs: the table to iterate and expression t
     <span class="no">YEAR</span> <span class="p">(</span> <span class="s1">&#39;Sales&#39;</span><span class="o">[</span><span class="n">sk_Date</span><span class="o">]</span> <span class="p">);</span> 
     <span class="o">...</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <blockquote>
 <p>This is a very flexible way of generating your own date dimension according to your specific&nbsp;needs.</p>
 <p>You can also generate a dimension table by scanning the columns of your different fact tables and appending them. For&nbsp;example:
 </p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="no">DISTINCT</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="no">DISTINCT</span> <span class="p">(</span>
     <span class="no">UNION</span> <span class="p">(</span>
         <span class="no">ALL</span> <span class="p">(</span> <span class="no">LaptopOrders</span><span class="o">[</span><span class="no">OrderID</span><span class="o">]</span> <span class="p">);</span>
         <span class="no">ALL</span> <span class="p">(</span> <span class="no">MobileOrders</span><span class="o">[</span><span class="no">OrderID</span><span class="o">]</span> <span class="p">);</span>
     <span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h3>The <span class="caps">IN</span>&nbsp;operator</h3>
 <p>Verifies whether a value exists in a list of possible values, i.e. <code>Company[Code] IN {"Microsoft", "Apple", "Dell"}</code>.
@@ -197,54 +165,50 @@ Note that the curly brackets notation generates a temporary table behind the sce
 </ul>
 <h3><span class="caps">CALCULATE</span> (&nbsp;)</h3>
 <p><code>CALCULATE</code> is the main function for <span class="caps">DAX</span> expressions, as it is used in many different scenarios to add, change or remove filters. Its syntax is as&nbsp;follows:</p>
-<div class="highlight"><pre><span></span><span class="err">CALCULATE (</span>
-<span class="err">    Expression;</span>
-<span class="err">    Filter1;</span>
-<span class="err">    ...;</span>
-<span class="err">    FilterN </span>
-<span class="err">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>CALCULATE (
+    Expression;
+    Filter1;
+    ...;
+    FilterN 
+)
+</code></pre></div>
 
 <p><code>CALCULATE</code> calls with multiple filters can have very different&nbsp;behaviors:</p>
-<div class="highlight"><pre><span></span><span class="no">CALCULATE</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="no">CALCULATE</span> <span class="p">(</span>
     <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">ItemId</span><span class="o">]</span> <span class="p">);</span>
     <span class="no">Company</span><span class="o">[</span><span class="no">Name</span><span class="o">]</span> <span class="no">IN</span> <span class="p">{</span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">};</span>
     <span class="no">Date</span><span class="o">[</span><span class="no">Year</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2019</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This will result in the amount of booking items for the filtered companies, in 2019.
 However, the following expression has a very different&nbsp;result:</p>
-<div class="highlight"><pre><span></span><span class="no">CALCULATE</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="no">CALCULATE</span> <span class="p">(</span>
     <span class="no">CALCULATE</span> <span class="p">(</span>
         <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">ItemId</span><span class="o">]</span> <span class="p">);</span>
         <span class="no">Company</span><span class="o">[</span><span class="no">Code</span><span class="o">]</span> <span class="no">IN</span> <span class="p">{</span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">};</span>
     <span class="p">);</span>
     <span class="no">Company</span><span class="o">[</span><span class="no">Code</span><span class="o">]</span> <span class="no">IN</span> <span class="p">{</span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Dell&quot;</span><span class="p">}</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>In this case, the use of nested <code>CALCULATE</code> statements does not intersect the filter. The result of the expression is <strong>the amount of items only for Microsoft</strong>, since the inner filter overwrites the&nbsp;outer.</p>
 <p>You can override this behavior to intersect filter by using the <code>KEEPFILTERS</code> function:</p>
-<div class="highlight"><pre><span></span><span class="no">CALCULATE</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="no">CALCULATE</span> <span class="p">(</span>
     <span class="no">CALCULATE</span> <span class="p">(</span>
         <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">ItemId</span><span class="o">]</span> <span class="p">);</span>
         <span class="no">KEEPFILTERS</span> <span class="p">(</span> <span class="no">Company</span><span class="o">[</span><span class="no">Code</span><span class="o">]</span> <span class="no">IN</span> <span class="p">{</span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">}</span> <span class="p">);</span>
     <span class="p">);</span>
     <span class="no">Company</span><span class="o">[</span><span class="no">Code</span><span class="o">]</span> <span class="no">IN</span> <span class="p">{</span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Dell&quot;</span><span class="p">}</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>In this context, only Microsoft remains visible at the end of the&nbsp;evaluation.</p>
 <h3>Variables</h3>
 <p>Newer feature in <span class="caps">DAX</span>. Allows for reduced repetition of expressions and other nifty tricks, such as accessing outer row context.
 You can store strings, numbers, and even tables in a&nbsp;variable.</p>
 <p>Variables can be used to store the previous row context for later&nbsp;access:</p>
-<div class="highlight"><pre><span></span><span class="no">Product</span><span class="o">[</span><span class="no">Rank</span><span class="o">]</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="no">Product</span><span class="o">[</span><span class="no">Rank</span><span class="o">]</span> <span class="o">=</span>
 
 <span class="no">VAR</span> <span class="n">_CurrentPrice</span> <span class="o">=</span> <span class="no">Product</span><span class="o">[</span><span class="no">Price</span><span class="o">]</span>
 
@@ -256,8 +220,7 @@ You can store strings, numbers, and even tables in a&nbsp;variable.</p>
         <span class="no">Product</span><span class="o">[</span><span class="no">Price</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">_CurrentPrice</span>
     <span class="p">)</span>
 <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>In this case, you save the value of the previous price during the outer context evaluation, and use it to check whether the price in the inner context is&nbsp;greater.</p>
 <h2>Evaluation&nbsp;contexts</h2>
@@ -274,19 +237,18 @@ You can store strings, numbers, and even tables in a&nbsp;variable.</p>
 <h5>Quick&nbsp;tip!</h5>
 <p>Starting from a row context, you can use related to access columns in other&nbsp;tables:</p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="no">SalePrice</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="no">SalePrice</span> <span class="o">=</span>
 
 <span class="no">SUMX</span> <span class="p">(</span>
     <span class="no">Orders</span><span class="p">;</span>
     <span class="no">Orders</span><span class="o">[</span><span class="no">Cost</span><span class="o">]</span> <span class="o">*</span> <span class="no">RELATED</span> <span class="p">(</span> <span class="no">Product</span><span class="o">[</span><span class="no">Markup</span><span class="o">]</span> <span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <blockquote>
 <p>You need <span class="caps">RELATED</span> because the row context is iterating the sales table. The Markup columns is in another table, but the row context allows for the relationship to be&nbsp;propagated. </p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="no">AverageDiscountedIncomeByProduct</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="no">AverageDiscountedIncomeByProduct</span> <span class="o">=</span>
 
 <span class="no">AVERAGEX</span> <span class="p">(</span>
     <span class="no">Products</span><span class="p">;</span>
@@ -295,8 +257,7 @@ You can store strings, numbers, and even tables in a&nbsp;variable.</p>
         <span class="no">Orders</span><span class="o">[</span><span class="no">SalePrice</span><span class="o">]</span> <span class="o">*</span> <span class="no">Products</span><span class="o">[</span><span class="no">Discount</span><span class="o">]</span>
     <span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The inner expression can safely reference two columns coming from different tables because there are <strong>two row contexts</strong>: the first one introduced by <code>AVERAGEX</code> and the second one by <code>SUMX</code>. Also note that <code>RELATEDTABLE</code> uses the row context to determine the set of rows to return, that is, the Orders of the current product which is the one being currently iterated by <code>AVERAGEX</code>.</p>
 <h3>Context&nbsp;transition</h3>
@@ -304,10 +265,9 @@ You can store strings, numbers, and even tables in a&nbsp;variable.</p>
 When <code>CALCULATE</code> is executed within a row context, it transforms the context into the equivalent filter context and applies it to the data model before computing its expression.
 This is an expensive operation, so it&#8217;s better to avoid it when iterating large&nbsp;tables.</p>
 <p>This concept is easier to understand through&nbsp;examples:</p>
-<div class="highlight"><pre><span></span><span class="no">Product</span><span class="o">[</span><span class="no">SumOfUnitsSold</span><span class="o">]</span> <span class="o">=</span> <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">UnitsSold</span><span class="o">]</span> <span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="no">Product</span><span class="o">[</span><span class="no">SumOfUnitsSold</span><span class="o">]</span> <span class="o">=</span> <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">UnitsSold</span><span class="o">]</span> <span class="p">)</span>
 <span class="no">Product</span><span class="o">[</span><span class="no">SumOfUnitsSoldCalculate</span><span class="o">]</span> <span class="o">=</span> <span class="no">CALCULATE</span> <span class="p">(</span> <span class="no">SUM</span> <span class="p">(</span> <span class="no">Orders</span><span class="o">[</span><span class="no">UnitsSold</span><span class="o">]</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The first calculated column returns the grand total of <code>Orders[UnitsSold]</code>, because no filter context is active, whereas the one with <code>CALCULATE</code> returns the sum of <code>Orders[UnitsSold]</code> for the current product only, because the filter context containing the current product is automatically propagated to sales due to the relationship between the two&nbsp;tables.</p>
 <p>It is important to note that context transition happens before further filters in <code>CALCULATE</code>. Thus, filters in <code>CALCULATE</code> might override filters produced by context transition as seen on previous&nbsp;sections.</p>
@@ -326,73 +286,20 @@ This is an expensive operation, so it&#8217;s better to avoid it when iterating 
 <p>This is but a small subset of all the capabilities of <span class="caps">DAX</span> and merely scratches the surface of the language. Some resources like <a href="sqlbi.com">sqlbi.com</a> or <a href="dax.guide">dax.guide</a> are great steps to take&nbsp;next.</p>
 <p>If you are stuck with a certain problem, try looking or posting a question on the <span class="caps">DAX</span> tag in the <a href="https://community.powerbi.com/">Power <span class="caps">BI</span> community forums</a>. They are a friendly and knowledgeable bunch that will most certainly help you as long as you follow the site&#8217;s rules and&nbsp;etiquette.</p>
 <p>Hopefully the techniques and tools mentioned in this post as well as the simplicity of the language and it&#8217;s Excel-like functionality encourage you to try the language or dive deeper into its guts. In any case, I&#8217;m more than happy to answer any questions you might&nbsp;have.</p>
-    </article>
+  </div>
+  <div class="article_meta">
+    <p>Category: <a href="../category/data-modeling-dax.html">data modeling, dax</a>
+ &ndash; Tags:
+      <a href="../tag/data.html">data</a>,      <a href="../tag/feature-engineering.html">feature engineering</a>    </p>
+  </div>
 
-    <hr>
 
-            </div>
-        </div>
+</article>
+
+
+    <div id="ending_message">
+      <p>&copy; Alex Gonzalez. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme adapted from <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">svbhack</a>. </p>
     </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="https://www.linkedin.com/in/alejandro-gonzalez-a05636127/">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:alejandrogcaules@gmail.com">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://github.com/gonz4lex">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Blog powered by <a href="http://getpelican.com">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="../theme/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../theme/js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../theme/js/clean-blog.min.js"></script>
-
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-155317378-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+  </main>
 </body>
-
 </html>
