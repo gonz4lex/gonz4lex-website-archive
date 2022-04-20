@@ -7,7 +7,7 @@ I am always looking for opportunities to grow and I am available for contract wo
 
 ## Profile 👨‍💻
 
-I'm a proactive and innovative self-taught developer from Spain. I specialise in data science and machine learning, as well as data engineering, analytics and visualization. I am always happy to explore new tech stacks or industries. In my spare time, I enjoy gaming, reading and writing (code or otherwise).
+I'm an innovative self-taught developer from Spain. I specialise in data science and machine learning, as well as data engineering, analytics and visualization. I am always happy to explore new tech stacks or industries. In my spare time, I enjoy gaming, reading and writing (code or otherwise).
 
 You can find more about me in my [website](https://alexgonzalezc.dev) or my [LinkedIn](https://www.linkedin.com/in/alejandro-gonzalez-a05636127/) profile.
 
@@ -16,12 +16,12 @@ You can find more about me in my [website](https://alexgonzalezc.dev) or my [Lin
 ### Machine Learning and AI Developer ([Bravent](bravent.net))
 `Jan 2022 - present`
 
-Engineering and development of AI & ML tools covering a breadth of domains.
+Engineering and development of AI & ML tools and solutions covering a wide range of domains.
 
 ### Data Scientist ([Tinamica](tinamica.com))
 `Feb 2020 - Jan 2022`
 
-Data science consultancy for end client Melia Hotels International involving full workflow stack: analysis, engineering, development and orchestration.
+Data science consultancy for international hotel chain end client, involving full stack and __end-to-end workflow__: analysis, engineering, development and orchestration using cloud and open source technology.
 
 
 ### Business Intelligence Developer ([MTS Globe](mtsglobe.com))
@@ -50,11 +50,11 @@ Promoted from junior analyst in under 6 months. Developed Excel reports using  _
 
 `Sep 2012 – Jun 2017`
 
-## Skills 
+## Skills ⚡️ 
 
 I have a broad knowledge of statistics, distributions and probability, as well as machine learning algorithms, artificial intelligence and data modeling. I can do frontend engineering, as well as backend. 
 
-### Programming languages ⚡️  
+### Programming languages   
 
 ⭐️⭐️⭐️ Python, R, SQL, DAX, M, MDX
 
@@ -63,7 +63,7 @@ I have a broad knowledge of statistics, distributions and probability, as well a
 ⭐️ Julia, GDScript, Ruby, Go, Powershell, Lua
 
 
-### Platforms and frameworks 🚀️  
+### Platforms and frameworks   
 
 ⭐️⭐️⭐️ Power BI, Excel, SQL Server
 
@@ -72,7 +72,7 @@ I have a broad knowledge of statistics, distributions and probability, as well a
 ⭐️ Team Foundation Server, PostgreSQL
 
 
-### Languages 💬️  
+### Languages   
 
 I speak native Spanish and Catalan, and I have achieved English level C2 in the Common European Framework of Reference for Languages. 
 
