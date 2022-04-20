@@ -81,3 +81,5 @@ MARKDOWN = {
     },
     'output_format': 'html5',
 }
+
+GISCUS_ENABLED = True
