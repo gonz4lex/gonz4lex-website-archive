@@ -9,7 +9,7 @@ import os
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
 TAGLINE = "Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics."
-SITEURL = 'http://127.0.0.1:8000'
+SITEURL = 'https://alexgonzalezc.dev'
 
 PATH = 'content'
 THEME = './themes/svbhack'
