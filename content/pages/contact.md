@@ -2,6 +2,7 @@ title: Contact
 slug: contact
 author: Alex Gonzalez
 status: published
+date: 2022-01-27
 
 # Say hi! 👋
 

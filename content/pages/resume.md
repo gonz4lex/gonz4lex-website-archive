@@ -2,6 +2,7 @@ title: Resume
 slug: resume
 author: Alex Gonzalez
 status: published
+locale_date: 2022-04-20
 summary: I am always looking for opportunities to grow and I am available for contract work or freelancing.
 I am always looking for opportunities to grow and I am available for contract work or freelancing.
 
