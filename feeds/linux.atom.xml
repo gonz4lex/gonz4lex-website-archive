@@ -13,10 +13,11 @@
 &lt;h1&gt;Linux&lt;/h1&gt;
 &lt;p&gt;I searched for a bit trying to decide which Linux flavor I would use. I tried Elementary &lt;span class="caps"&gt;OS&lt;/span&gt; and Ubuntu Budgie, but finally decided myself for the true and tested Ubuntu 18.04 &lt;span class="caps"&gt;LTS&lt;/span&gt;, which grants support and maintenance for up to 5 years. After all, I just want to learn and have fun with this&amp;nbsp;laptop.&lt;/p&gt;
 &lt;p&gt;At first, I experienced some issues with the system. For example, the Wi-Fi adapter wasn&amp;#8217;t recognised by the &lt;span class="caps"&gt;OS&lt;/span&gt;, so I had no internet connection. The Stream 14 doesn&amp;#8217;t have an Ethernet port, so that wasn&amp;#8217;t an option either. Finally I had to use my phone&amp;#8217;s connection through &lt;span class="caps"&gt;USB&lt;/span&gt; thethering so I could run the following&amp;nbsp;commands:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get upgrade
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get upgrade
 sudo apt-get update
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;This fixes any broken packages. After that, I was able to install Git and clone a repo with the drivers for my adapters. This got my connection ready to start the real setup. The details are probably specific to the factory settings on my laptop so I won&amp;#8217;t really go over them, but &lt;a href="https://alexgonzalezc.dev/pages/contact.html"&gt;let me know&lt;/a&gt; if you&amp;#8217;re stuck with a similar issue and I&amp;#8217;ll try to help&amp;nbsp;out.&lt;/p&gt;
 &lt;h2&gt;Coding&amp;nbsp;tools&lt;/h2&gt;
 &lt;p&gt;That&amp;#8217;s my default editor and developer tool. I love the extensible and customizable design, and the many &lt;a href="https://alexgonzalezc.dev/posts/vs-code-ninja.html"&gt;productivity hacks&lt;/a&gt; you can take advantage&amp;nbsp;of.&lt;/p&gt;

@@ -40,7 +40,7 @@
   <aside>
     <div id="user_meta">
       <a href="..">
-        <img src="https://alexgonzalezc.dev/images/logo.png" alt="logo">
+        <img src="http://127.0.0.1:8000/images/avatar.png" alt="logo">
       </a>
       <h2><a href="..">Alex Gonzalez</a></h2>
       <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
@@ -56,6 +56,7 @@
         <li><a href="../category/web-dev-api.html">web dev, api</a></li>
  -->
         <li><a href="http://github.com/gonz4lex" target="_blank">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/alejandro-gonzalez-a05636127/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </aside>
@@ -86,15 +87,17 @@ Aseprite is a paid software and you should buy it to support its developers. It&
 <h2>Get&nbsp;started</h2>
 <p>Before beginning, please note that the full <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md">install instructions</a> can be found in the project&#8217;s&nbsp;repo.</p>
 <p>First, you should clone the repository in a directory of your choice, such as <code>~/</code>:</p>
-<div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/aseprite/aseprite.git
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/aseprite/aseprite.git
 </code></pre></div>
-
+</td></tr></table>
 <p>This will create an <code>aseprite</code> directory. You can later update this clone with new releases by&nbsp;running:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> aseprite
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> aseprite
 git pull
 git submodule update --init --recursive
 </code></pre></div>
-
+</td></tr></table>
 <h2>Aseprite&nbsp;dependencies</h2>
 <p>There are three main dependencies for&nbsp;Aseprite:</p>
 <ul>
@@ -104,11 +107,19 @@ git submodule update --init --recursive
 </ul>
 <p>Note that for Windows, you need Windows 10 and <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2019</a>, as well as a [C++ <span class="caps">SDK</span>] for desktop development. The latter is an item to check in your <a href="https://imgur.com/4Pq2Cbv">Visual Studio installer</a>, so make sure you have selected&nbsp;it.</p>
 <p>Also, installing CMake on Windows was <span class="caps">HORRIBLE</span> and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&nbsp;command:</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
 </code></pre></div>
-
+</td></tr></table>
 <p>Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&nbsp;Windows:</p>
-<div class="highlight"><pre><span></span><code>mkdir <span class="nv">$HOME</span>/deps
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir <span class="nv">$HOME</span>/deps
 <span class="nb">cd</span> <span class="nv">$HOME</span>/deps
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 git clone -b aseprite-m71 https://github.com/aseprite/skia.git
@@ -118,20 +129,28 @@ python tools/git-sync-deps
 gn gen out/Release --args<span class="o">=</span><span class="s2">&quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&quot;</span>
 ninja -C out/Release skia
 </code></pre></div>
-
+</td></tr></table>
 <p>These commands can also be found in the Aseprite documentation, so head there if you get&nbsp;stuck.</p>
 <h2>Compiling the&nbsp;code</h2>
 <p>After getting all the dependecies, create a new folder <code>build</code> inside your <code>aseprite</code> directory, and <code>cd</code> into it. Afterwards, run <code>cmake</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/aseprite
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/aseprite
 mkdir build
 <span class="nb">cd</span> build
 </code></pre></div>
-
+</td></tr></table>
 <blockquote>
 <p>In this last command, <code>cmake</code> needs a different setup based on your <span class="caps">OS</span>. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling">installation guide</a>.</p>
 </blockquote>
 <p>Run this command on your Linux machine to build the&nbsp;source:</p>
-<div class="highlight"><pre><span></span><code>cmake <span class="se">\</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cmake <span class="se">\</span>
   -DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo <span class="se">\</span>
   -DLAF_OS_BACKEND<span class="o">=</span>skia <span class="se">\</span>
   -DSKIA_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia <span class="se">\</span>
@@ -139,11 +158,11 @@ mkdir build
   -G Ninja <span class="se">\</span>
   ..
 </code></pre></div>
-
+</td></tr></table>
 <p>When your terminal finishes the previous task, just run Ninja inside the <code>build</code> directory and you will have your executable in <code>aseprite/build/bin/aseprite.exe</code>:</p>
-<div class="highlight"><pre><span></span><code>ninja aseprite
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ninja aseprite
 </code></pre></div>
-
+</td></tr></table>
 <h2>Start&nbsp;pixeling!</h2>
 <p>That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
 Remember to actually purchase Aseprite if you are going to use it commercially or&nbsp;professionally.</p>
@@ -154,6 +173,18 @@ Remember to actually purchase Aseprite if you are going to use it commercially o
       <a href="../tag/aseprite.html">aseprite</a>    </p>
   </div>
 
+  <div id="article_comments">
+    <div id="comment_thread">
+      <p>
+      <h4>Any comments or reactions? Let me know!</h4></p>
+    </div>
+    <script src="https://giscus.app/client.js" data-repo="gonz4lex/gonz4lex.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=" data-category="Announcements"
+    data-category-id="DIC_kwDODXc-784COr2Q" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0"
+    data-input-position="bottom" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+      </script>
+      <p><h6>Powered by <a href="https://giscus.app/">giscus</a>.</h6></p>
+  </div>
 
 </article>
 

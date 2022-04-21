@@ -40,7 +40,7 @@
   <aside>
     <div id="user_meta">
       <a href="..">
-        <img src="https://alexgonzalezc.dev/images/logo.png" alt="logo">
+        <img src="http://127.0.0.1:8000/images/avatar.png" alt="logo">
       </a>
       <h2><a href="..">Alex Gonzalez</a></h2>
       <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
@@ -56,6 +56,7 @@
         <li><a href="../category/web-dev-api.html">web dev, api</a></li>
  -->
         <li><a href="http://github.com/gonz4lex" target="_blank">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/alejandro-gonzalez-a05636127/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </aside>
@@ -79,7 +80,18 @@
     <p>Multiple dispatch is a function of programming languages, which chooses and <em>dispatches</em> the optimal method for a given function or operator. This decision in taken based on the type of <strong>all</strong> the parameters passed to the function, whereas in object-oriented programming languages only the first parameters&nbsp;matters.</p>
 <p>This is one of the features that makes Julia inherently faster than Python and other languages, so it&#8217;s useful to know the basics and learn how to implement your own typed&nbsp;methods.</p>
 <h3>Code</h3>
-<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for String for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 
@@ -92,23 +104,28 @@
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">)</span>
 <span class="n">printf</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>You can also examine the methods of the <code>+</code> operator:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">methods</span><span class="ss">(</span><span class="o">+</span><span class="ss">)</span> # <span class="mi">166</span> <span class="nv">methods</span> <span class="k">for</span> <span class="nv">generic</span> <span class="nv">function</span> <span class="s2">&quot;</span><span class="s">+</span><span class="s2">&quot;</span>: [...]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>methods(+) # 166 methods for generic function &quot;+&quot;: [...]
 </code></pre></div>
-
+</td></tr></table>
 <p>One use of this would be to enable the <code>+</code> operator to do string concatenation, much like in&nbsp;Python.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="n">Base</span><span class="o">.+</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="n">Base</span><span class="o">.+</span>
 
 <span class="k">function</span> <span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
     <span class="n">println</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>Note how the output returns <code>+ (generic function with 167 methods)</code>, and the new method has been added to our operator. You can also check it with <code>methods(+)</code>.</p>
 <p>Now, the following code should&nbsp;work:</p>
-<div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
 </code></pre></div>
+</td></tr></table>
   </div>
   <div class="article_meta">
     <p>Category: <a href="../category/data-science.html">data science</a>
@@ -116,6 +133,18 @@
       <a href="../tag/julia.html">julia</a>    </p>
   </div>
 
+  <div id="article_comments">
+    <div id="comment_thread">
+      <p>
+      <h4>Any comments or reactions? Let me know!</h4></p>
+    </div>
+    <script src="https://giscus.app/client.js" data-repo="gonz4lex/gonz4lex.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=" data-category="Announcements"
+    data-category-id="DIC_kwDODXc-784COr2Q" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0"
+    data-input-position="bottom" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+      </script>
+      <p><h6>Powered by <a href="https://giscus.app/">giscus</a>.</h6></p>
+  </div>
 
 </article>
 
