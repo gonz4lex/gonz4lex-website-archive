@@ -1,5 +1,5 @@
 title: Data visualization principles
-date: 2020-1-23 20:05
+date: 2020-1-01 20:05
 category:
 tags:
 slug: data-visualization-principles
