@@ -8,7 +8,7 @@ summary: Conveying meaning through data visualization is not an easy task. Here 
 header_cover: images/data-visualization/data-viz.jpeg
 status: published
 
-> Originally published on 2020-1-1. Updated with figures and examples, like a good post about data visualization.
+> Updated on 2020-1-23 with figures and examples, like a good post about data visualization.
 
 When designing a visualization, there are usually four main topics that the author would want to highlight:
 
