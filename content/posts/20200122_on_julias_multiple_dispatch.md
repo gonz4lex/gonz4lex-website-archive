@@ -5,7 +5,6 @@ tags: julia
 slug: on-julias-multiple-dispatch
 author: Alex Gonzalez
 summary: Multiple dispatch is one of the key features of Julia, and makes your code blazing fast thanks to its typed functions.
-header_cover: 
 status: draft
 
 

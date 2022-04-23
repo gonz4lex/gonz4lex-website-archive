@@ -1,14 +1,11 @@
-title: A Pint of APIs
+title: A Pint of API
 date: 2020-1-18 23:50
 category: web dev, api
 tags: python
 slug: a-pint-of-api
 author: Alex Gonzalez
 summary: Understand the fundamentals of APIs with this adaptation of a talk I gave fully in-editor with Visual Studio Code.
-header_cover: images/pint-of-api.jpg
 status: published
-
-# A Pint of API
 
 ## Definition
 

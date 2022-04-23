@@ -5,7 +5,6 @@ tags: data, feature engineering
 slug: learning-dax
 author: Alex Gonzalez
 summary: The first part of an overview of the DAX language for data analysis.
-header_cover: images/dax-code.png
 status: published
 
 

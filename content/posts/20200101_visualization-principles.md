@@ -5,7 +5,6 @@ tags:
 slug: data-visualization-principles
 author: Alex Gonzalez
 summary: Conveying meaning through data visualization is not an easy task. Here is how you might get started.
-header_cover: images/data-visualization/data-viz.jpeg
 status: published
 
 > Updated on 2020-1-23 with figures and examples, like a good post about data visualization.

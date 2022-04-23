@@ -5,7 +5,6 @@ tags: aseprite
 slug: how-to-build-aseprite-from-source
 author: Alex Gonzalez
 summary: Aseprite is an amazing pixel art software and its source code is open. This is how you can build and test it, or help with its development.
-header_cover: images/aseprite.png
 status: published
 
 > __Disclaimer:__
