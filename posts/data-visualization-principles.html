@@ -53,6 +53,7 @@
         <li><a href="../category/posts.html">posts</a></li>
         <li><a href="../category/power-bi-data-viz.html">power bi, data viz</a></li>
         <li><a href="../category/vscode.html">vscode</a></li>
+        <li><a href="../category/web-dev.html">web dev</a></li>
         <li><a href="../category/web-dev-api.html">web dev, api</a></li>
  -->
         <li><a href="http://github.com/gonz4lex" target="_blank">Github</a></li>
@@ -86,34 +87,34 @@
 <p>If you want to compare values over time, line or bar charts are often the best option and their choice depends on the number of periods you would like to analyze.
 However, for comparisons among items, bar or column charts are preferred. Line charts provide a sense of continuity that might not be meaningful for&nbsp;categories.</p>
 <p>Faceted charts are also a good option when dealing with many categories or dimensions. R&#8217;s <code>ggplot2</code> package is specially useful for&nbsp;this.</p>
-<p><img alt="Example of a faceted plot" src="../images/data-visualization/facet-plot.png"></p>
+<p><img alt="Example of a faceted plot" src="../images/data-visualization/facet-plot.png" /></p>
 <p>For example, the above plot shows the density of each numerical variable in a dataset, using subplots or <em>facets</em> to create a new dimension of&nbsp;visualization.</p>
 <p>You can use pie charts for comparison as well, although the length of a column or bar is usually better at displaying differences in your data than the angle of a pie&nbsp;chart.</p>
 <p>For example, examine the following&nbsp;figures:</p>
-<p><img alt="Pie chart against bar chart" src="../images/data-visualization/pie-bar-chart.png"></p>
+<p><img alt="Pie chart against bar chart" src="../images/data-visualization/pie-bar-chart.png" /></p>
 <p>For values differing very little, such as 10% to 11%, the difference is more noticeable when plotted in a bar chart with proper scaling. Labels normally alleviate this problem, but they also tend to increase clutter in the&nbsp;chart.</p>
 <p>However, <em>I am not completely against pie charts</em>, as I think they can quick convey meaning when plotting attributes of low cardinality or dichotomic relations. Personally, I think 2 (or at most 3) different values should be shown on a pie chart so that it does not become&nbsp;confusing.  </p>
 <h4>Composition</h4>
 <p>Composition charts are used to see how a part of your data compares to the whole, and can show relative and absolute values. They can be used to accurately represent both static and time-series&nbsp;data.</p>
 <p>For static data, a pie chart can do the job. However, there also other options that can tell the same story, such as a stacked bar chart, a waterfall chart or a tree map.
 For time-based data, the number of periods is again a decisive factor when choosing your chart. You can visualize composition over many periods with area charts, which are very similar to line charts, and stacked bar or column charts when you have a reduced amount of&nbsp;periods.</p>
-<p><img alt="Example of composition chart" src="../images/data-visualization/stacked-bar.png">  </p>
+<p><img alt="Example of composition chart" src="../images/data-visualization/stacked-bar.png" />  </p>
 <p>It is important to consider that time-based visualization should be ordered chronologically as a general rule, and not by highest value, for example. Otherwise, those consuming the visualization might get the wrong conclusion when charts are not ordered according to expectations or&nbsp;convention.</p>
 <h4>Distribution</h4>
 <p>When studying how quantitative values are located along an axis, distribution charts are the way to go. By looking at the shape of the data, the user can identify features such as value range, central tendency and&nbsp;outliers.</p>
 <p>One of the previous figures is actually an example of a distribution plot. Here&#8217;s another&nbsp;one:</p>
-<p><img alt="Density plot to show value distribution" src="../images/data-visualization/density.png"></p>
+<p><img alt="Density plot to show value distribution" src="../images/data-visualization/density.png" /></p>
 <p>See how the relative values of the population are <em>distributed</em> along the different age categories. Being a continuous range of integers, we use lines to represent the distribution. If instead, it were categories (i.e. age 18 - 35) we would use&nbsp;columns.</p>
 <p>With this charts, the interest is in the full picture of the data and this can lead to having many data points (note: not categories!). In these cases, it&#8217;s often better to use a line histogram, while column histograms are great for few data points.
 In any case, when analyzing distribution for two variables at once, a scatter plot allows to compare between the full picture of two&nbsp;dimensions.</p>
 <h4>Relationship</h4>
 <p>Relationship charts have a constrained set of options as normally scatter plots are the only adequate way of presenting the data. They are used to find correlations, outliers, and clusters in your&nbsp;data.</p>
 <p>While the human eye can only appreciate three dimensions together, you can visualize additional variables by mapping them to the size, color or shape of your data&nbsp;points.</p>
-<p><img alt="Example of a scatter plot" src="../images/data-visualization/scatter-plot.png"></p>
+<p><img alt="Example of a scatter plot" src="../images/data-visualization/scatter-plot.png" /></p>
 <p>In this example, the chart can be used to study 3 variables at the same time: number of marketing calls, their duration, and whether their outcome is a sale or not. To aid the human eye, the third dimension is mapped to a color based on the value of their factors.
 Thanks to this, we can see that calls that do not result in a sale are concentrated along the lower bounds of the Y axis, meaning more calls increases the likelihood of&nbsp;conversion.</p>
 <p>See the image below for&nbsp;reference:</p>
-<p><img alt="Visualization Best Principles" src="../images/data-visualization/chart-viz.jpg"></p>
+<p><img alt="Visualization Best Principles" src="../images/data-visualization/chart-viz.jpg" /></p>
 <blockquote>
 <p>As a bonus tool, if you run into issues trying to find the best set of colors for your report or chart, make sure to check out <a href="https://coolors.co/">Coolors</a>. This is a web app that provides color scales, palettes and blends based on the color of your&nbsp;choice.</p>
 </blockquote>
@@ -126,14 +127,17 @@ Thanks to this, we can see that calls that do not result in a sale are concentra
   <div id="article_comments">
     <div id="comment_thread">
       <p>
-      <h4>Any comments or reactions? Let me know!</h4></p>
+      <h4>Any comments or reactions? Let me know!</h4>
+      </p>
     </div>
     <script src="https://giscus.app/client.js" data-repo="gonz4lex/gonz4lex.github.io"
-    data-repo-id="MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=" data-category="Announcements"
-    data-category-id="DIC_kwDODXc-784COr2Q" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0"
-    data-input-position="bottom" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+      data-repo-id="MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=" data-category="Announcements"
+      data-category-id="DIC_kwDODXc-784COr2Q" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0"
+      data-input-position="bottom" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
       </script>
-      <p><h6>Powered by <a href="https://giscus.app/">giscus</a>.</h6></p>
+    <p>
+    <h6>Powered by <a href="https://giscus.app/">giscus</a>.</h6>
+    </p>
   </div>
 
 </article>

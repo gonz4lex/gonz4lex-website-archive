@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez - web dev</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/web-dev.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2022-04-23T13:31:00+02:00</updated><entry><title>A comment system for static websites using Github Discussions</title><link href="https://alexgonzalezc.dev/posts/github-comment-system.html" rel="alternate"></link><published>2022-04-23T13:31:00+02:00</published><updated>2022-04-23T13:31:00+02:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2022-04-23:/posts/github-comment-system.html</id><summary type="html">&lt;p&gt;Easily add comments to your static website with giscus and GitHub&amp;nbsp;Discussions!&lt;/p&gt;</summary><content type="html">&lt;p&gt;I&amp;#8217;ve been searching for an easy alternative to a comment system for this &lt;a href="https://www.alexgonzalezc.dev"&gt;blog&lt;/a&gt;, which is built with &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; and served through Github Pages. Being a static website, traditional server-based solutions are not a good fit or they require too much setup work that I really didn&amp;#8217;t want to do. 
+So after many months procrastinating on this, I finally sat down and got it work in less than an hour.&amp;nbsp;Easy!&lt;/p&gt;
+&lt;h2&gt;Setting&amp;nbsp;up&lt;/h2&gt;
+&lt;p&gt;I looked mainly at two solutions, &lt;a href="https://utteranc.es"&gt;utterances&lt;/a&gt; (based on Github issues) and &lt;a href="https://giscus.app"&gt;giscus&lt;/a&gt; which is still under active development since it&amp;#8217;s based on a newer feature, Github Discussions. So naturally, I chose the more unstable and experimental&amp;nbsp;solution.&lt;/p&gt;
+&lt;p&gt;The setup is extremely straight-forward and can be found either on the app website or the &lt;a href="https://github.com/giscus/giscus"&gt;repo&lt;/a&gt;, so make sure to check those sources as&amp;nbsp;well.&lt;/p&gt;
+&lt;p&gt;Start by heading to https://giscus.app to begin the&amp;nbsp;process.&lt;/p&gt;
+&lt;h2&gt;Make your website &lt;em&gt;giscus-ready&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Your website&amp;#8217;s repo needs to be on Github, for obvious reasons, and&amp;nbsp;needs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;public&lt;/strong&gt; access, so discussions can be&amp;nbsp;viewed&lt;/li&gt;
+&lt;li&gt;the &lt;a href="https://github.com/apps/giscus"&gt;giscus app&lt;/a&gt; &lt;strong&gt;installed&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;Discussions&lt;/strong&gt; feature &lt;a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository"&gt;turned&amp;nbsp;on&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can simply follow the guidelines in the website to generate you definitive &lt;code&gt;script&lt;/code&gt; tag which just needs to be plugged into your &lt;span class="caps"&gt;HTML&lt;/span&gt; template, and it looks like&amp;nbsp;this:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;span class="normal"&gt; 2&lt;/span&gt;
+&lt;span class="normal"&gt; 3&lt;/span&gt;
+&lt;span class="normal"&gt; 4&lt;/span&gt;
+&lt;span class="normal"&gt; 5&lt;/span&gt;
+&lt;span class="normal"&gt; 6&lt;/span&gt;
+&lt;span class="normal"&gt; 7&lt;/span&gt;
+&lt;span class="normal"&gt; 8&lt;/span&gt;
+&lt;span class="normal"&gt; 9&lt;/span&gt;
+&lt;span class="normal"&gt;10&lt;/span&gt;
+&lt;span class="normal"&gt;11&lt;/span&gt;
+&lt;span class="normal"&gt;12&lt;/span&gt;
+&lt;span class="normal"&gt;13&lt;/span&gt;
+&lt;span class="normal"&gt;14&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://giscus.app/client.js&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER REPO HERE]&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-repo-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER REPO ID HERE]&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER CATEGORY NAME HERE]&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-category-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER CATEGORY ID HERE]&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-mapping&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pathname&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-reactions-enabled&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-emit-metadata&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-input-position&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bottom&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-theme&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;light&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;data-lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;en&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;crossorigin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;anonymous&amp;quot;&lt;/span&gt;
+        &lt;span class="na"&gt;async&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h2&gt;Plug-and-play&lt;/h2&gt;
+&lt;p&gt;The only necessary step left is to go into your desired template (&lt;code&gt;article.html&lt;/code&gt; in my case) and just paste that snippet of code wherever I want my comments to show&amp;nbsp;up:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;span class="normal"&gt; 2&lt;/span&gt;
+&lt;span class="normal"&gt; 3&lt;/span&gt;
+&lt;span class="normal"&gt; 4&lt;/span&gt;
+&lt;span class="normal"&gt; 5&lt;/span&gt;
+&lt;span class="normal"&gt; 6&lt;/span&gt;
+&lt;span class="normal"&gt; 7&lt;/span&gt;
+&lt;span class="normal"&gt; 8&lt;/span&gt;
+&lt;span class="normal"&gt; 9&lt;/span&gt;
+&lt;span class="normal"&gt;10&lt;/span&gt;
+&lt;span class="normal"&gt;11&lt;/span&gt;
+&lt;span class="normal"&gt;12&lt;/span&gt;
+&lt;span class="normal"&gt;13&lt;/span&gt;
+&lt;span class="normal"&gt;14&lt;/span&gt;
+&lt;span class="normal"&gt;15&lt;/span&gt;
+&lt;span class="normal"&gt;16&lt;/span&gt;
+&lt;span class="normal"&gt;17&lt;/span&gt;
+&lt;span class="normal"&gt;18&lt;/span&gt;
+&lt;span class="normal"&gt;19&lt;/span&gt;
+&lt;span class="normal"&gt;20&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;&amp;lt;!-- article.html --&amp;gt;&lt;/span&gt;
+  ...
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;article_text&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {{ article.content }}
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;article_meta&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      ...
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+
+  {% if GISCUS_ENABLED %}
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;article_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;comment_thread&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://giscus.app/client.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;gonz4lex/gonz4lex.github.io&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;data-repo-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Announcements&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;data-category-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;DIC_kwDODXc-784COr2Q&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-mapping&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pathname&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-reactions-enabled&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-emit-metadata&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;data-input-position&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bottom&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-theme&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;light&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;en&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-loading&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lazy&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;crossorigin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;anonymous&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;async&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  {% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;I added an option &lt;code&gt;GISCUS_ENABLED&lt;/code&gt; flag on my settings file, but that&amp;#8217;s entirely&amp;nbsp;optional.&lt;/p&gt;
+&lt;p&gt;After that, just reload and regenerate your site, and comments should show up on your&amp;nbsp;posts!&lt;/p&gt;
+&lt;h2&gt;Some closing&amp;nbsp;thoughts&lt;/h2&gt;
+&lt;p&gt;Even if this isn&amp;#8217;t a big change or project, it&amp;#8217;s another reminder of why it&amp;#8217;s almost always better to dive right away into demos or proofs of concepts rather than getting stuck on an endless loop of &lt;em&gt;analysis paralysis&lt;/em&gt;. If I hadn&amp;#8217;t waited so long because I wasn&amp;#8217;t sure how to &lt;em&gt;best&lt;/em&gt; tackle this feature, I would had probably finished months&amp;nbsp;ago.&lt;/p&gt;
+&lt;p&gt;However, before implementing this feature yourself, make sure it works by trying out the comment section&amp;nbsp;below!&lt;/p&gt;</content><category term="web dev"></category><category term="python"></category></entry></feed>

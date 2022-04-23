@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez - web dev, api</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/web-dev-api.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2020-01-18T23:50:00+01:00</updated><entry><title>A Pint of APIs</title><link href="https://alexgonzalezc.dev/posts/a-pint-of-api.html" rel="alternate"></link><published>2020-01-18T23:50:00+01:00</published><updated>2020-01-18T23:50:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-18:/posts/a-pint-of-api.html</id><summary type="html">&lt;p&gt;Understand the fundamentals of APIs with this adaptation of a talk I gave fully in-editor with Visual Studio&amp;nbsp;Code.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;A Pint of &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/h1&gt;
-&lt;h2&gt;Definition&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alex Gonzalez - web dev, api</title><link href="https://alexgonzalezc.dev/" rel="alternate"></link><link href="https://alexgonzalezc.dev/feeds/web-dev-api.atom.xml" rel="self"></link><id>https://alexgonzalezc.dev/</id><updated>2020-01-18T23:50:00+01:00</updated><entry><title>A Pint of API</title><link href="https://alexgonzalezc.dev/posts/a-pint-of-api.html" rel="alternate"></link><published>2020-01-18T23:50:00+01:00</published><updated>2020-01-18T23:50:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-18:/posts/a-pint-of-api.html</id><summary type="html">&lt;p&gt;Understand the fundamentals of APIs with this adaptation of a talk I gave fully in-editor with Visual Studio&amp;nbsp;Code.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Definition&lt;/h2&gt;
 &lt;p&gt;&lt;span class="caps"&gt;API&lt;/span&gt; stands for Application Programming Interface. In other words, it&amp;#8217;s an &lt;em&gt;interface&lt;/em&gt; that makes it easier for developers to &lt;em&gt;program&lt;/em&gt; different &lt;em&gt;applications&lt;/em&gt;.&lt;/p&gt;
 &lt;h2&gt;Some&amp;nbsp;examples&lt;/h2&gt;
 &lt;ul&gt;
@@ -22,7 +21,7 @@
 &lt;li&gt;a path to a resource, also called an &lt;em&gt;endpoint&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;an optional message body with a data&amp;nbsp;payload&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="A Pint of API" src="../images/pint-of-api.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Pint of API" src="../images/pint-of-api.jpg" /&gt;&lt;/p&gt;
 &lt;h4&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;verbs&lt;/h4&gt;
 &lt;p&gt;The basic verbs to interact with resources over &lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;are:&lt;/p&gt;
 &lt;ul&gt;
