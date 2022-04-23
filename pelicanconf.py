@@ -75,11 +75,11 @@ import logging
 LOG_FILTER = [(logging.WARN, 'Cannot get modification stamp')]
 
 MARKDOWN = {
-    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.admonition'],
+    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.admonition',],
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight','guess_lang': 'False', 'linenums': 'True'},
+        'markdown.extensions.codehilite': {'css_class': 'highlight','guess_lang': 'True', 'linenums': 'True'},
     },
-    'output_format': 'html5',
+    # 'output_format': 'html5',
 }
 
 GISCUS_ENABLED = True
