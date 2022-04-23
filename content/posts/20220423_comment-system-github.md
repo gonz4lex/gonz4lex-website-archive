@@ -1,11 +1,11 @@
-title: 
+title: A comment system for static websites using Github Discussions
 date: 2022-4-23 13:31
 category: web dev
 tags: python
 slug: github-comment-system
 author: Alex Gonzalez
 summary: Easily add comments to your static website with giscus and GitHub Discussions! 
-status: draft
+status: published
 
 
 I've been searching for an easy alternative to a comment system for this [blog](https://www.alexgonzalezc.dev), which is built with [Pelican](https://blog.getpelican.com/) and served through Github Pages. Being a static website, traditional server-based solutions are not a good fit or they require too much setup work that I really didn't want to do. 
