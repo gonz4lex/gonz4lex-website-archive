@@ -248,7 +248,7 @@ mkdir build
   ..
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;p&gt;When your terminal finishes the previous task, just run Ninja inside the &lt;code&gt;build&lt;/code&gt; directory and you will have your executable in &lt;code&gt;aseprite/build/bin/aseprite.exe&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;When your terminal finishes the previous task, just run Ninja inside the &lt;code&gt;build&lt;/code&gt; directory and you will have your executable in &lt;code&gt;aseprite/build/bin/aseprite&lt;/code&gt;:&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ninja aseprite
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
