@@ -89,7 +89,7 @@ cmake \
   ..
 ```
 
-When your terminal finishes the previous task, just run Ninja inside the `build` directory and you will have your executable in `aseprite/build/bin/aseprite.exe`:
+When your terminal finishes the previous task, just run Ninja inside the `build` directory and you will have your executable in `aseprite/build/bin/aseprite`:
 
 ```bash
 ninja aseprite
