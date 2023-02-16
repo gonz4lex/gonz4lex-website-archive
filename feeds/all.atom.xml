@@ -13,7 +13,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 &lt;li&gt;the &lt;strong&gt;Discussions&lt;/strong&gt; feature &lt;a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository"&gt;turned&amp;nbsp;on&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can simply follow the guidelines in the website to generate you definitive &lt;code&gt;script&lt;/code&gt; tag which just needs to be plugged into your &lt;span class="caps"&gt;HTML&lt;/span&gt; template, and it looks like&amp;nbsp;this:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
 &lt;span class="normal"&gt; 3&lt;/span&gt;
 &lt;span class="normal"&gt; 4&lt;/span&gt;
@@ -26,7 +26,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 &lt;span class="normal"&gt;11&lt;/span&gt;
 &lt;span class="normal"&gt;12&lt;/span&gt;
 &lt;span class="normal"&gt;13&lt;/span&gt;
-&lt;span class="normal"&gt;14&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://giscus.app/client.js&amp;quot;&lt;/span&gt;
+&lt;span class="normal"&gt;14&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://giscus.app/client.js&amp;quot;&lt;/span&gt;
         &lt;span class="na"&gt;data-repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER REPO HERE]&amp;quot;&lt;/span&gt;
         &lt;span class="na"&gt;data-repo-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER REPO ID HERE]&amp;quot;&lt;/span&gt;
         &lt;span class="na"&gt;data-category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[ENTER CATEGORY NAME HERE]&amp;quot;&lt;/span&gt;
@@ -40,11 +40,11 @@ So after many months procrastinating on this, I finally sat down and got it work
         &lt;span class="na"&gt;crossorigin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;anonymous&amp;quot;&lt;/span&gt;
         &lt;span class="na"&gt;async&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;h2&gt;Plug-and-play&lt;/h2&gt;
 &lt;p&gt;The only necessary step left is to go into your desired template (&lt;code&gt;article.html&lt;/code&gt; in my case) and just paste that snippet of code wherever I want my comments to show&amp;nbsp;up:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
 &lt;span class="normal"&gt; 3&lt;/span&gt;
 &lt;span class="normal"&gt; 4&lt;/span&gt;
@@ -63,7 +63,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 &lt;span class="normal"&gt;17&lt;/span&gt;
 &lt;span class="normal"&gt;18&lt;/span&gt;
 &lt;span class="normal"&gt;19&lt;/span&gt;
-&lt;span class="normal"&gt;20&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;&amp;lt;!-- article.html --&amp;gt;&lt;/span&gt;
+&lt;span class="normal"&gt;20&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;&amp;lt;!-- article.html --&amp;gt;&lt;/span&gt;
   ...
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;article_text&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     {{ article.content }}
@@ -80,11 +80,11 @@ So after many months procrastinating on this, I finally sat down and got it work
     &lt;span class="na"&gt;data-repo-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Announcements&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;data-category-id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;DIC_kwDODXc-784COr2Q&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-mapping&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pathname&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-reactions-enabled&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-emit-metadata&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;data-input-position&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bottom&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-theme&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;light&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;en&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-loading&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lazy&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;crossorigin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;anonymous&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;async&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   {% endif %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;I added an option &lt;code&gt;GISCUS_ENABLED&lt;/code&gt; flag on my settings file, but that&amp;#8217;s entirely&amp;nbsp;optional.&lt;/p&gt;
 &lt;p&gt;After that, just reload and regenerate your site, and comments should show up on your&amp;nbsp;posts!&lt;/p&gt;
 &lt;h2&gt;Some closing&amp;nbsp;thoughts&lt;/h2&gt;
@@ -176,17 +176,17 @@ Aseprite is a paid software and you should buy it to support its developers. It&
 &lt;h2&gt;Get&amp;nbsp;started&lt;/h2&gt;
 &lt;p&gt;Before beginning, please note that the full &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md"&gt;install instructions&lt;/a&gt; can be found in the project&amp;#8217;s&amp;nbsp;repo.&lt;/p&gt;
 &lt;p&gt;First, you should clone the repository in a directory of your choice, such as &lt;code&gt;~/&lt;/code&gt;:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone --recursive https://github.com/aseprite/aseprite.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;--recursive&lt;span class="w"&gt; &lt;/span&gt;https://github.com/aseprite/aseprite.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;This will create an &lt;code&gt;aseprite&lt;/code&gt; directory. You can later update this clone with new releases by&amp;nbsp;running:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
-&lt;span class="normal"&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; aseprite
-git pull
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="normal"&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;aseprite
+git&lt;span class="w"&gt; &lt;/span&gt;pull
+git&lt;span class="w"&gt; &lt;/span&gt;submodule&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;--init&lt;span class="w"&gt; &lt;/span&gt;--recursive
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;h2&gt;Aseprite&amp;nbsp;dependencies&lt;/h2&gt;
 &lt;p&gt;There are three main dependencies for&amp;nbsp;Aseprite:&lt;/p&gt;
 &lt;ul&gt;
@@ -196,11 +196,11 @@ git submodule update --init --recursive
 &lt;/ul&gt;
 &lt;p&gt;Note that for Windows, you need Windows 10 and &lt;a href="https://visualstudio.microsoft.com/downloads/"&gt;Visual Studio 2019&lt;/a&gt;, as well as a [C++ &lt;span class="caps"&gt;SDK&lt;/span&gt;] for desktop development. The latter is an item to check in your &lt;a href="https://imgur.com/4Pq2Cbv"&gt;Visual Studio installer&lt;/a&gt;, so make sure you have selected&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;Also, installing CMake on Windows was &lt;span class="caps"&gt;HORRIBLE&lt;/span&gt; and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&amp;nbsp;command:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;g++&lt;span class="w"&gt; &lt;/span&gt;cmake&lt;span class="w"&gt; &lt;/span&gt;ninja-build&lt;span class="w"&gt; &lt;/span&gt;libx11-dev&lt;span class="w"&gt; &lt;/span&gt;libxcursor-dev&lt;span class="w"&gt; &lt;/span&gt;libgl1-mesa-dev&lt;span class="w"&gt; &lt;/span&gt;libfontconfig1-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&amp;nbsp;Windows:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
@@ -208,50 +208,50 @@ git submodule update --init --recursive
 &lt;span class="normal"&gt;6&lt;/span&gt;
 &lt;span class="normal"&gt;7&lt;/span&gt;
 &lt;span class="normal"&gt;8&lt;/span&gt;
-&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
-&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-git clone -b aseprite-m71 https://github.com/aseprite/skia.git
-&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PWD&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/depot_tools:&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; skia
-python tools/git-sync-deps
-gn gen out/Release --args&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&amp;quot;&lt;/span&gt;
-ninja -C out/Release skia
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps
+git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;aseprite-m71&lt;span class="w"&gt; &lt;/span&gt;https://github.com/aseprite/skia.git
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PWD&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/depot_tools:&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;skia
+python&lt;span class="w"&gt; &lt;/span&gt;tools/git-sync-deps
+gn&lt;span class="w"&gt; &lt;/span&gt;gen&lt;span class="w"&gt; &lt;/span&gt;out/Release&lt;span class="w"&gt; &lt;/span&gt;--args&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&amp;quot;&lt;/span&gt;
+ninja&lt;span class="w"&gt; &lt;/span&gt;-C&lt;span class="w"&gt; &lt;/span&gt;out/Release&lt;span class="w"&gt; &lt;/span&gt;skia
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;These commands can also be found in the Aseprite documentation, so head there if you get&amp;nbsp;stuck.&lt;/p&gt;
 &lt;h2&gt;Compiling the&amp;nbsp;code&lt;/h2&gt;
 &lt;p&gt;After getting all the dependecies, create a new folder &lt;code&gt;build&lt;/code&gt; inside your &lt;code&gt;aseprite&lt;/code&gt; directory, and &lt;code&gt;cd&lt;/code&gt; into it. Afterwards, run &lt;code&gt;cmake&lt;/code&gt;:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
-&lt;span class="normal"&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/aseprite
-mkdir build
-&lt;span class="nb"&gt;cd&lt;/span&gt; build
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="normal"&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/aseprite
+mkdir&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;In this last command, &lt;code&gt;cmake&lt;/code&gt; needs a different setup based on your &lt;span class="caps"&gt;OS&lt;/span&gt;. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the &lt;a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling"&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Run this command on your Linux machine to build the&amp;nbsp;source:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
-&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cmake &lt;span class="se"&gt;\&lt;/span&gt;
-  -DCMAKE_BUILD_TYPE&lt;span class="o"&gt;=&lt;/span&gt;RelWithDebInfo &lt;span class="se"&gt;\&lt;/span&gt;
-  -DLAF_OS_BACKEND&lt;span class="o"&gt;=&lt;/span&gt;skia &lt;span class="se"&gt;\&lt;/span&gt;
-  -DSKIA_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia &lt;span class="se"&gt;\&lt;/span&gt;
-  -DSKIA_OUT_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia/out/Release &lt;span class="se"&gt;\&lt;/span&gt;
-  -G Ninja &lt;span class="se"&gt;\&lt;/span&gt;
-  ..
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cmake&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-DCMAKE_BUILD_TYPE&lt;span class="o"&gt;=&lt;/span&gt;RelWithDebInfo&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-DLAF_OS_BACKEND&lt;span class="o"&gt;=&lt;/span&gt;skia&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-DSKIA_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-DSKIA_OUT_DIR&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/deps/skia/out/Release&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-G&lt;span class="w"&gt; &lt;/span&gt;Ninja&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;When your terminal finishes the previous task, just run Ninja inside the &lt;code&gt;build&lt;/code&gt; directory and you will have your executable in &lt;code&gt;aseprite/build/bin/aseprite&lt;/code&gt;:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ninja aseprite
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ninja&lt;span class="w"&gt; &lt;/span&gt;aseprite
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;h2&gt;Start&amp;nbsp;pixeling!&lt;/h2&gt;
 &lt;p&gt;That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
 Remember to actually purchase Aseprite if you are going to use it commercially or&amp;nbsp;professionally.&lt;/p&gt;</content><category term="game dev, pixel art"></category><category term="aseprite"></category></entry><entry><title>Data visualization principles</title><link href="https://alexgonzalezc.dev/posts/data-visualization-principles.html" rel="alternate"></link><published>2020-01-01T20:05:00+01:00</published><updated>2020-01-01T20:05:00+01:00</updated><author><name>Alex Gonzalez</name></author><id>tag:alexgonzalezc.dev,2020-01-01:/posts/data-visualization-principles.html</id><summary type="html">&lt;p&gt;Conveying meaning through data visualization is not an easy task. Here is how you might get&amp;nbsp;started.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
@@ -346,41 +346,41 @@ These functions always receive two inputs: the table to iterate and expression t
 &lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
 &lt;p&gt;I often use &lt;code&gt;ADDCOLUMNS&lt;/code&gt; to generate a Date table, For&amp;nbsp;example:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
 &lt;span class="normal"&gt;7&lt;/span&gt;
-&lt;span class="normal"&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
-    &lt;span class="no"&gt;MONTH&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
-    &lt;span class="no"&gt;YEAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; 
-    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="normal"&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;MONTH&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;YEAR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;This is a very flexible way of generating your own date dimension according to your specific&amp;nbsp;needs.&lt;/p&gt;
 &lt;p&gt;You can also generate a dimension table by scanning the columns of your different fact tables and appending them. For&amp;nbsp;example:
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;UNION&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;UNION&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;h3&gt;The &lt;span class="caps"&gt;IN&lt;/span&gt;&amp;nbsp;operator&lt;/h3&gt;
 &lt;p&gt;Verifies whether a value exists in a list of possible values, i.e. &lt;code&gt;Company[Code] IN {"Microsoft", "Apple", "Dell"}&lt;/code&gt;.
 Note that the curly brackets notation generates a temporary table behind the scenes to perform the&amp;nbsp;filtering.&lt;/p&gt;
@@ -394,71 +394,71 @@ Note that the curly brackets notation generates a temporary table behind the sce
 &lt;/ul&gt;
 &lt;h3&gt;&lt;span class="caps"&gt;CALCULATE&lt;/span&gt; (&amp;nbsp;)&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; is the main function for &lt;span class="caps"&gt;DAX&lt;/span&gt; expressions, as it is used in many different scenarios to add, change or remove filters. Its syntax is as&amp;nbsp;follows:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CALCULATE (
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CALCULATE (
     Expression;
     Filter1;
     ...;
     FilterN 
 )
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; calls with multiple filters can have very different&amp;nbsp;behaviors:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
-&lt;span class="normal"&gt;5&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-    &lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;span class="normal"&gt;5&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;This will result in the amount of booking items for the filtered companies, in 2019.
 However, the following expression has a very different&amp;nbsp;result:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
-&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-    &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this case, the use of nested &lt;code&gt;CALCULATE&lt;/code&gt; statements does not intersect the filter. The result of the expression is &lt;strong&gt;the amount of items only for Microsoft&lt;/strong&gt;, since the inner filter overwrites the&amp;nbsp;outer.&lt;/p&gt;
 &lt;p&gt;You can override this behavior to intersect filter by using the &lt;code&gt;KEEPFILTERS&lt;/code&gt; function:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
-&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this context, only Microsoft remains visible at the end of the&amp;nbsp;evaluation.&lt;/p&gt;
 &lt;h3&gt;Variables&lt;/h3&gt;
 &lt;p&gt;Newer feature in &lt;span class="caps"&gt;DAX&lt;/span&gt;. Allows for reduced repetition of expressions and other nifty tricks, such as accessing outer row context.
 You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt;
 &lt;p&gt;Variables can be used to store the previous row context for later&amp;nbsp;access:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
 &lt;span class="normal"&gt; 3&lt;/span&gt;
 &lt;span class="normal"&gt; 4&lt;/span&gt;
@@ -469,20 +469,20 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;span class="normal"&gt; 9&lt;/span&gt;
 &lt;span class="normal"&gt;10&lt;/span&gt;
 &lt;span class="normal"&gt;11&lt;/span&gt;
-&lt;span class="normal"&gt;12&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;12&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;VAR&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="no"&gt;VAR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 
 &lt;span class="no"&gt;RETURN&lt;/span&gt;
 
-&lt;span class="no"&gt;COUNTROWS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="no"&gt;COUNTROWS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this case, you save the value of the previous price during the outer context evaluation, and use it to check whether the price in the inner context is&amp;nbsp;greater.&lt;/p&gt;
 &lt;h2&gt;Evaluation&amp;nbsp;contexts&lt;/h2&gt;
 &lt;p&gt;The filter and row contexts are one of the most important concepts in &lt;span class="caps"&gt;DAX&lt;/span&gt;.&lt;/p&gt;
@@ -498,23 +498,23 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
 &lt;p&gt;Starting from a row context, you can use related to access columns in other&amp;nbsp;tables:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;RELATED&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;SUMX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;RELATED&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;You need &lt;span class="caps"&gt;RELATED&lt;/span&gt; because the row context is iterating the sales table. The Markup columns is in another table, but the row context allows for the relationship to be&amp;nbsp;propagated. &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
@@ -522,28 +522,28 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;span class="normal"&gt;6&lt;/span&gt;
 &lt;span class="normal"&gt;7&lt;/span&gt;
 &lt;span class="normal"&gt;8&lt;/span&gt;
-&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;AVERAGEX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;AVERAGEX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;SUMX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;The inner expression can safely reference two columns coming from different tables because there are &lt;strong&gt;two row contexts&lt;/strong&gt;: the first one introduced by &lt;code&gt;AVERAGEX&lt;/code&gt; and the second one by &lt;code&gt;SUMX&lt;/code&gt;. Also note that &lt;code&gt;RELATEDTABLE&lt;/code&gt; uses the row context to determine the set of rows to return, that is, the Orders of the current product which is the one being currently iterated by &lt;code&gt;AVERAGEX&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Context&amp;nbsp;transition&lt;/h3&gt;
 &lt;p&gt;The context transition in &lt;span class="caps"&gt;DAX&lt;/span&gt; is the transformation of row contexts into an equivalent filter context performed by &lt;code&gt;CALCULATE&lt;/code&gt; functions.
 When &lt;code&gt;CALCULATE&lt;/code&gt; is executed within a row context, it transforms the context into the equivalent filter context and applies it to the data model before computing its expression.
 This is an expensive operation, so it&amp;#8217;s better to avoid it when iterating large&amp;nbsp;tables.&lt;/p&gt;
 &lt;p&gt;This concept is easier to understand through&amp;nbsp;examples:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
-&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;The first calculated column returns the grand total of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt;, because no filter context is active, whereas the one with &lt;code&gt;CALCULATE&lt;/code&gt; returns the sum of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt; for the current product only, because the filter context containing the current product is automatically propagated to sales due to the relationship between the two&amp;nbsp;tables.&lt;/p&gt;
 &lt;p&gt;It is important to note that context transition happens before further filters in &lt;code&gt;CALCULATE&lt;/code&gt;. Thus, filters in &lt;code&gt;CALCULATE&lt;/code&gt; might override filters produced by context transition as seen on previous&amp;nbsp;sections.&lt;/p&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio&lt;/h2&gt;
@@ -574,11 +574,11 @@ This is an expensive operation, so it&amp;#8217;s better to avoid it when iterat
 &lt;h1&gt;Linux&lt;/h1&gt;
 &lt;p&gt;I searched for a bit trying to decide which Linux flavor I would use. I tried Elementary &lt;span class="caps"&gt;OS&lt;/span&gt; and Ubuntu Budgie, but finally decided myself for the true and tested Ubuntu 18.04 &lt;span class="caps"&gt;LTS&lt;/span&gt;, which grants support and maintenance for up to 5 years. After all, I just want to learn and have fun with this&amp;nbsp;laptop.&lt;/p&gt;
 &lt;p&gt;At first, I experienced some issues with the system. For example, the Wi-Fi adapter wasn&amp;#8217;t recognised by the &lt;span class="caps"&gt;OS&lt;/span&gt;, so I had no internet connection. The Stream 14 doesn&amp;#8217;t have an Ethernet port, so that wasn&amp;#8217;t an option either. Finally I had to use my phone&amp;#8217;s connection through &lt;span class="caps"&gt;USB&lt;/span&gt; thethering so I could run the following&amp;nbsp;commands:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
-&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get upgrade
-sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;upgrade
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;This fixes any broken packages. After that, I was able to install Git and clone a repo with the drivers for my adapters. This got my connection ready to start the real setup. The details are probably specific to the factory settings on my laptop so I won&amp;#8217;t really go over them, but &lt;a href="https://alexgonzalezc.dev/pages/contact.html"&gt;let me know&lt;/a&gt; if you&amp;#8217;re stuck with a similar issue and I&amp;#8217;ll try to help&amp;nbsp;out.&lt;/p&gt;
 &lt;h2&gt;Coding&amp;nbsp;tools&lt;/h2&gt;
 &lt;p&gt;That&amp;#8217;s my default editor and developer tool. I love the extensible and customizable design, and the many &lt;a href="https://alexgonzalezc.dev/posts/vs-code-ninja.html"&gt;productivity hacks&lt;/a&gt; you can take advantage&amp;nbsp;of.&lt;/p&gt;
@@ -690,9 +690,9 @@ You can change a breakpoint to also be a log points, that is, some info will be 
 &lt;p&gt;One of the killer features of Code. The Visual Studio marketplace is community-sourced and you can make your own extensions with JavaScript or TypeScript. There are loads of useful features in extensions, but take into account that every extension that you install with have a small impact in the performance of your editor. Also, they bloat the &lt;code&gt;%APPDATA%&lt;/code&gt; folder in your roaming profile, making your machine start up a lot more&amp;nbsp;slowly.&lt;/p&gt;
 &lt;p&gt;As a workaround, you can write a one line batch file that loads the editor&amp;#8217;s metadata from a location outside the roaming profile where you have previously placed the Code folder.&lt;br /&gt;
 For example, my setup is as&amp;nbsp;follows:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-extensions-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-user-data-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-extensions-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="n"&gt;-user-data-dir&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:/BIDepartment/Code&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;Save this with a &lt;code&gt;.bat&lt;/code&gt; extension and place it in your desktop. Next time you open &lt;span class="caps"&gt;VS&lt;/span&gt; Code, you can do it from that icon.
 It&amp;#8217;s not the most elegant solution, but it works in corporate&amp;nbsp;machines.&lt;/p&gt;
 &lt;p&gt;Alternatively, check the &lt;a href="https://code.visualstudio.com/docs/editor/portable"&gt;portable version of &lt;span class="caps"&gt;VS&lt;/span&gt; Code&lt;/a&gt;.&lt;/p&gt;
@@ -820,12 +820,12 @@ I (and many other developers) use &lt;a href="https://github.com/tonsky/FiraCode
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align="center"&gt;&lt;img alt="Types of IntelliSense Completion" src="https://raw.githubusercontent.com/gonz4lex/vscode-ninja/master/assets/intellisense.jpg" /&gt;&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;&lt;img alt="Types of IntelliSense Completion" src="https://raw.githubusercontent.com/gonz4lex/vscode-ninja/master/assets/intellisense.jpg" /&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;&lt;em&gt;Types of IntelliSense Completion. From https://code.visualstudio.com/docs/editor/intellisense.&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;&lt;em&gt;Types of IntelliSense Completion. From https://code.visualstudio.com/docs/editor/intellisense.&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

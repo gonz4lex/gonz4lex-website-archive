@@ -40,10 +40,10 @@
   <aside>
     <div id="user_meta">
       <a href="..">
-        <img src="https://alexgonzalezc.dev/images/avatar.png" alt="logo">
+        <img src="https://alexgonzalezc.dev/images/logo.png" alt="logo">
       </a>
       <h2><a href="..">Alex Gonzalez</a></h2>
-      <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
+      <p>Hey there! I'm a developer and data geek specialising in engineering, machine learning and data science, as well as visualization and analytics.</p>
       <ul>
         <li><a href="../pages/contact.html">Contact</a></li>
         <li><a href="../pages/resume.html">Resume</a></li>
@@ -88,17 +88,17 @@ Aseprite is a paid software and you should buy it to support its developers. It&
 <h2>Get&nbsp;started</h2>
 <p>Before beginning, please note that the full <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md">install instructions</a> can be found in the project&#8217;s&nbsp;repo.</p>
 <p>First, you should clone the repository in a directory of your choice, such as <code>~/</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/aseprite/aseprite.git
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/aseprite/aseprite.git
+</code></pre></div></td></tr></table></div>
+
 <p>This will create an <code>aseprite</code> directory. You can later update this clone with new releases by&nbsp;running:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> aseprite
-git pull
-git submodule update --init --recursive
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>aseprite
+git<span class="w"> </span>pull
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</code></pre></div></td></tr></table></div>
+
 <h2>Aseprite&nbsp;dependencies</h2>
 <p>There are three main dependencies for&nbsp;Aseprite:</p>
 <ul>
@@ -108,11 +108,11 @@ git submodule update --init --recursive
 </ul>
 <p>Note that for Windows, you need Windows 10 and <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2019</a>, as well as a [C++ <span class="caps">SDK</span>] for desktop development. The latter is an item to check in your <a href="https://imgur.com/4Pq2Cbv">Visual Studio installer</a>, so make sure you have selected&nbsp;it.</p>
 <p>Also, installing CMake on Windows was <span class="caps">HORRIBLE</span> and took quite a long time. In Ubuntu, however, I was able to install all dependencies with a single&nbsp;command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get install -y g++ cmake ninja-build libx11-dev libxcursor-dev libgl1-mesa-dev libfontconfig1-dev
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>g++<span class="w"> </span>cmake<span class="w"> </span>ninja-build<span class="w"> </span>libx11-dev<span class="w"> </span>libxcursor-dev<span class="w"> </span>libgl1-mesa-dev<span class="w"> </span>libfontconfig1-dev
+</code></pre></div></td></tr></table></div>
+
 <p>Building Skia is also quite trivial on Linux. I was able to run all of the following commands without any errors or missing dependencies, unlike in&nbsp;Windows:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -120,50 +120,50 @@ git submodule update --init --recursive
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir <span class="nv">$HOME</span>/deps
-<span class="nb">cd</span> <span class="nv">$HOME</span>/deps
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-git clone -b aseprite-m71 https://github.com/aseprite/skia.git
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/depot_tools:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">cd</span> skia
-python tools/git-sync-deps
-gn gen out/Release --args<span class="o">=</span><span class="s2">&quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&quot;</span>
-ninja -C out/Release skia
-</code></pre></div>
-</td></tr></table>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span><span class="nv">$HOME</span>/deps
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/deps
+git<span class="w"> </span>clone<span class="w"> </span>https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>aseprite-m71<span class="w"> </span>https://github.com/aseprite/skia.git
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/depot_tools:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>skia
+python<span class="w"> </span>tools/git-sync-deps
+gn<span class="w"> </span>gen<span class="w"> </span>out/Release<span class="w"> </span>--args<span class="o">=</span><span class="s2">&quot;is_debug=false is_official_build=true skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false&quot;</span>
+ninja<span class="w"> </span>-C<span class="w"> </span>out/Release<span class="w"> </span>skia
+</code></pre></div></td></tr></table></div>
+
 <p>These commands can also be found in the Aseprite documentation, so head there if you get&nbsp;stuck.</p>
 <h2>Compiling the&nbsp;code</h2>
 <p>After getting all the dependecies, create a new folder <code>build</code> inside your <code>aseprite</code> directory, and <code>cd</code> into it. Afterwards, run <code>cmake</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/aseprite
-mkdir build
-<span class="nb">cd</span> build
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/aseprite
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+</code></pre></div></td></tr></table></div>
+
 <blockquote>
 <p>In this last command, <code>cmake</code> needs a different setup based on your <span class="caps">OS</span>. I will just outline the Linux process since I still get nightmares trying to install Clang, Google depot tools, CMake and Visual Studio in Windows. Feel free to look up the other ones in the <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md#compiling">installation guide</a>.</p>
 </blockquote>
 <p>Run this command on your Linux machine to build the&nbsp;source:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cmake <span class="se">\</span>
-  -DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo <span class="se">\</span>
-  -DLAF_OS_BACKEND<span class="o">=</span>skia <span class="se">\</span>
-  -DSKIA_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia <span class="se">\</span>
-  -DSKIA_OUT_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia/out/Release <span class="se">\</span>
-  -G Ninja <span class="se">\</span>
-  ..
-</code></pre></div>
-</td></tr></table>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-DLAF_OS_BACKEND<span class="o">=</span>skia<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-DSKIA_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-DSKIA_OUT_DIR<span class="o">=</span><span class="nv">$HOME</span>/deps/skia/out/Release<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-G<span class="w"> </span>Ninja<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>..
+</code></pre></div></td></tr></table></div>
+
 <p>When your terminal finishes the previous task, just run Ninja inside the <code>build</code> directory and you will have your executable in <code>aseprite/build/bin/aseprite</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ninja aseprite
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ninja<span class="w"> </span>aseprite
+</code></pre></div></td></tr></table></div>
+
 <h2>Start&nbsp;pixeling!</h2>
 <p>That should be it! Run your Aseprite executable and you should be greeted by the clean interface of the software.
 Remember to actually purchase Aseprite if you are going to use it commercially or&nbsp;professionally.</p>

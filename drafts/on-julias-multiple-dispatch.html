@@ -40,10 +40,10 @@
   <aside>
     <div id="user_meta">
       <a href="..">
-        <img src="https://alexgonzalezc.dev/images/avatar.png" alt="logo">
+        <img src="https://alexgonzalezc.dev/images/logo.png" alt="logo">
       </a>
       <h2><a href="..">Alex Gonzalez</a></h2>
-      <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
+      <p>Hey there! I'm a developer and data geek specialising in engineering, machine learning and data science, as well as visualization and analytics.</p>
       <ul>
         <li><a href="../pages/contact.html">Contact</a></li>
         <li><a href="../pages/resume.html">Resume</a></li>
@@ -81,7 +81,7 @@
     <p>Multiple dispatch is a function of programming languages, which chooses and <em>dispatches</em> the optimal method for a given function or operator. This decision in taken based on the type of <strong>all</strong> the parameters passed to the function, whereas in object-oriented programming languages only the first parameters&nbsp;matters.</p>
 <p>This is one of the features that makes Julia inherently faster than Python and other languages, so it&#8217;s useful to know the basics and learn how to implement your own typed&nbsp;methods.</p>
 <h3>Code</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -92,41 +92,40 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
-    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for String for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for String for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="k">function</span> <span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Float64</span><span class="p">)</span>
-    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for Float64 for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">function</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Float64</span><span class="p">)</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Calling method for Float64 for value </span><span class="si">$x</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="n">methods</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+<span class="n">methods</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"> </span>
 
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">)</span>
 <span class="n">printf</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
+
 <p>You can also examine the methods of the <code>+</code> operator:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">methods</span><span class="ss">(</span><span class="o">+</span><span class="ss">)</span> # <span class="mi">166</span> <span class="nv">methods</span> <span class="k">for</span> <span class="nv">generic</span> <span class="nv">function</span> <span class="s2">&quot;</span><span class="s">+</span><span class="s2">&quot;</span>: [...]
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">methods</span><span class="ss">(</span><span class="o">+</span><span class="ss">)</span><span class="w"> </span>#<span class="w"> </span><span class="mi">166</span><span class="w"> </span><span class="nv">methods</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">generic</span><span class="w"> </span><span class="nv">function</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>:<span class="w"> </span>[...]
+</code></pre></div></td></tr></table></div>
+
 <p>One use of this would be to enable the <code>+</code> operator to do string concatenation, much like in&nbsp;Python.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="n">Base</span><span class="o">.+</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="n">Base</span><span class="o">.+</span>
 
-<span class="k">function</span> <span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">function</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
+
 <p>Note how the output returns <code>+ (generic function with 167 methods)</code>, and the new method has been added to our operator. You can also check it with <code>methods(+)</code>.</p>
 <p>Now, the following code should&nbsp;work:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>
+</code></pre></div></td></tr></table></div>
   </div>
   <div class="article_meta">
     <p>Category: <a href="../category/data-science.html">data science</a>

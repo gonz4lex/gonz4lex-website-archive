@@ -40,10 +40,10 @@
   <aside>
     <div id="user_meta">
       <a href="..">
-        <img src="https://alexgonzalezc.dev/images/avatar.png" alt="logo">
+        <img src="https://alexgonzalezc.dev/images/logo.png" alt="logo">
       </a>
       <h2><a href="..">Alex Gonzalez</a></h2>
-      <p>Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics.</p>
+      <p>Hey there! I'm a developer and data geek specialising in engineering, machine learning and data science, as well as visualization and analytics.</p>
       <ul>
         <li><a href="../pages/contact.html">Contact</a></li>
         <li><a href="../pages/resume.html">Resume</a></li>
@@ -92,7 +92,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 <li>the <strong>Discussions</strong> feature <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository">turned&nbsp;on</a></li>
 </ul>
 <p>You can simply follow the guidelines in the website to generate you definitive <code>script</code> tag which just needs to be plugged into your <span class="caps">HTML</span> template, and it looks like&nbsp;this:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -105,7 +105,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://giscus.app/client.js&quot;</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://giscus.app/client.js&quot;</span>
         <span class="na">data-repo</span><span class="o">=</span><span class="s">&quot;[ENTER REPO HERE]&quot;</span>
         <span class="na">data-repo-id</span><span class="o">=</span><span class="s">&quot;[ENTER REPO ID HERE]&quot;</span>
         <span class="na">data-category</span><span class="o">=</span><span class="s">&quot;[ENTER CATEGORY NAME HERE]&quot;</span>
@@ -119,11 +119,11 @@ So after many months procrastinating on this, I finally sat down and got it work
         <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span>
         <span class="na">async</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
+
 <h2>Plug-and-play</h2>
 <p>The only necessary step left is to go into your desired template (<code>article.html</code> in my case) and just paste that snippet of code wherever I want my comments to show&nbsp;up:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -142,7 +142,7 @@ So after many months procrastinating on this, I finally sat down and got it work
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- article.html --&gt;</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">&lt;!-- article.html --&gt;</span>
   ...
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article_text&quot;</span><span class="p">&gt;</span>
     {{ article.content }}
@@ -159,11 +159,11 @@ So after many months procrastinating on this, I finally sat down and got it work
     <span class="na">data-repo-id</span><span class="o">=</span><span class="s">&quot;MDEwOlJlcG9zaXRvcnkyMjU5MTg3MDM=&quot;</span> <span class="na">data-category</span><span class="o">=</span><span class="s">&quot;Announcements&quot;</span>
     <span class="na">data-category-id</span><span class="o">=</span><span class="s">&quot;DIC_kwDODXc-784COr2Q&quot;</span> <span class="na">data-mapping</span><span class="o">=</span><span class="s">&quot;pathname&quot;</span> <span class="na">data-reactions-enabled</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">data-emit-metadata</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
     <span class="na">data-input-position</span><span class="o">=</span><span class="s">&quot;bottom&quot;</span> <span class="na">data-theme</span><span class="o">=</span><span class="s">&quot;light&quot;</span> <span class="na">data-lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">data-loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="na">async</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   {% endif %}
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
+
 <p>I added an option <code>GISCUS_ENABLED</code> flag on my settings file, but that&#8217;s entirely&nbsp;optional.</p>
 <p>After that, just reload and regenerate your site, and comments should show up on your&nbsp;posts!</p>
 <h2>Some closing&nbsp;thoughts</h2>

@@ -52,41 +52,41 @@ These functions always receive two inputs: the table to iterate and expression t
 &lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
 &lt;p&gt;I often use &lt;code&gt;ADDCOLUMNS&lt;/code&gt; to generate a Date table, For&amp;nbsp;example:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
 &lt;span class="normal"&gt;7&lt;/span&gt;
-&lt;span class="normal"&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
-    &lt;span class="no"&gt;MONTH&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
-    &lt;span class="no"&gt;YEAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; 
-    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="normal"&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;ADDCOLUMNS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the table that will be iterated&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the name of the first column to add&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;MONTH&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# the definition of the first column to add&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;YEAR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Sales&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sk_Date&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;This is a very flexible way of generating your own date dimension according to your specific&amp;nbsp;needs.&lt;/p&gt;
 &lt;p&gt;You can also generate a dimension table by scanning the columns of your different fact tables and appending them. For&amp;nbsp;example:
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;UNION&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;ALL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;DISTINCT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;UNION&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LaptopOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;MobileOrders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;OrderID&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;h3&gt;The &lt;span class="caps"&gt;IN&lt;/span&gt;&amp;nbsp;operator&lt;/h3&gt;
 &lt;p&gt;Verifies whether a value exists in a list of possible values, i.e. &lt;code&gt;Company[Code] IN {"Microsoft", "Apple", "Dell"}&lt;/code&gt;.
 Note that the curly brackets notation generates a temporary table behind the scenes to perform the&amp;nbsp;filtering.&lt;/p&gt;
@@ -100,71 +100,71 @@ Note that the curly brackets notation generates a temporary table behind the sce
 &lt;/ul&gt;
 &lt;h3&gt;&lt;span class="caps"&gt;CALCULATE&lt;/span&gt; (&amp;nbsp;)&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; is the main function for &lt;span class="caps"&gt;DAX&lt;/span&gt; expressions, as it is used in many different scenarios to add, change or remove filters. Its syntax is as&amp;nbsp;follows:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CALCULATE (
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CALCULATE (
     Expression;
     Filter1;
     ...;
     FilterN 
 )
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;code&gt;CALCULATE&lt;/code&gt; calls with multiple filters can have very different&amp;nbsp;behaviors:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
-&lt;span class="normal"&gt;5&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-    &lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;span class="normal"&gt;5&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Name&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Year&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;This will result in the amount of booking items for the filtered companies, in 2019.
 However, the following expression has a very different&amp;nbsp;result:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
-&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-    &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this case, the use of nested &lt;code&gt;CALCULATE&lt;/code&gt; statements does not intersect the filter. The result of the expression is &lt;strong&gt;the amount of items only for Microsoft&lt;/strong&gt;, since the inner filter overwrites the&amp;nbsp;outer.&lt;/p&gt;
 &lt;p&gt;You can override this behavior to intersect filter by using the &lt;code&gt;KEEPFILTERS&lt;/code&gt; function:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
 &lt;span class="normal"&gt;6&lt;/span&gt;
-&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="no"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="normal"&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;ItemId&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;KEEPFILTERS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Apple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Company&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;IN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Microsoft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Dell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this context, only Microsoft remains visible at the end of the&amp;nbsp;evaluation.&lt;/p&gt;
 &lt;h3&gt;Variables&lt;/h3&gt;
 &lt;p&gt;Newer feature in &lt;span class="caps"&gt;DAX&lt;/span&gt;. Allows for reduced repetition of expressions and other nifty tricks, such as accessing outer row context.
 You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt;
 &lt;p&gt;Variables can be used to store the previous row context for later&amp;nbsp;access:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
 &lt;span class="normal"&gt; 3&lt;/span&gt;
 &lt;span class="normal"&gt; 4&lt;/span&gt;
@@ -175,20 +175,20 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;span class="normal"&gt; 9&lt;/span&gt;
 &lt;span class="normal"&gt;10&lt;/span&gt;
 &lt;span class="normal"&gt;11&lt;/span&gt;
-&lt;span class="normal"&gt;12&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;12&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Rank&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;VAR&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="no"&gt;VAR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 
 &lt;span class="no"&gt;RETURN&lt;/span&gt;
 
-&lt;span class="no"&gt;COUNTROWS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class="no"&gt;COUNTROWS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;FILTER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Price&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_CurrentPrice&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;In this case, you save the value of the previous price during the outer context evaluation, and use it to check whether the price in the inner context is&amp;nbsp;greater.&lt;/p&gt;
 &lt;h2&gt;Evaluation&amp;nbsp;contexts&lt;/h2&gt;
 &lt;p&gt;The filter and row contexts are one of the most important concepts in &lt;span class="caps"&gt;DAX&lt;/span&gt;.&lt;/p&gt;
@@ -204,23 +204,23 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;h5&gt;Quick&amp;nbsp;tip!&lt;/h5&gt;
 &lt;p&gt;Starting from a row context, you can use related to access columns in other&amp;nbsp;tables:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
 &lt;span class="normal"&gt;5&lt;/span&gt;
-&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;RELATED&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;SUMX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Cost&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;RELATED&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Markup&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;You need &lt;span class="caps"&gt;RELATED&lt;/span&gt; because the row context is iterating the sales table. The Markup columns is in another table, but the row context allows for the relationship to be&amp;nbsp;propagated. &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
 &lt;span class="normal"&gt;4&lt;/span&gt;
@@ -228,28 +228,28 @@ You can store strings, numbers, and even tables in a&amp;nbsp;variable.&lt;/p&gt
 &lt;span class="normal"&gt;6&lt;/span&gt;
 &lt;span class="normal"&gt;7&lt;/span&gt;
 &lt;span class="normal"&gt;8&lt;/span&gt;
-&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="normal"&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;AverageDiscountedIncomeByProduct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 
-&lt;span class="no"&gt;AVERAGEX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="no"&gt;SUMX&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;AVERAGEX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="no"&gt;SUMX&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;RELATEDTABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SalePrice&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Products&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;Discount&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;The inner expression can safely reference two columns coming from different tables because there are &lt;strong&gt;two row contexts&lt;/strong&gt;: the first one introduced by &lt;code&gt;AVERAGEX&lt;/code&gt; and the second one by &lt;code&gt;SUMX&lt;/code&gt;. Also note that &lt;code&gt;RELATEDTABLE&lt;/code&gt; uses the row context to determine the set of rows to return, that is, the Orders of the current product which is the one being currently iterated by &lt;code&gt;AVERAGEX&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Context&amp;nbsp;transition&lt;/h3&gt;
 &lt;p&gt;The context transition in &lt;span class="caps"&gt;DAX&lt;/span&gt; is the transformation of row contexts into an equivalent filter context performed by &lt;code&gt;CALCULATE&lt;/code&gt; functions.
 When &lt;code&gt;CALCULATE&lt;/code&gt; is executed within a row context, it transforms the context into the equivalent filter context and applies it to the data model before computing its expression.
 This is an expensive operation, so it&amp;#8217;s better to avoid it when iterating large&amp;nbsp;tables.&lt;/p&gt;
 &lt;p&gt;This concept is easier to understand through&amp;nbsp;examples:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
-&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;CALCULATE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;SUM&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;span class="normal"&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;Product&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;SumOfUnitsSoldCalculate&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;CALCULATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;SUM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Orders&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="no"&gt;UnitsSold&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
 &lt;p&gt;The first calculated column returns the grand total of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt;, because no filter context is active, whereas the one with &lt;code&gt;CALCULATE&lt;/code&gt; returns the sum of &lt;code&gt;Orders[UnitsSold]&lt;/code&gt; for the current product only, because the filter context containing the current product is automatically propagated to sales due to the relationship between the two&amp;nbsp;tables.&lt;/p&gt;
 &lt;p&gt;It is important to note that context transition happens before further filters in &lt;code&gt;CALCULATE&lt;/code&gt;. Thus, filters in &lt;code&gt;CALCULATE&lt;/code&gt; might override filters produced by context transition as seen on previous&amp;nbsp;sections.&lt;/p&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;DAX&lt;/span&gt;&amp;nbsp;Studio&lt;/h2&gt;
