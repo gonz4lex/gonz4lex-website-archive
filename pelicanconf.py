@@ -8,7 +8,7 @@ import os
 
 AUTHOR = 'Alex Gonzalez'
 SITENAME = 'Alex Gonzalez'
-TAGLINE = "Hey! I'm Alex, a developer specialising on machine learning, data science, engineering, visualization and analytics."
+TAGLINE = "Hey there! I'm a developer and data geek specialising in engineering, machine learning and data science, as well as visualization and analytics."
 SITEURL = 'https://alexgonzalezc.dev'
 
 PATH = 'content'
@@ -46,7 +46,7 @@ SOCIAL = (
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-USER_LOGO_URL = SITEURL + '/images/avatar.png'
+USER_LOGO_URL = SITEURL + '/images/logo.png'
 
 STATIC_PATHS = ['images', 'extra', 'assets']
 
